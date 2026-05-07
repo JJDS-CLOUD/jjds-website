@@ -465,7 +465,7 @@ export default function App() {
           <div className="mx-auto grid max-w-[1600px] gap-16 lg:grid-cols-2 items-start" >
             <div>
               <SectionLabel dark>Compliance You Can Trust</SectionLabel>
-              <className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.05em] md:text-7xl">
+              <h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.05em] md:text-7xl">
                 Built into every job, not added later.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
