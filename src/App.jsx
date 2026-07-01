@@ -92,13 +92,13 @@ const stats = [
 
 const galleryImages = [
    {
-    src: "/20260130_224350680_iOS.heic",
+    src: "/20260130_224350680_iOS.jpg",
     alt: "JJDS Industries site works",
     label: "Site Works",
     featured: true,
   },
   {
-    src: "/20260130_224353137_iOS.heic",
+    src: "/20260130_224353137_iOS.jpg",
     alt: "JJDS Industries project works",
     label: "Project Works",
     featured: true,
@@ -120,12 +120,12 @@ const galleryImages = [
     label: "Structural Works",
   },
   {
-    src: "/20260615_041638546_iOS.heic",
+    src: "/20260615_041638546_iOS.jpg",
     alt: "JJDS Industries plant works",
     label: "Plant Works",
   },
   {
-    src: "/20260615_041640730_iOS.heic",
+    src: "/20260615_041640730_iOS.jpg",
     alt: "JJDS Industries depacker installation works",
     label: "Depacker Works",
   },
