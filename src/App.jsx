@@ -52,12 +52,6 @@ const services = [
     text: "Process equipment, plant upgrades, depackers, bio-filter systems, pipework and industrial installation support.",
   },
   {
-    icon: "06",
-    title: "Blast & Paint Services",
-    short: "Coatings",
-    text: "Surface preparation, protective coatings, industrial painting, corrosion protection and refurbishment works.",
-  },
-  {
     icon: "07",
     title: "Culvert Relining & Drainage",
     short: "Culverts",
