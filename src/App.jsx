@@ -114,11 +114,11 @@ const galleryImages = [
     alt: "JJDS Industries civil works",
     label: "Civil Works",
   },
-  {
-    src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057067/download_1_arjqwr.png",
-    alt: "JJDS Industries plant works",
-    label: "Plant Works",
-  },
+ {
+  src: "/20260615_041638546_iOS.heic",
+  alt: "JJDS Industries plant works",
+  label: "Plant Works",
+},
   {
     src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png",
     alt: "JJDS regional works",
