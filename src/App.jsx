@@ -186,10 +186,10 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
           <a href="#top" className="flex items-center gap-4">
             <img
-              src="https://res.cloudinary.com/dbjdq6ahz/image/upload/e_background_removal/f_png,e_improve,e_sharpen/v1778048889/ChatGPT_Image_Apr_25_2026_11_20_04_PM_pojk21.jpg"
-              alt="JJDS Industries logo"
-              className="h-16 w-auto object-contain md:h-24"
-            />
+  src="/jjds-logo.png"
+  alt="JJDS Industries logo"
+  className="h-16 w-auto object-contain md:h-24"
+/>
             <div className="hidden sm:block">
               <p className="text-lg font-black tracking-[0.18em] text-white md:text-2xl" >
                 {BRAND.name}
