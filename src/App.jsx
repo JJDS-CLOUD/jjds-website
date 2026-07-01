@@ -91,6 +91,64 @@ const stats = [
 ];
 
 const galleryImages = [
+   {
+    src: "/20260130_224350680_iOS.heic",
+    alt: "JJDS Industries site works",
+    label: "Site Works",
+    featured: true,
+  },
+  {
+    src: "/20260130_224353137_iOS.heic",
+    alt: "JJDS Industries project works",
+    label: "Project Works",
+    featured: true,
+  },
+  {
+    src: "/20260510_071228000_iOS.png",
+    alt: "JJDS Industries installation works",
+    label: "Installation Works",
+    featured: true,
+  },
+  {
+    src: "/20260510_071339000_iOS.jpg",
+    alt: "JJDS Industries mechanical works",
+    label: "Mechanical Works",
+  },
+  {
+    src: "/20260510_071405000_iOS.jpg",
+    alt: "JJDS Industries structural works",
+    label: "Structural Works",
+  },
+  {
+    src: "/20260615_041638546_iOS.heic",
+    alt: "JJDS Industries plant works",
+    label: "Plant Works",
+  },
+  {
+    src: "/20260615_041640730_iOS.heic",
+    alt: "JJDS Industries depacker installation works",
+    label: "Depacker Works",
+  },
+  {
+    src: "/IMG_0961.jpeg",
+    alt: "JJDS Industries process plant works",
+    label: "Process Plant",
+  },
+  {
+    src: "/IMG_0966.jpeg",
+    alt: "JJDS Industries fabrication and installation",
+    label: "Fabrication",
+  },
+  {
+    src: "/IMG_4075 1.JPG",
+    alt: "JJDS Industries industrial site works",
+    label: "Industrial Works",
+  },
+  {
+    src: "/IMG_4767 1.jpeg",
+    alt: "JJDS Industries regional site works",
+    label: "Regional Works",
+  },
   {
     src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778048301/IMG_3476_1_xdtko1.jpg",
     alt: "JJDS Industries structural steel installation",
