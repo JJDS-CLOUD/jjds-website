@@ -78,7 +78,7 @@ const stats = [
   },
   {
     value: "Multi-Trade Crew",
-    label: "Steel • Mechanical • Civil • Coatings",
+    label: "Steel • Mechanical • Civil",
   },
   {
     value: "Australia Wide",
