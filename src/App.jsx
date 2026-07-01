@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
@@ -644,6 +645,7 @@ export default function App() {
           💬 SMS JJDS
         </a>
       </div>
+      <Analytics />
     </div>
   );
 }
