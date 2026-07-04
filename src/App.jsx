@@ -5,7 +5,7 @@ const BRAND = {
   tagline: "Steel • Mechanical • Civil • Process Plant • Compliance",
   slogan: "Site-ready industrial crews for serious project delivery.",
   phone: "0427 626 101",
-  email: "james@jjdsindustries.com.au",
+  email: "jjdsburnett@outlook.com.au",
   owner: "James Burnett",
   abn: "47 626 605 350",
 };
@@ -15,12 +15,13 @@ const siteUrl = "https://www.jjdsindustries.com.au";
 
 const seoPages = [
   {
-    path: "/process-pipework-melbourne",
+    path: "/process-pipework-australia",
+    aliases: ["/process-pipework-melbourne"],
     navLabel: "Pipework",
-    eyebrow: "Process Pipework Melbourne",
-    title: "Process Pipework Installation Melbourne",
+    eyebrow: "Process Pipework Australia",
+    title: "Process Pipework Installation Australia",
     hero: "Stainless process pipework, pipe supports, site welding and mechanical installation for industrial facilities.",
-    description: "JJDS Industries provides stainless steel process pipework, fabrication, welding, supports and installation support across Melbourne, Victoria and Australia.",
+    description: "JJDS Industries provides stainless steel process pipework, fabrication, welding, supports and installation support for industrial sites across Australia.",
     bullets: ["Stainless process pipework installation", "Site welding and fabrication modifications", "Pipe supports, brackets and access steel", "Shutdown and plant upgrade support", "SWMS, permits and site records"],
     sectors: ["Waste processing", "Water treatment", "Industrial plants", "Manufacturing", "Remote sites"],
     image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051790/IMG_0963_1_hiqc4w.jpg",
@@ -146,6 +147,32 @@ const navItems = [
   { label: "Contact", href: "/#contact" },
 ];
 
+const menuGroups = [
+  {
+    label: "Services",
+    items: seoPages.slice(0, 8).map((page) => ({ label: page.navLabel, href: page.path, text: page.eyebrow })),
+  },
+  {
+    label: "Industries",
+    items: [
+      { label: "EPC Contractors", href: "/epc-contractor-support", text: "RFQ, install and compliance support" },
+      { label: "Waste Processing", href: "/waste-processing-installation", text: "Depackers, pipework and plant works" },
+      { label: "Water Treatment", href: "/water-treatment-installation", text: "Pumps, pipework and equipment install" },
+      { label: "Civil Infrastructure", href: "/civil-infrastructure", text: "Bridge, drainage and culvert support" },
+      { label: "Remote Site Works", href: "/remote-site-works", text: "Regional and difficult access jobs" },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      { label: "Tier 1 Ready", href: "/#tier-ready", text: "Compliance-ready contractor presentation" },
+      { label: "Gallery", href: "/#gallery", text: "Real JJDS site delivery photos" },
+      { label: "Compliance", href: "/#compliance", text: "SWMS, permits, records and handover" },
+      { label: "Contact", href: "/#contact", text: "Send drawings, photos or an RFQ" },
+    ],
+  },
+];
+
 const capabilityCards = [
   ["01", "Mechanical & Plant Installation", "Process equipment, depackers, pipework, plant upgrades, staged installation and shutdown support."],
   ["02", "Structural Steel & Site Fabrication", "Frames, platforms, access steel, brackets, pipe supports, site welding and modifications."],
@@ -244,32 +271,70 @@ function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
   );
 }
 
+function DropdownMenu({ group }) {
+  return (
+    <div className="group relative">
+      <button
+        type="button"
+        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-slate-200 transition hover:border-cyan-200/40 hover:bg-white/10 hover:text-white"
+      >
+        {group.label}
+        <span className="text-cyan-200 transition group-hover:rotate-180">⌄</span>
+      </button>
+      <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 rounded-[1.7rem] border border-white/10 bg-[#050505]/96 p-3 opacity-0 shadow-2xl shadow-black/50 backdrop-blur-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#004A78]/50 via-[#00A8C8]/20 to-[#F59E0B]/20 px-4 py-3 text-xs font-black uppercase tracking-[0.25em] text-cyan-100">
+          {group.label} Menu
+        </div>
+        <div className="grid gap-2">
+          {group.items.map((item) => (
+            <a key={item.href + item.label} href={item.href} className="rounded-2xl border border-white/5 bg-white/[0.04] px-4 py-3 transition hover:border-cyan-200/30 hover:bg-white/10">
+              <span className="block text-sm font-black text-white">{item.label}</span>
+              <span className="mt-1 block text-xs leading-5 text-slate-400">{item.text}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeMenu = () => setMobileOpen(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/88 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <a href="/" className="flex items-center gap-4" onClick={closeMenu}>
-          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-14 w-auto object-contain md:h-20" />
-          <div className="hidden sm:block">
-            <p className="text-base font-black tracking-[0.18em] text-white md:text-xl">{BRAND.name}</p>
-            <p className="max-w-[500px] text-[10px] uppercase tracking-[0.22em] text-cyan-100 md:text-xs">{BRAND.tagline}</p>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/90 shadow-2xl shadow-black/40 backdrop-blur-2xl">
+      <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-5 px-5 py-4 md:px-10">
+        <a href="/" className="flex min-w-0 items-center gap-5" onClick={closeMenu}>
+          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-20 w-auto object-contain md:h-28 xl:h-32" />
+          <div className="hidden min-w-0 sm:block">
+            <p className="text-2xl font-black uppercase tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
+            <p className="mt-2 max-w-[720px] text-[11px] font-black uppercase tracking-[0.38em] text-cyan-100 md:text-sm">{BRAND.tagline}</p>
           </div>
         </a>
-        <nav className="hidden items-center gap-6 text-sm font-bold text-slate-300 lg:flex">
-          {navItems.map((item) => <a key={item.href} href={item.href} className="transition hover:text-cyan-200">{item.label}</a>)}
-          <GradientButton href="/#contact">Get a Quote</GradientButton>
+
+        <nav className="hidden items-center gap-3 xl:flex">
+          {menuGroups.map((group) => <DropdownMenu key={group.label} group={group} />)}
+          <GradientButton href="/#contact" className="ml-2 px-8 py-4 text-base">Get a Quote</GradientButton>
         </nav>
-        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-black text-white lg:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
+
+        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="rounded-full border border-white/10 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
       </div>
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-[#050505]/98 px-5 py-5 lg:hidden">
-          <div className="grid gap-3">
-            {navItems.map((item) => <a key={item.href} href={item.href} onClick={closeMenu} className="rounded-2xl bg-white/10 px-4 py-3 font-bold">{item.label}</a>)}
-            <div className="grid gap-3 sm:grid-cols-2">
-              {seoPages.slice(0, 8).map((page) => <a key={page.path} href={page.path} onClick={closeMenu} className="rounded-2xl border border-white/10 px-4 py-3 text-sm font-bold text-slate-200">{page.navLabel}</a>)}
-            </div>
+        <div className="border-t border-white/10 bg-[#050505]/98 px-5 py-5 xl:hidden">
+          <div className="grid gap-4">
+            {menuGroups.map((group) => (
+              <div key={group.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-3">
+                <p className="px-2 pb-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100">{group.label}</p>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {group.items.map((item) => (
+                    <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="rounded-2xl bg-white/10 px-4 py-3">
+                      <span className="block font-black text-white">{item.label}</span>
+                      <span className="mt-1 block text-xs leading-5 text-slate-400">{item.text}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
             <GradientButton href="/#contact" className="w-full" onClick={closeMenu}>Get Quote</GradientButton>
           </div>
         </div>
@@ -324,7 +389,7 @@ function HomePage() {
         <section id="tier-ready" className="bg-[#07131A] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-              <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to look organised before boots hit site.</h2><p className="mt-6 text-lg leading-8 text-slate-300">The website now positions JJDS as a contractor that understands RFQs, compliance, project teams, site access, sequencing, documentation and handover — not just labour hire.</p></div>
+              <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to present like a serious industrial contractor.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS presents as a contractor that understands RFQs, compliance, project teams, site access, sequencing, documentation and handover — not just labour hire.</p></div>
               <div className="grid gap-5 sm:grid-cols-2">{tierProof.map((item) => <article key={item.title} className="rounded-[2rem] border border-white/10 bg-white/10 p-7"><h3 className="text-2xl font-black">{item.title}</h3><p className="mt-4 leading-7 text-slate-300">{item.text}</p></article>)}</div>
             </div>
           </div>
@@ -332,21 +397,21 @@ function HomePage() {
 
         <section id="industries" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Targeted at the people who actually award industrial work.</h2>
+            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Positioned for the clients who award industrial work.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section className="bg-black px-5 py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Service URLs</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Dedicated SEO pages for every high-value job type.</h2>
+            <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">High-value service pages built for Google and real RFQs.</h2>
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-cyan-100">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-cyan-100">Open page →</span></a>)}</div>
           </div>
         </section>
 
         <section id="gallery" className="bg-[#050505] px-5 py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Real JJDS site delivery.</h2>
+            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
             <div className="mt-12 grid auto-rows-[260px] gap-4 md:grid-cols-4">{galleryImages.map((img) => <figure key={img.src} className={`group relative overflow-hidden rounded-[1.7rem] bg-white/10 shadow-2xl ${img.featured ? "md:col-span-2 md:row-span-2" : ""}`}><img src={img.src} alt={img.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" /><figcaption className="absolute bottom-0 p-5"><span className="rounded-full bg-cyan-300/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-100 backdrop-blur">{img.label}</span></figcaption></figure>)}</div>
           </div>
         </section>
@@ -360,14 +425,14 @@ function HomePage() {
 
         <section id="compliance" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Documentation that matches the work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">Use the site to make JJDS look organised before a client even rings: SWMS, permits, QA checks, hold points, site reports, photo records and handover support.</p></div>
+            <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Compliance documentation that supports real site work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS can present clear project controls: SWMS, permits, QA checks, hold points, site reports, photo records, variation notes and handover support.</p></div>
             <div className="grid gap-4 sm:grid-cols-2">{["SWMS and permits", "Pre-start support", "Site reporting", "Quality records", "Handover docs", "Variation control"].map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, photos or a rough scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">JJDS will review the job and respond with practical next steps, install thinking, assumptions, risks, inclusions and delivery support.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">JJDS will review the information and respond with practical next steps, install thinking, assumptions, risks, inclusions and delivery support.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -419,7 +484,7 @@ function MobileButtons() {
 
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
-  const page = seoPages.find((item) => item.path === path);
+  const page = seoPages.find((item) => item.path === path || item.aliases?.includes(path));
   if (page) return <ServicePage page={page} />;
   return <HomePage />;
 }
