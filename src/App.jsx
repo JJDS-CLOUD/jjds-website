@@ -5,7 +5,7 @@ const BRAND = {
   tagline: "Steel • Mechanical • Civil • Process Plant • Compliance",
   slogan: "Site-ready, compliant crews delivering across Australia.",
   phone: "0427 626 101",
-  email: "james@jjdsindustries.com.au",
+  email: "jjdsburnett@outlook.com.au",
   owner: "James Burnett",
   abn: "47 626 605 350",
 };
