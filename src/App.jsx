@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
   tagline: "Steel • Mechanical • Civil • Process Plant • Compliance",
-  slogan: "Site-ready, compliant crews delivering across Australia.",
+  slogan: "Site-ready, compliant crews delivering serious industrial work across Australia.",
   phone: "0427 626 101",
   email: "jjdsburnett@outlook.com.au",
   owner: "James Burnett",
@@ -14,6 +14,7 @@ const phoneClean = BRAND.phone.replaceAll(" ", "");
 
 const navItems = [
   { label: "Capabilities", href: "/#services" },
+  { label: "Industries", href: "/#industries" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Remote Works", href: "/#remote" },
   { label: "Compliance", href: "/#compliance" },
@@ -148,6 +149,54 @@ const seoPages = [
       "Compliance built into project delivery",
     ],
     sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],
+  },
+  {
+    path: "/remote-site-works",
+    navLabel: "Remote Works",
+    eyebrow: "Remote Site Works",
+    title: "Remote and Regional Industrial Site Works",
+    description:
+      "JJDS Industries mobilises practical crews for remote, regional and difficult-access works including steel, civil, mechanical, pipework, installation and compliance-ready delivery.",
+    bullets: [
+      "Remote and regional mobilisation",
+      "Steel, mechanical and civil site packages",
+      "Shutdown, upgrade and access-constrained works",
+      "Plant, bridge, culvert and infrastructure support",
+      "Clear communication from RFQ through handover",
+    ],
+    sectors: ["Regional Victoria", "Remote sites", "Civil infrastructure", "Industrial plants", "Council assets"],
+  },
+  {
+    path: "/epc-contractor-support",
+    navLabel: "EPC Support",
+    eyebrow: "EPC Contractor Support",
+    title: "Site Delivery Support for EPC Contractors",
+    description:
+      "JJDS Industries supports EPC contractors and consulting engineers with practical installation crews, compliance documentation, fabrication, steelwork, mechanical installation and site reporting.",
+    bullets: [
+      "RFQ review and practical install input",
+      "Contractor supply and installation packages",
+      "Mechanical, steel, civil and process plant support",
+      "Site-ready documentation and reporting",
+      "Straight communication with project teams",
+    ],
+    sectors: ["EPC contractors", "Consulting engineers", "Tier contractors", "Waste and water", "Industrial upgrades"],
+  },
+  {
+    path: "/civil-infrastructure",
+    navLabel: "Civil Infra",
+    eyebrow: "Civil Infrastructure",
+    title: "Civil Infrastructure and Bridge Support Works",
+    description:
+      "JJDS Industries assists civil and infrastructure projects with bridge component works, culvert relining, drainage upgrades, steel repairs, site welding and remote construction support.",
+    bullets: [
+      "Bridge and civil component installation",
+      "Culvert relining and drainage upgrades",
+      "Structural repairs and site fabrication",
+      "Remote access and regional project support",
+      "Compliance documentation and delivery records",
+    ],
+    sectors: ["Bridge works", "Drainage", "Culverts", "Councils", "Remote infrastructure"],
   },
 ];
 
@@ -347,6 +396,31 @@ const process = [
   },
 ];
 
+const tierProof = [
+  { title: "EPC-ready response", text: "Clear RFQ review, practical constructability input, exclusions, inclusions and mobilisation planning." },
+  { title: "Compliance-led delivery", text: "SWMS, permits, pre-starts, site records, handover information and contractor documentation support." },
+  { title: "Multi-discipline capability", text: "Structural steel, mechanical installation, civil support, process pipework, field welding and site repairs." },
+  { title: "Serious site presentation", text: "Professional communication, photos, reporting, variation control and direct owner-led accountability." },
+];
+
+const industriesServed = [
+  "Waste processing and resource recovery",
+  "Water treatment and pump infrastructure",
+  "Industrial manufacturing facilities",
+  "Civil infrastructure, bridges and culverts",
+  "Food, organics and process plant upgrades",
+  "Councils, contractors and regional assets",
+];
+
+const complianceDeliverables = [
+  "SWMS and task-specific controls",
+  "Permits and pre-start support",
+  "Site photos and progress reporting",
+  "Quality checks and completion records",
+  "Plant, equipment and labour coordination",
+  "Handover-ready documentation",
+];
+
 function SectionLabel({ children, light = false }) {
   return (
     <p
@@ -496,6 +570,24 @@ export default function App() {
       : "/";
   const activeSeoPage = seoPages.find((page) => page.path === currentPath);
 
+  useEffect(() => {
+    const title = activeSeoPage
+      ? `${activeSeoPage.title} | JJDS Industries`
+      : "JJDS Industries | Industrial Site Delivery Australia";
+    const description = activeSeoPage
+      ? activeSeoPage.description
+      : "JJDS Industries delivers steel, mechanical, civil, process plant, field welding and compliance-ready site crews across Victoria and Australia.";
+
+    document.title = title;
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", description);
+  }, [activeSeoPage]);
+
   return (
     <div className="min-h-screen overflow-hidden bg-[#050505] text-white selection:bg-cyan-200 selection:text-black">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/88 shadow-2xl shadow-black/40 backdrop-blur-2xl">
@@ -517,7 +609,7 @@ export default function App() {
           </a>
 
           <nav className="hidden items-center gap-7 text-sm font-bold text-slate-300 md:flex">
-            {navItems.slice(0, 2).map((item) => (
+            {navItems.slice(0, 4).map((item) => (
               <a key={item.href} href={item.href} className="transition hover:text-cyan-200">
                 {item.label}
               </a>
@@ -590,19 +682,17 @@ export default function App() {
               </div>
 
               <h1 className="mt-6 max-w-6xl text-[clamp(3rem,8vw,7.5rem)] font-black uppercase leading-[0.9] tracking-[-0.075em] text-white">
-                Site-ready,
+                Tier-ready
                 <br />
-                compliant crews.
+                site delivery.
               </h1>
 
               <p className="mt-7 max-w-3xl rounded-3xl border border-white/10 bg-black/35 p-5 text-lg leading-8 text-white/88 shadow-2xl backdrop-blur md:text-xl">
-                {BRAND.slogan} Mechanical installation, structural steel,
-                process plant, civil infrastructure, coatings and project
-                compliance support.
+                {BRAND.slogan} JJDS supports EPC contractors, consulting engineers, councils and industrial clients with steel, mechanical, civil, process plant, field welding and compliance-led installation packages.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3 text-sm font-black text-white/90">
-                {["Send drawings", "Get a clear response", "Mobilise with compliance"].map((item) => (
+                {["EPC support", "Waste & water plants", "Steel • Mechanical • Civil", "Compliance ready"].map((item) => (
                   <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 backdrop-blur">
                     ✓ {item}
                   </span>
@@ -662,6 +752,28 @@ export default function App() {
                 </article>
               ))}
             </div>
+
+            <div className="mt-14 rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.4fr] lg:items-start">
+                <div>
+                  <SectionLabel light>Tier 1 Presentation</SectionLabel>
+                  <h2 className="mt-3 text-3xl font-black uppercase tracking-[-0.04em] text-white md:text-5xl">
+                    Built to look serious before the first site visit.
+                  </h2>
+                  <p className="mt-5 leading-8 text-slate-300">
+                    The goal is simple: when a project manager, engineer or procurement team lands here, JJDS looks capable, organised and ready to mobilise.
+                  </p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {tierProof.map((item) => (
+                    <article key={item.title} className="rounded-[1.5rem] border border-white/10 bg-black/25 p-5">
+                      <h3 className="text-xl font-black text-white">{item.title}</h3>
+                      <p className="mt-3 leading-7 text-slate-300">{item.text}</p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -676,7 +788,7 @@ export default function App() {
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Capabilities</SectionLabel>
             <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">
-              Services customers can call JJDS for.
+              Industrial capability customers can rely on.
             </h2>
 
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -696,6 +808,25 @@ export default function App() {
                   <h3 className="text-2xl font-black tracking-tight">{service.title}</h3>
                   <p className="mt-4 leading-7 text-slate-600">{service.text}</p>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="industries" className="bg-[#07131A] px-5 py-24">
+          <div className="mx-auto max-w-7xl">
+            <SectionLabel light>Industries Served</SectionLabel>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">
+              Built for industrial clients, EPC contractors and infrastructure work.
+            </h2>
+            <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">
+              JJDS is positioned for the jobs that need practical thinking, site-ready labour, clear communication and compliance from day one.
+            </p>
+            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {industriesServed.map((item) => (
+                <div key={item} className="rounded-[1.5rem] border border-white/10 bg-white/10 p-6 text-lg font-black text-white shadow-xl">
+                  ✓ {item}
+                </div>
               ))}
             </div>
           </div>
@@ -768,14 +899,7 @@ export default function App() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
-              {[
-                "Safety-first delivery",
-                "Environmental responsibility",
-                "Quality assurance systems",
-                "Structured documentation",
-                "Site compliance control",
-                "Client-ready reporting",
-              ].map((item) => (
+              {complianceDeliverables.map((item) => (
                 <div key={item} className="rounded-3xl border border-white/10 bg-white/10 p-5 font-bold text-white">
                   ✓ {item}
                 </div>
@@ -829,10 +953,10 @@ export default function App() {
             <div>
               <SectionLabel>Get a Quote</SectionLabel>
               <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">
-                Let’s make your job easier.
+                Send the scope. Get a serious response.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                Send drawings, photos, RFQ details, site location or a rough description. JJDS will review it and help work out the next step.
+                Send drawings, photos, RFQ details, site location or a rough description. JJDS will review the work and respond with practical next steps, inclusions, exclusions and mobilisation requirements.
               </p>
 
               <div className="mt-8 grid gap-4">
