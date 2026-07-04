@@ -13,11 +13,142 @@ const BRAND = {
 const phoneClean = BRAND.phone.replaceAll(" ", "");
 
 const navItems = [
-  { label: "Capabilities", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Remote Works", href: "#remote" },
-  { label: "Compliance", href: "#compliance" },
-  { label: "Contact", href: "#contact" },
+  { label: "Capabilities", href: "/#services" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Remote Works", href: "/#remote" },
+  { label: "Compliance", href: "/#compliance" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const seoPages = [
+  {
+    path: "/process-pipework-melbourne",
+    navLabel: "Pipework",
+    eyebrow: "Process Pipework Melbourne",
+    title: "Process Pipework Installation Melbourne",
+    description:
+      "JJDS Industries provides stainless steel process pipework, site fabrication, pipe supports, welding, installation and practical site delivery for industrial facilities across Melbourne, Victoria and Australia.",
+    bullets: [
+      "Stainless process pipework installation",
+      "Site welding, fabrication and modifications",
+      "Pipe supports, brackets and access steel",
+      "Shutdown, upgrade and plant installation support",
+      "Compliance documents, SWMS and site records",
+    ],
+    sectors: ["Waste processing", "Water treatment", "Industrial plants", "Manufacturing", "Remote sites"],
+  },
+  {
+    path: "/industrial-plant-installation",
+    navLabel: "Plant Install",
+    eyebrow: "Industrial Plant Installation",
+    title: "Industrial Plant Installation Contractors",
+    description:
+      "JJDS Industries delivers mechanical installation, equipment placement, structural steel, process plant upgrades, depacker works, conveyors, supports and site installation packages for Australian industrial projects.",
+    bullets: [
+      "Mechanical and process equipment installation",
+      "Structural steel supports, platforms and frames",
+      "Plant upgrades, shutdowns and staged works",
+      "Crew planning, site coordination and reporting",
+      "Australia-wide mobilisation capability",
+    ],
+    sectors: ["Process plants", "Recycling facilities", "Food and industrial", "Civil infrastructure", "Regional projects"],
+  },
+  {
+    path: "/waste-processing-installation",
+    navLabel: "Waste Plants",
+    eyebrow: "Waste Processing Installation",
+    title: "Waste Processing Plant Installation",
+    description:
+      "JJDS Industries supports waste processing and recycling facilities with plant installation, mechanical works, structural steel, process pipework, site welding and compliance-ready project delivery.",
+    bullets: [
+      "Depacker and processing equipment installation",
+      "Pipework, ducting, supports and steelwork",
+      "Shutdown and live-site installation support",
+      "Fabrication repairs and site modifications",
+      "Practical contractor supply and installation packages",
+    ],
+    sectors: ["Organics", "Recycling", "Resource recovery", "Biofilter systems", "Industrial waste facilities"],
+  },
+  {
+    path: "/water-treatment-installation",
+    navLabel: "Water Plants",
+    eyebrow: "Water Treatment Installation",
+    title: "Water Treatment Plant Installation",
+    description:
+      "JJDS Industries provides installation support for water treatment plants, pump and pipework systems, access steel, mechanical packages, site welding and compliance documentation.",
+    bullets: [
+      "Pipework and mechanical installation",
+      "Pump, skid and equipment install support",
+      "Steel supports, frames and access structures",
+      "Site fabrication and rectification works",
+      "Clear reporting and handover support",
+    ],
+    sectors: ["Water treatment", "Pump stations", "Process water", "Council assets", "Industrial facilities"],
+  },
+  {
+    path: "/site-welding-victoria",
+    navLabel: "Site Welding",
+    eyebrow: "Site Welding Victoria",
+    title: "Site Welding and Fabrication Victoria",
+    description:
+      "JJDS Industries provides boilermaker-led site welding, fabrication repairs, structural rectification, mechanical modifications and shutdown support across Victoria and regional Australia.",
+    bullets: [
+      "On-site welding and fabrication repairs",
+      "Structural steel rectification and modifications",
+      "Urgent breakdown and shutdown support",
+      "Brackets, supports, platforms and custom steelwork",
+      "Mobile site-ready crew capability",
+    ],
+    sectors: ["Factories", "Plants", "Civil sites", "Councils", "Industrial contractors"],
+  },
+  {
+    path: "/structural-steel-fabrication",
+    navLabel: "Structural Steel",
+    eyebrow: "Structural Steel Fabrication",
+    title: "Structural Steel Fabrication and Installation",
+    description:
+      "JJDS Industries supplies practical structural steel fabrication and installation support including frames, platforms, supports, brackets, access steel, site modifications and industrial steelwork.",
+    bullets: [
+      "Frames, platforms, supports and brackets",
+      "Site measure, fabrication and installation",
+      "Industrial access and support steel",
+      "Structural rectification and modification works",
+      "Project-ready compliance and documentation",
+    ],
+    sectors: ["Industrial", "Commercial", "Civil infrastructure", "Process plants", "Remote works"],
+  },
+  {
+    path: "/industrial-maintenance-victoria",
+    navLabel: "Maintenance",
+    eyebrow: "Industrial Maintenance Victoria",
+    title: "Industrial Maintenance and Shutdown Support",
+    description:
+      "JJDS Industries assists industrial sites with maintenance works, site repairs, breakdown support, mechanical modifications, welding, steelwork and shutdown labour packages.",
+    bullets: [
+      "Shutdown and maintenance crews",
+      "Mechanical and steel repairs",
+      "Breakdown rectification support",
+      "Plant modifications and improvement works",
+      "Straight communication and practical site delivery",
+    ],
+    sectors: ["Manufacturing", "Process plants", "Recycling", "Water assets", "Regional facilities"],
+  },
+  {
+    path: "/hseq-compliance",
+    navLabel: "HSEQ",
+    eyebrow: "HSEQ Compliance",
+    title: "HSEQ and Contractor Compliance Support",
+    description:
+      "JJDS Industries supports projects with SWMS, permits, site documentation, contractor compliance, pre-start support, reporting and practical safety systems for site delivery.",
+    bullets: [
+      "SWMS, permits and site documentation",
+      "Contractor compliance and mobilisation support",
+      "Pre-start and site reporting systems",
+      "Quality and handover documentation",
+      "Compliance built into project delivery",
+    ],
+    sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],
+  },
 ];
 
 const services = [
@@ -250,6 +381,92 @@ function SoftButton({ href, children, className = "" }) {
   );
 }
 
+function ServiceRoutePage({ page }) {
+  return (
+    <main className="bg-[#050505] text-white">
+      <section className="relative overflow-hidden px-5 py-24 md:px-10 md:py-32">
+        <img
+          src="https://res.cloudinary.com/dbjdq6ahz/image/upload/f_auto,q_auto,w_2400/IMG_1739_dxsrjp.jpg"
+          alt="JJDS Industries site works"
+          className="absolute inset-0 h-full w-full object-cover opacity-35"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,168,200,0.32),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.72),rgba(0,0,0,0.9))]" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <SectionLabel light>{page.eyebrow}</SectionLabel>
+          <h1 className="mt-5 max-w-5xl text-[clamp(2.8rem,7vw,6.5rem)] font-black uppercase leading-[0.9] tracking-[-0.07em]">
+            {page.title}
+          </h1>
+          <p className="mt-7 max-w-3xl rounded-3xl border border-white/10 bg-black/35 p-5 text-lg leading-8 text-white/88 shadow-2xl backdrop-blur md:text-xl">
+            {page.description}
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4">
+            <GradientButton href="/#contact">Get a Quote</GradientButton>
+            <SoftButton href={`tel:${phoneClean}`}>Call JJDS</SoftButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 text-slate-950">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <SectionLabel>What JJDS can supply</SectionLabel>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">
+              Practical site delivery with compliance built in.
+            </h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {page.bullets.map((item) => (
+                <div key={item} className="rounded-[1.5rem] bg-slate-100 p-6 text-lg font-bold leading-8 text-slate-800">
+                  ✓ {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <aside className="rounded-[2rem] bg-[#07131A] p-7 text-white shadow-2xl">
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-cyan-100">
+              Common project types
+            </p>
+            <div className="mt-6 grid gap-3">
+              {page.sectors.map((sector) => (
+                <div key={sector} className="rounded-2xl border border-white/10 bg-white/10 p-4 font-bold">
+                  {sector}
+                </div>
+              ))}
+            </div>
+            <a
+              href="/#contact"
+              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#004A78] via-[#00A8C8] to-[#F59E0B] px-7 py-4 text-sm font-black uppercase tracking-[0.12em] text-white shadow-xl"
+            >
+              Send Enquiry
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section className="bg-black px-5 py-20">
+        <div className="mx-auto max-w-7xl">
+          <SectionLabel light>More JJDS services</SectionLabel>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {seoPages
+              .filter((item) => item.path !== page.path)
+              .slice(0, 4)
+              .map((item) => (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  className="rounded-[1.5rem] border border-white/10 bg-white/10 p-5 font-black text-white transition hover:-translate-y-1 hover:bg-white/15"
+                >
+                  {item.title}
+                </a>
+              ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [form, setForm] = useState({
@@ -273,12 +490,17 @@ export default function App() {
   };
 
   const closeMenu = () => setMobileOpen(false);
+  const currentPath =
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/$/, "") || "/"
+      : "/";
+  const activeSeoPage = seoPages.find((page) => page.path === currentPath);
 
   return (
     <div className="min-h-screen overflow-hidden bg-[#050505] text-white selection:bg-cyan-200 selection:text-black">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/88 shadow-2xl shadow-black/40 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <a href="#top" className="flex items-center gap-4" onClick={closeMenu}>
+          <a href="/" className="flex items-center gap-4" onClick={closeMenu}>
             <img
               src="/jjds-logo.png"
               alt="JJDS Industries logo"
@@ -295,12 +517,17 @@ export default function App() {
           </a>
 
           <nav className="hidden items-center gap-7 text-sm font-bold text-slate-300 md:flex">
-            {navItems.slice(0, 4).map((item) => (
+            {navItems.slice(0, 2).map((item) => (
               <a key={item.href} href={item.href} className="transition hover:text-cyan-200">
                 {item.label}
               </a>
             ))}
-            <GradientButton href="#contact">Get a Quote</GradientButton>
+            {seoPages.slice(0, 3).map((item) => (
+              <a key={item.path} href={item.path} className="transition hover:text-cyan-200">
+                {item.navLabel}
+              </a>
+            ))}
+            <GradientButton href="/#contact">Get a Quote</GradientButton>
           </nav>
 
           <button
@@ -326,7 +553,17 @@ export default function App() {
                   {item.label}
                 </a>
               ))}
-              <GradientButton href="#contact" className="w-full" onClick={closeMenu}>
+              {seoPages.map((item) => (
+                <a
+                  key={item.path}
+                  href={item.path}
+                  onClick={closeMenu}
+                  className="rounded-2xl bg-white/10 px-4 py-3 font-bold"
+                >
+                  {item.navLabel}
+                </a>
+              ))}
+              <GradientButton href="/#contact" className="w-full" onClick={closeMenu}>
                 Get Quote
               </GradientButton>
             </div>
@@ -334,6 +571,9 @@ export default function App() {
         )}
       </header>
 
+      {activeSeoPage ? (
+        <ServiceRoutePage page={activeSeoPage} />
+      ) : (
       <main id="top">
         <section className="relative min-h-screen overflow-hidden">
           <img
@@ -652,6 +892,7 @@ export default function App() {
           </div>
         </section>
       </main>
+      )}
 
       <footer className="bg-[#050505] px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
