@@ -2,8 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
-  tagline: "Steel • Mechanical • Civil • Process Plant • Compliance",
-  slogan: "Site-ready industrial crews for serious project delivery.",
+  tagline: "Industrial Construction • Mechanical • Structural • Process",
+  slogan: "Integrated industrial construction and maintenance, delivered safely across Australia.",
   phone: "0427 626 101",
   email: "jjdsburnett@outlook.com.au",
   owner: "James Burnett",
@@ -136,6 +136,73 @@ const seoPages = [
     sectors: ["Bridge works", "Drainage", "Culverts", "Councils", "Remote infrastructure"],
     image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023020/db4bd0d3-d81e-41a9-bacd-d92cb50e17fd_up3see.jpg",
   },
+  {
+    path: "/mechanical-installation-contractor",
+    navLabel: "Mechanical Install",
+    eyebrow: "Mechanical Installation Contractor",
+    title: "Industrial Mechanical Installation Contractor",
+    hero: "Qualified installation crews for process equipment, pumps, conveyors, skids, tanks and complete mechanical packages.",
+    description: "JJDS Industries delivers disciplined mechanical installation packages from site mobilisation and equipment placement through alignment, testing, commissioning assistance and handover.",
+    bullets: ["Process equipment placement and assembly", "Pumps, motors, drives and rotating equipment", "Conveyors, skids, tanks and packaged systems", "Precision alignment and mechanical completion", "Commissioning and handover support"],
+    sectors: ["Manufacturing", "Water", "Waste", "Food processing", "Heavy industry"],
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
+  },
+  {
+    path: "/shutdown-contractors-australia",
+    navLabel: "Shutdowns",
+    eyebrow: "Industrial Shutdown Contractors",
+    title: "Shutdown and Outage Support Australia",
+    hero: "Planned shutdown teams for mechanical replacement, steelwork, pipework, welding and critical-path plant maintenance.",
+    description: "JJDS Industries supports planned shutdowns and outages with coordinated supervision, skilled trades, documented work fronts and practical delivery under tight programme constraints.",
+    bullets: ["Shutdown planning and work-front coordination", "Mechanical replacement and overhaul support", "Pipework, steelwork and field fabrication", "Breakdown and emergent scope response", "Daily reporting and completion records"],
+    sectors: ["Process plants", "Manufacturing", "Recycling", "Water assets", "Regional facilities"],
+    image: "/IMG_4075 1.JPG",
+  },
+  {
+    path: "/stainless-steel-pipework",
+    navLabel: "Stainless Pipe",
+    eyebrow: "Stainless Steel Process Pipework",
+    title: "Stainless Steel Pipework Installation",
+    hero: "Fabrication and installation of stainless process systems for hygienic, corrosive and industrial applications.",
+    description: "JJDS Industries supplies and installs stainless process pipework, fittings, supports and associated steelwork with controlled fabrication, installation and quality documentation.",
+    bullets: ["Stainless process piping and fittings", "Site fabrication and tie-in works", "Pipe supports and access steel", "Pressure testing and inspection support", "Traceable quality and handover records"],
+    sectors: ["Food and beverage", "Water", "Waste", "Chemical", "Manufacturing"],
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051790/IMG_0963_1_hiqc4w.jpg",
+  },
+  {
+    path: "/conveyor-installation",
+    navLabel: "Conveyors",
+    eyebrow: "Conveyor Installation",
+    title: "Industrial Conveyor Installation",
+    hero: "Mechanical and structural installation support for conveyors, transfer systems, access platforms and plant interfaces.",
+    description: "JJDS Industries installs conveyor systems and associated steelwork, guarding, supports and mechanical components for new plants, upgrades and shutdown replacements.",
+    bullets: ["Conveyor frames and mechanical assembly", "Drives, rollers, belts and transfer interfaces", "Platforms, stairs, guarding and supports", "Alignment, adjustment and commissioning support", "Brownfield modifications and shutdown replacements"],
+    sectors: ["Recycling", "Quarrying", "Manufacturing", "Food processing", "Bulk handling"],
+    image: "/20260615_041640730_iOS.jpg",
+  },
+  {
+    path: "/pump-station-installation",
+    navLabel: "Pump Stations",
+    eyebrow: "Pump Station Installation",
+    title: "Pump Station Mechanical Installation",
+    hero: "Installation of pumps, pipework, valves, supports, skids and access steel for water and industrial assets.",
+    description: "JJDS Industries delivers pump station installation and upgrade packages, integrating mechanical equipment, pipework, supports and access structures with practical commissioning support.",
+    bullets: ["Pump, motor and base installation", "Suction and discharge pipework", "Valves, supports and equipment frames", "Alignment and mechanical completion", "Testing and commissioning assistance"],
+    sectors: ["Water authorities", "Councils", "Industrial water", "Wastewater", "Remote assets"],
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051790/IMG_0963_1_hiqc4w.jpg",
+  },
+  {
+    path: "/brownfield-plant-upgrades",
+    navLabel: "Plant Upgrades",
+    eyebrow: "Brownfield Plant Upgrades",
+    title: "Brownfield Industrial Plant Upgrades",
+    hero: "Controlled modifications, tie-ins and equipment upgrades in operating industrial facilities.",
+    description: "JJDS Industries plans and delivers brownfield works where access, live services, staging, shutdown windows and operational interfaces demand disciplined site execution.",
+    bullets: ["Live-site planning and staged installation", "Equipment replacement and process tie-ins", "Structural and access modifications", "Shutdown integration and temporary works", "As-built, variation and handover records"],
+    sectors: ["Operating plants", "Manufacturing", "Water", "Waste", "Infrastructure"],
+    image: "/20260510_071339000_iOS.jpg",
+  },
+
 ];
 
 const navItems = [
@@ -174,12 +241,12 @@ const menuGroups = [
 ];
 
 const capabilityCards = [
-  ["01", "Mechanical & Plant Installation", "Process equipment, depackers, pipework, plant upgrades, staged installation and shutdown support."],
-  ["02", "Structural Steel & Site Fabrication", "Frames, platforms, access steel, brackets, pipe supports, site welding and modifications."],
-  ["03", "Civil & Remote Infrastructure", "Culverts, drainage, bridge support works, remote site packages and regional mobilisation."],
-  ["04", "HSEQ & Contractor Compliance", "SWMS, permits, mobilisation support, site documentation, reporting and handover control."],
-  ["05", "Field Welding & Repairs", "Mobile boilermaker-led site welding, fabrication repairs, breakdowns and structural rectification."],
-  ["06", "Project Delivery Support", "RFQ review, planning, labour coordination, install sequencing, variation support and practical reporting."],
+  ["01", "Industrial Plant Installation", "Complete installation packages for process equipment, skids, conveyors, pumps, tanks, vessels and production systems."],
+  ["02", "Mechanical Construction", "Equipment placement, alignment, assembly, commissioning support, upgrades and brownfield modifications."],
+  ["03", "Process Pipework", "Stainless steel, carbon steel, HDPE and specialty process systems, including supports, testing and handover."],
+  ["04", "Structural Steel", "Platforms, access steel, support frames, pipe racks, stairs, handrails and structural modifications."],
+  ["05", "Shutdowns & Maintenance", "Planned shutdowns, breakdown response, replacement works, plant improvements and critical-path support."],
+  ["06", "HSEQ & QA Delivery", "Project-specific SWMS, ITPs, permits, inspections, progress records, variations and completion documentation."],
 ];
 
 const industries = [
@@ -192,6 +259,32 @@ const tierProof = [
   { title: "Multi-trade capability", text: "Steel, mechanical, civil, pipework, coatings, plant installation and field welding support under one practical contractor." },
   { title: "Professional response", text: "Clear RFQ review, scope breakdowns, inclusions, exclusions, assumptions, risk notes, photos and job communication." },
 ];
+
+const deliverySteps = [
+  ["01", "Scope review", "Review drawings, specifications, interfaces, access constraints and programme requirements."],
+  ["02", "Planning", "Develop methodology, resourcing, procurement, SWMS, ITPs, permits and installation sequencing."],
+  ["03", "Mobilisation", "Deploy site-ready supervision, trades, plant, tooling and project controls."],
+  ["04", "Installation", "Deliver mechanical, structural, pipework and associated works with active coordination."],
+  ["05", "Verification", "Complete inspections, test records, punch-list closeout and commissioning support."],
+  ["06", "Handover", "Provide completion records, marked-up documentation, photos and practical closeout support."],
+];
+
+const trustStats = [
+  ["Australia-wide", "Mobilisation capability"],
+  ["Integrated", "Steel • Mechanical • Process"],
+  ["Project-ready", "HSEQ and QA systems"],
+  ["Direct", "Accountable communication"],
+];
+
+const complianceItems = [
+  "Project-specific SWMS and risk controls",
+  "Inspection and Test Plans (ITPs)",
+  "Permits, pre-starts and daily records",
+  "Material and weld traceability where required",
+  "Progress photos and site reporting",
+  "Variation, punch-list and handover control",
+];
+
 
 const galleryImages = [
   { src: "/20260130_224350680_iOS.jpg", alt: "JJDS Industries site works", label: "Site Works", featured: true },
@@ -355,8 +448,8 @@ function HomePage() {
           <div className="relative z-10 flex min-h-screen items-center px-5 pt-24 md:px-16">
             <div className="max-w-7xl">
               <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100 backdrop-blur">JJDS Industries • Industrial project delivery</div>
-              <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white">Tier-ready crews for serious site work.</h1>
-              <p className="mt-7 max-w-4xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 shadow-2xl backdrop-blur md:text-xl">JJDS Industries supports EPC contractors, consulting engineers, councils and industrial facilities with mechanical installation, structural steel, process plant, civil infrastructure, field welding and compliance-ready site delivery.</p>
+              <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white">Industrial construction. Installed right.</h1>
+              <p className="mt-7 max-w-4xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 shadow-2xl backdrop-blur md:text-xl">JJDS Industries delivers integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance packages for EPC contractors, principal contractors and asset owners across Australia.</p>
               <div className="mt-7 grid gap-3 text-sm font-black text-white/90 sm:grid-cols-3 lg:max-w-4xl">
                 {["RFQ to mobilisation", "Steel • Mechanical • Civil", "SWMS • Permits • Handover"].map((item) => <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-3 text-center backdrop-blur">{item}</span>)}
               </div>
@@ -369,7 +462,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
           <div className="relative mx-auto max-w-7xl">
             <div className="grid gap-5 md:grid-cols-4">
-              {["Compliance ready", "Multi-trade delivery", "Australia-wide support", "Practical site leadership"].map((item, index) => <article key={item} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#004A78]/70 via-[#00A8C8]/20 to-slate-950 p-6 shadow-2xl"><span className="text-xs font-black uppercase tracking-[0.28em] text-cyan-100">0{index + 1}</span><h2 className="mt-10 text-3xl font-black tracking-[-0.05em]">{item}</h2></article>)}
+              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#004A78]/70 via-[#00A8C8]/20 to-slate-950 p-6 shadow-2xl"><span className="text-xs font-black uppercase tracking-[0.28em] text-cyan-100">0{index + 1}</span><h2 className="mt-8 text-3xl font-black tracking-[-0.05em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
             </div>
           </div>
         </section>
@@ -379,7 +472,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-white/94" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel>Core capability</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">A practical contractor for complicated industrial jobs.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Integrated capability for demanding industrial projects.</h2>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#004A78] text-sm font-black text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
             </div>
@@ -389,22 +482,33 @@ function HomePage() {
         <section id="tier-ready" className="bg-[#07131A] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-              <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to present like a serious industrial contractor.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS presents as a contractor that understands RFQs, compliance, project teams, site access, sequencing, documentation and handover — not just labour hire.</p></div>
+              <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to deliver to principal-contractor expectations.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS operates with a contractor mindset: defined scope, planned work fronts, competent supervision, controlled installation, clear reporting and accountable handover. We provide more than labour — we take ownership of delivery.</p></div>
               <div className="grid gap-5 sm:grid-cols-2">{tierProof.map((item) => <article key={item.title} className="rounded-[2rem] border border-white/10 bg-white/10 p-7"><h3 className="text-2xl font-black">{item.title}</h3><p className="mt-4 leading-7 text-slate-300">{item.text}</p></article>)}</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-100 px-5 py-24 text-slate-950">
+          <div className="mx-auto max-w-7xl">
+            <SectionLabel>How we deliver</SectionLabel>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">A controlled path from RFQ to handover.</h2>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Every project is approached with clear scope ownership, practical planning and documentation that keeps clients informed and work fronts moving.</p>
+            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#004A78]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
 
         <section id="industries" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Positioned for the clients who award industrial work.</h2>
+            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Supporting the industries that keep Australia moving.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section className="bg-black px-5 py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">High-value service pages built for Google and real RFQs.</h2>
+            <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Specialist capability, clearly defined.</h2>
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-cyan-100">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-cyan-100">Open page →</span></a>)}</div>
           </div>
         </section>
@@ -418,21 +522,21 @@ function HomePage() {
 
         <section id="remote" className="bg-[#07131A] px-5 py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Send the hard jobs.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS can present as a contractor for awkward access, shutdown windows, regional sites, plant upgrades, infrastructure works and site packages where practical construction thinking matters.</p></div>
+            <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
             <div className="grid gap-5"><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023022/IMG_5758_vw57hk.jpg" alt="JJDS remote site works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png" alt="JJDS regional civil works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /></div>
           </div>
         </section>
 
         <section id="compliance" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Compliance documentation that supports real site work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS can present clear project controls: SWMS, permits, QA checks, hold points, site reports, photo records, variation notes and handover support.</p></div>
-            <div className="grid gap-4 sm:grid-cols-2">{["SWMS and permits", "Pre-start support", "Site reporting", "Quality records", "Handover docs", "Variation control"].map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
+            <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Compliance and quality controls that support delivery.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS integrates safety, quality and documentation into the work itself. Project controls are established before mobilisation and maintained through installation, testing, closeout and handover.</p></div>
+            <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">JJDS will review the information and respond with practical next steps, install thinking, assumptions, risks, inclusions and delivery support.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send the drawings, specifications, photos or RFQ package. JJDS will review the scope and respond with practical delivery input, defined inclusions, assumptions, programme considerations and the next steps required to move forward.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -459,14 +563,30 @@ function ServicePage({ page }) {
         </section>
         <section className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Scope capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">What JJDS can support with.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
+            <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Complete delivery support for industrial projects.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
         <section className="bg-[#07131A] px-5 py-24">
-          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for industrial clients who need practical delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
+          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
         </section>
-        <section className="bg-white px-5 py-24 text-slate-950"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Not just labour. A contractor mindset.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines practical trade delivery with project communication, compliance documents, site planning and handover support so the job is easier for the client to manage.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><img src={page.image} alt={`${page.title} by JJDS Industries`} className="h-96 w-full rounded-[2rem] object-cover shadow-2xl" /></div></section>
+        <section className="bg-slate-100 px-5 py-24 text-slate-950">
+          <div className="mx-auto max-w-7xl">
+            <SectionLabel>Delivery approach</SectionLabel>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Planned, coordinated and documented.</h2>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#004A78]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+            </div>
+          </div>
+        </section>
+        <section className="bg-[#07131A] px-5 py-24">
+          <div className="mx-auto max-w-7xl">
+            <SectionLabel light>Project controls</SectionLabel>
+            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety, quality and handover built into the work.</h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-black text-white">✓ {item}</div>)}</div>
+          </div>
+        </section>
+        <section className="bg-white px-5 py-24 text-slate-950"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><img src={page.image} alt={`${page.title} by JJDS Industries`} className="h-96 w-full rounded-[2rem] object-cover shadow-2xl" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -475,7 +595,15 @@ function ServicePage({ page }) {
 }
 
 function Footer() {
-  return <footer className="bg-[#050505] px-5 py-8"><div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-slate-400 md:flex-row md:items-center md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn}</p></div></footer>;
+  return <footer className="border-t border-white/10 bg-[#050505] px-5 py-14 text-slate-300">
+    <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-20 w-auto" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-cyan-200">{page.navLabel}</a>)}</div></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-cyan-200">Why JJDS</a><a href="/#gallery" className="hover:text-cyan-200">Project Gallery</a><a href="/#compliance" className="hover:text-cyan-200">HSEQ & Quality</a><a href="/#contact" className="hover:text-cyan-200">Request a Quote</a></div></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-cyan-200">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-cyan-200">{BRAND.email}</a><p>Victoria, Australia</p><p>Australia-wide mobilisation</p></div></div>
+    </div>
+    <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn}</p></div>
+  </footer>;
 }
 
 function MobileButtons() {
