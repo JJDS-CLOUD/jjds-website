@@ -323,8 +323,8 @@ const bridgeConditionGallery = [
     text: "Existing bridge member condition recorded before demolition and replacement activities commenced.",
   },
   {
-    src: "/bridge-area13.jpg",
-    label: "Area 13",
+    src: "/bridge-area7.jpg",
+    label: "Area 7",
     title: "Primary Member Assessment",
     text: "Inspection of a primary structural member to document corrosion extent and support replacement planning.",
   },
