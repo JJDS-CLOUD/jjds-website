@@ -2,13 +2,14 @@ import React, { useEffect, useMemo, useState } from "react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
-  tagline: "AUSTRALIA'S LEADING INDUSTRIAL INSTALLATION SPECIALISTS",
+  tagline: "Australia's Industrial Installation Specialists",
   slogan:
     "Mechanical Installation • Structural Steel • Process Pipework • Shutdowns • Water & Wastewater • EPC Contractor Support",
   phone: "0427 626 101",
   email: "james@jjdsindustries.com.au",
   owner: "James Burnett",
-  abn: "ABN 39 700 250 157  •  ACN 700 250 157",
+  abn: "39 700 250 157",
+  acn: "700 250 157",
 };
 
 const phoneClean = BRAND.phone.replaceAll(" ", "");
@@ -651,7 +652,7 @@ function Footer() {
       <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-cyan-200">Why JJDS</a><a href="/#gallery" className="hover:text-cyan-200">Project Gallery</a><a href="/#compliance" className="hover:text-cyan-200">HSEQ & Quality</a><a href="/#contact" className="hover:text-cyan-200">Request a Quote</a></div></div>
       <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-cyan-200">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-cyan-200">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
-    <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn}</p></div>
+    <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
   </footer>;
 }
 
