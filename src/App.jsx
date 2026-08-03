@@ -302,6 +302,136 @@ const galleryImages = [
   { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png", alt: "JJDS Industries regional works", label: "Regional Works" },
 ];
 
+
+const bridgeConditionGallery = [
+  {
+    src: "/bridge-area10.jpg",
+    label: "Area 10",
+    title: "Heavy Pitting Corrosion",
+    text: "Heavy pitting corrosion and advanced surface deterioration documented during the bridge replacement works.",
+  },
+  {
+    src: "/bridge-area11.jpg",
+    label: "Area 11",
+    title: "Localised Corrosion",
+    text: "Localised corrosion and coating failure identified for further assessment before structural replacement.",
+  },
+  {
+    src: "/bridge-area12.jpg",
+    label: "Area 12",
+    title: "Existing Steel Condition",
+    text: "Existing bridge member condition recorded before demolition and replacement activities commenced.",
+  },
+  {
+    src: "/bridge-area13.jpg",
+    label: "Area 13",
+    title: "Primary Member Assessment",
+    text: "Inspection of a primary structural member to document corrosion extent and support replacement planning.",
+  },
+  {
+    src: "/bridge-area16.jpg",
+    label: "Area 16",
+    title: "Advanced Deterioration",
+    text: "Advanced surface degradation and section deterioration identified within the bridge replacement work area.",
+  },
+  {
+    src: "/bridge-area17.jpg",
+    label: "Area 17",
+    title: "Marked Inspection Limits",
+    text: "Inspection boundaries marked to support demolition sequencing, engineering review and steel replacement.",
+  },
+];
+
+function BridgeConditionGallery() {
+  return (
+    <section className="border-y border-[#C9CDD2]/15 bg-[#050505] px-5 py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionLabel light>Bridge replacement project</SectionLabel>
+
+        <div className="mt-4 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
+              Existing Structure Condition Assessment
+            </h2>
+          </div>
+
+          <div>
+            <p className="text-lg leading-8 text-slate-300">
+              These photographs were taken during a bridge replacement project
+              to document the condition of the existing structural steel before
+              demolition and replacement works.
+            </p>
+            <p className="mt-4 leading-7 text-slate-400">
+              The inspection identified corrosion, pitting, coating failure and
+              areas of deterioration requiring engineering review, replacement
+              planning and controlled site execution.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {bridgeConditionGallery.map((photo) => (
+            <figure
+              key={photo.src}
+              className="group overflow-hidden rounded-[1.8rem] border border-[#C9CDD2]/20 bg-[#111827] shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
+            >
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt={`${photo.label} bridge corrosion condition`}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#C9E3FF] backdrop-blur">
+                  {photo.label}
+                </span>
+              </div>
+
+              <figcaption className="p-6">
+                <h3 className="text-2xl font-black text-white">{photo.title}</h3>
+                <p className="mt-3 leading-7 text-slate-300">{photo.text}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-14 rounded-[2rem] border border-[#005BFF]/30 bg-gradient-to-br from-[#111827] via-[#0B1220] to-[#050505] p-8 shadow-[0_25px_65px_rgba(0,91,255,0.16)] md:p-10">
+          <h3 className="text-3xl font-black uppercase text-white">
+            Bridge Rehabilitation & Replacement Capability
+          </h3>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Existing asset condition assessments",
+              "Bridge rehabilitation and replacement",
+              "Structural steel replacement",
+              "Corrosion and deterioration documentation",
+              "Demolition and installation planning",
+              "Site welding and structural modifications",
+              "Temporary works and lifting support",
+              "QA/QC and completion records",
+              "Regional and remote mobilisation",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-[#C9CDD2]/15 bg-black/35 p-5 font-black text-white"
+              >
+                <span className="mr-2 text-[#2F8DFF]">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <GradientButton href="/#contact">Discuss a Bridge Project</GradientButton>
+            <GhostButton href={`tel:${phoneClean}`}>Call JJDS</GhostButton>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SectionLabel({ children, light = false }) {
   return <p className={`text-xs font-black uppercase tracking-[0.34em] ${light ? "text-[#99C8FF]" : "text-[#005BFF]"}`}>{children}</p>;
 }
@@ -610,6 +740,8 @@ function ServicePage({ page }) {
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
+        {page.path === "/civil-infrastructure" && <BridgeConditionGallery />}
+
         <section className="bg-[#111827] px-5 py-24">
           <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
         </section>
@@ -659,3 +791,5 @@ export default function App() {
   if (page) return <ServicePage page={page} />;
   return <HomePage />;
 }
+
+
