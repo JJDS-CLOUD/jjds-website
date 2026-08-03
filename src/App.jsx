@@ -37,7 +37,7 @@ const seoPages = [
     description: "JJDS Industries delivers industrial plant installation, mechanical works, structural steel, process equipment, shutdown support and site installation packages.",
     bullets: ["Mechanical and process equipment installation", "Structural supports, platforms and frames", "Plant upgrades and staged shutdown works", "Crew planning and site coordination", "Australia-wide mobilisation capability"],
     sectors: ["Process plants", "Recycling facilities", "Food and industrial", "Civil infrastructure", "Regional projects"],
-    image: "/20260615_041638546_iOS.jpg",
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
   },
   {
     path: "/waste-processing-installation",
@@ -48,7 +48,7 @@ const seoPages = [
     description: "JJDS Industries supports waste processing and recycling facilities with plant installation, mechanical works, pipework, structural steel and compliance-ready delivery.",
     bullets: ["Depacker and processing equipment installation", "Pipework, ducting, supports and steelwork", "Shutdown and live-site installation support", "Fabrication repairs and site modifications", "Contractor supply and installation packages"],
     sectors: ["Organics", "Recycling", "Resource recovery", "Biofilter systems", "Industrial waste facilities"],
-    image: "/20260615_041640730_iOS.jpg",
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
   },
   {
     path: "/water-treatment-installation",
@@ -105,7 +105,7 @@ const seoPages = [
     description: "JJDS Industries supports projects with SWMS, permits, site documentation, contractor compliance, reporting and practical safety systems.",
     bullets: ["SWMS, permits and site documentation", "Contractor compliance and mobilisation support", "Pre-start and site reporting systems", "Quality and handover documentation", "Compliance built into delivery"],
     sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],
-    image: "/20260130_224350680_iOS.jpg",
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
   },
   {
     path: "/remote-site-works",
@@ -182,7 +182,7 @@ const seoPages = [
     description: "JJDS Industries installs conveyor systems and associated steelwork, guarding, supports and mechanical components for new plants, upgrades and shutdown replacements.",
     bullets: ["Conveyor frames and mechanical assembly", "Drives, rollers, belts and transfer interfaces", "Platforms, stairs, guarding and supports", "Alignment, adjustment and commissioning support", "Brownfield modifications and shutdown replacements"],
     sectors: ["Recycling", "Quarrying", "Manufacturing", "Food processing", "Bulk handling"],
-    image: "/20260615_041640730_iOS.jpg",
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
   },
   {
     path: "/pump-station-installation",
@@ -204,7 +204,7 @@ const seoPages = [
     description: "JJDS Industries plans and delivers brownfield works where access, live services, staging, shutdown windows and operational interfaces demand disciplined site execution.",
     bullets: ["Live-site planning and staged installation", "Equipment replacement and process tie-ins", "Structural and access modifications", "Shutdown integration and temporary works", "As-built, variation and handover records"],
     sectors: ["Operating plants", "Manufacturing", "Water", "Waste", "Infrastructure"],
-    image: "/20260510_071339000_iOS.jpg",
+    image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
   },
 
 ];
@@ -291,13 +291,6 @@ const complianceItems = [
 
 
 const galleryImages = [
-  { src: "/20260130_224350680_iOS.jpg", alt: "JJDS Industries site works", label: "Site Works", featured: true },
-  { src: "/20260130_224353137_iOS.jpg", alt: "JJDS Industries project works", label: "Project Works", featured: true },
-  { src: "/20260510_071228000_iOS.png", alt: "JJDS Industries installation works", label: "Install Works", featured: true },
-  { src: "/20260510_071339000_iOS.jpg", alt: "JJDS Industries mechanical works", label: "Mechanical" },
-  { src: "/20260510_071405000_iOS.jpg", alt: "JJDS Industries structural works", label: "Structural" },
-  { src: "/20260615_041638546_iOS.jpg", alt: "JJDS Industries plant works", label: "Plant" },
-  { src: "/20260615_041640730_iOS.jpg", alt: "JJDS Industries depacker installation works", label: "Depacker" },
   { src: "/IMG_0961.jpeg", alt: "JJDS Industries process plant works", label: "Process Plant" },
   { src: "/IMG_0966.jpeg", alt: "JJDS Industries fabrication and installation", label: "Fabrication" },
   { src: "/IMG_4075 1.JPG", alt: "JJDS Industries industrial site works", label: "Industrial" },
