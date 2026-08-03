@@ -6,7 +6,7 @@ const BRAND = {
   slogan:
     "Mechanical Installation • Structural Steel • Process Pipework • Shutdowns • Water & Wastewater • EPC Contractor Support",
   phone: "0427 626 101",
-  email: "james@jjdsindustries.com.au",
+  email: "operations@jjdsindustries.com.au",
   owner: "James Burnett",
   abn: "39 700 250 157",
   acn: "700 250 157",
@@ -791,5 +791,3 @@ export default function App() {
   if (page) return <ServicePage page={page} />;
   return <HomePage />;
 }
-
-
