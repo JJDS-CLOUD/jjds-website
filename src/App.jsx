@@ -450,12 +450,26 @@ function HomePage() {
           <div className="relative z-10 flex min-h-screen items-center px-5 pt-24 md:px-16">
             <div className="max-w-7xl">
               <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100 backdrop-blur">JJDS Industries • Industrial project delivery</div>
-              <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white">Industrial construction. Installed right.</h1>
-              <p className="mt-7 max-w-4xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 shadow-2xl backdrop-blur md:text-xl">JJDS Industries delivers integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance packages for EPC contractors, principal contractors and asset owners across Australia.</p>
+            <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white" Australia's Industrial Installation Specialists</h1>
+             <p className="mt-7 max-w-4xl rounded-3xl border border-white/10 bg-black/50 p-6 text-lg leading-8 text-white/95 shadow-2xl backdrop-blur md:text-xl">JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and complete industrial installation packages for EPC contractors, principal contractors andasset owners across Australia.</p>
               <div className="mt-7 grid gap-3 text-sm font-black text-white/90 sm:grid-cols-3 lg:max-w-4xl">
-                {["RFQ to mobilisation", "Steel • Mechanical • Civil", "SWMS • Permits • Handover"].map((item) => <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-3 text-center backdrop-blur">{item}</span>)}
+               {[
+  "Australia-wide mobilisation",
+  "Mechanical • Structural • Process",
+  "Shutdowns • Installation • Handover",
+].map((item) => <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-3 text-center backdrop-blur">{item}</span>)}
               </div>
-              <div className="mt-10 flex flex-wrap gap-4"><GradientButton href="/#contact">Send drawings / RFQ</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call James</GhostButton></div>
+             <div className="mt-10 flex flex-wrap gap-4">
+  <GradientButton href="/#contact">Request a Quote</GradientButton>
+
+  <GhostButton href="/JJDS-Capability-Statement.pdf">
+    Capability Statement
+  </GhostButton>
+
+  <GhostButton href={`tel:${phoneClean}`}>
+    Call JJDS
+  </GhostButton>
+</div>
             </div>
           </div>
         </section>
