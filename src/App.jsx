@@ -321,7 +321,7 @@ function GhostButton({ href, children, className = "", onClick }) {
 
 function useMeta(page) {
   useEffect(() => {
-    const title = page ? `${page.title} | JJDS Industries` : "JJDS Industries | Industrial Site Delivery Australia";
+    const title = page ? `${page.title} |"JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and industrial plant installation services across Australia.";
     const description = page ? page.description : "JJDS Industries delivers mechanical, structural, civil, process plant, field welding and compliance-ready site works across Australia.";
     document.title = title;
     const setMeta = (name, content, property = false) => {
