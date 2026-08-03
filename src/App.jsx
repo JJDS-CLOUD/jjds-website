@@ -2,12 +2,13 @@ import React, { useEffect, useMemo, useState } from "react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
-  tagline: "Industrial Construction • Mechanical • Structural • Process",
-  slogan: "Integrated industrial construction and maintenance, delivered safely across Australia.",
+  tagline: "AUSTRALIA'S LEADING INDUSTRIAL INSTALLATION SPECIALISTS",
+  slogan:
+    "Mechanical Installation • Structural Steel • Process Pipework • Shutdowns • Water & Wastewater • EPC Contractor Support",
   phone: "0427 626 101",
   email: "james@jjdsindustries.com.au",
   owner: "James Burnett",
-  abn: "47 626 605 350",
+  abn: "ABN 39 700 250 157  •  ACN 700 250 157",
 };
 
 const phoneClean = BRAND.phone.replaceAll(" ", "");
