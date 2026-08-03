@@ -310,15 +310,15 @@ const galleryImages = [
 ];
 
 function SectionLabel({ children, light = false }) {
-  return <p className={`text-xs font-black uppercase tracking-[0.34em] ${light ? "text-cyan-200" : "text-[#004A78]"}`}>{children}</p>;
+  return <p className={`text-xs font-black uppercase tracking-[0.34em] ${light ? "text-[#99C8FF]" : "text-[#005BFF]"}`}>{children}</p>;
 }
 
 function GradientButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#004A78] via-[#00A8C8] to-[#F59E0B] px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
 }
 
 function GhostButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white backdrop-blur transition hover:bg-white/20 ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
 }
 
 function useMeta(page) {
@@ -376,16 +376,16 @@ function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
   }, [form, pageTitle]);
   const update = (field) => (event) => setForm({ ...form, [field]: event.target.value });
   return (
-    <form className={`rounded-[2rem] bg-[#07131A] ${compact ? "p-5" : "p-6 md:p-8"} shadow-2xl`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-cyan-100">Fast enquiry</p>
+    <form className={`rounded-[2rem] bg-[#111827] ${compact ? "p-5" : "p-6 md:p-8"} shadow-2xl`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
+      <p className="text-xs font-black uppercase tracking-[0.3em] text-[#C9E3FF]">Fast enquiry</p>
       <h3 className="mt-2 text-3xl font-black text-white">Send the scope</h3>
       <p className="mt-3 text-sm leading-6 text-slate-300">Attach drawings, photos or RFQ docs after your email opens.</p>
       <div className="mt-6 grid gap-4">
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-cyan-200" placeholder="Name / Company" value={form.name} onChange={update("name")} />
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-cyan-200" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-cyan-200" placeholder="Project Location" value={form.location} onChange={update("location")} />
-        <textarea className="min-h-36 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-cyan-200" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
-        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#004A78] via-[#00A8C8] to-[#F59E0B] px-6 py-4 font-black uppercase tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Submit enquiry</button>
+        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
+        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
+        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
+        <textarea className="min-h-36 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
+        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-black uppercase tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Submit enquiry</button>
       </div>
     </form>
   );
@@ -396,18 +396,18 @@ function DropdownMenu({ group }) {
     <div className="group relative">
       <button
         type="button"
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-slate-200 transition hover:border-cyan-200/40 hover:bg-white/10 hover:text-white"
+        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
       >
         {group.label}
-        <span className="text-cyan-200 transition group-hover:rotate-180">⌄</span>
+        <span className="text-[#99C8FF] transition group-hover:rotate-180">⌄</span>
       </button>
       <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 rounded-[1.7rem] border border-white/10 bg-[#0B1118] p-4 opacity-0 shadow-[0_25px_70px_rgba(0,0,0,0.75)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#004A78]/50 via-[#00A8C8]/20 to-[#F59E0B]/20 px-4 py-3 text-xs font-black uppercase tracking-[0.25em] text-cyan-100">
+        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#003C8F]/70 via-[#005BFF]/35 to-[#C9CDD2]/15 px-4 py-3 text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">
           {group.label} Menu
         </div>
         <div className="grid gap-2">
           {group.items.map((item) => (
-            <a key={item.href + item.label} href={item.href} className="rounded-2xl border border-slate-700 bg-[#17212B] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-300/70 hover:bg-[#004A78] hover:shadow-xl">
+            <a key={item.href + item.label} href={item.href} className="rounded-2xl border border-slate-700 bg-[#17212B] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#99C8FF]/70 hover:bg-[#005BFF] hover:shadow-xl">
               <span className="block text-sm font-black text-white">{item.label}</span>
               <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
             </a>
@@ -425,10 +425,10 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/90 shadow-2xl shadow-black/40 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-5 px-5 py-4 md:px-10">
         <a href="/" className="flex min-w-0 items-center gap-5" onClick={closeMenu}>
-          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-20 w-auto object-contain md:h-28 xl:h-32" />
+          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-24 w-auto object-contain md:h-36 xl:h-40" />
           <div className="hidden min-w-0 sm:block">
             <p className="text-2xl font-black uppercase tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
-            <p className="mt-2 max-w-[720px] text-[11px] font-black uppercase tracking-[0.38em] text-cyan-100 md:text-sm">{BRAND.tagline}</p>
+            <p className="mt-2 max-w-[720px] text-[11px] font-black uppercase tracking-[0.38em] text-[#C9E3FF] md:text-sm">{BRAND.tagline}</p>
           </div>
         </a>
 
@@ -444,7 +444,7 @@ function Header() {
           <div className="grid gap-4">
             {menuGroups.map((group) => (
               <div key={group.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-3">
-                <p className="px-2 pb-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100">{group.label}</p>
+                <p className="px-2 pb-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF]">{group.label}</p>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {group.items.map((item) => (
                     <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="rounded-2xl bg-white/10 px-4 py-3">
@@ -471,10 +471,10 @@ function HomePage() {
       <main id="top" className="bg-[#050505] text-white">
         <section className="relative min-h-screen overflow-hidden">
           <img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/f_auto,q_auto,w_2400/IMG_1739_dxsrjp.jpg" alt="JJDS Industries industrial site works" className="absolute inset-0 h-full w-full scale-105 object-cover brightness-105" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,168,200,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(245,158,11,0.18),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
           <div className="relative z-10 flex min-h-screen items-center px-5 pt-24 md:px-16">
             <div className="max-w-7xl">
-              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-cyan-100 backdrop-blur">JJDS Industries • Industrial project delivery</div>
+              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries • Industrial project delivery</div>
             <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white">
                 Australia's Industrial Installation Specialists
               </h1>
@@ -512,7 +512,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
           <div className="relative mx-auto max-w-7xl">
             <div className="grid gap-5 md:grid-cols-4">
-              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#004A78]/70 via-[#00A8C8]/20 to-slate-950 p-6 shadow-2xl"><span className="text-xs font-black uppercase tracking-[0.28em] text-cyan-100">0{index + 1}</span><h2 className="mt-8 text-3xl font-black tracking-[-0.05em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
+              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#003C8F]/80 via-[#005BFF]/25 to-[#111827] p-6 shadow-2xl"><span className="text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-black tracking-[-0.05em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
             </div>
           </div>
         </section>
@@ -524,12 +524,12 @@ function HomePage() {
             <SectionLabel light>Core capability</SectionLabel>
             <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Integrated capability for demanding industrial projects.</h2>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#004A78] text-sm font-black text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
+              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#005BFF] text-sm font-black text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
 
-        <section id="tier-ready" className="bg-[#07131A] px-5 py-24">
+        <section id="tier-ready" className="bg-[#111827] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
               <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to deliver to principal-contractor expectations.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS operates with a contractor mindset: defined scope, planned work fronts, competent supervision, controlled installation, clear reporting and accountable handover. We provide more than labour — we take ownership of delivery.</p></div>
@@ -544,7 +544,7 @@ function HomePage() {
             <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">A controlled path from RFQ to handover.</h2>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Every project is approached with clear scope ownership, practical planning and documentation that keeps clients informed and work fronts moving.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#004A78]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
@@ -559,18 +559,18 @@ function HomePage() {
         <section className="bg-black px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Specialist capability, clearly defined.</h2>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-cyan-100">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-cyan-100">Open page →</span></a>)}</div>
+            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
           </div>
         </section>
 
         <section id="gallery" className="bg-[#050505] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
-            <div className="mt-12 grid auto-rows-[260px] gap-4 md:grid-cols-4">{galleryImages.map((img) => <figure key={img.src} className={`group relative overflow-hidden rounded-[1.7rem] bg-white/10 shadow-2xl ${img.featured ? "md:col-span-2 md:row-span-2" : ""}`}><img src={img.src} alt={img.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" /><figcaption className="absolute bottom-0 p-5"><span className="rounded-full bg-cyan-300/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-100 backdrop-blur">{img.label}</span></figcaption></figure>)}</div>
+            <div className="mt-12 grid auto-rows-[260px] gap-4 md:grid-cols-4">{galleryImages.map((img) => <figure key={img.src} className={`group relative overflow-hidden rounded-[1.7rem] bg-white/10 shadow-2xl ${img.featured ? "md:col-span-2 md:row-span-2" : ""}`}><img src={img.src} alt={img.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" /><figcaption className="absolute bottom-0 p-5"><span className="rounded-full bg-[#005BFF]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#C9E3FF] backdrop-blur">{img.label}</span></figcaption></figure>)}</div>
           </div>
         </section>
 
-        <section id="remote" className="bg-[#07131A] px-5 py-24">
+        <section id="remote" className="bg-[#111827] px-5 py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
             <div className="grid gap-5"><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023022/IMG_5758_vw57hk.jpg" alt="JJDS remote site works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png" alt="JJDS regional civil works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /></div>
@@ -586,7 +586,7 @@ function HomePage() {
 
         <section id="contact" className="bg-white px-5 py-24 text-slate-950">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send the drawings, specifications, photos or RFQ package. JJDS will review the scope and respond with practical delivery input, defined inclusions, assumptions, programme considerations and the next steps required to move forward.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-cyan-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send the drawings, specifications, photos or RFQ package. JJDS will review the scope and respond with practical delivery input, defined inclusions, assumptions, programme considerations and the next steps required to move forward.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -605,7 +605,7 @@ function ServicePage({ page }) {
       <main className="bg-[#050505] text-white">
         <section className="relative overflow-hidden px-5 py-24 md:py-32">
           <img src={page.image} alt={page.title} className="absolute inset-0 h-full w-full object-cover opacity-35" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,168,200,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 pt-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-5 text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.88] tracking-[-0.075em]">{page.title}</h1><p className="mt-7 max-w-3xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 backdrop-blur md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
@@ -617,7 +617,7 @@ function ServicePage({ page }) {
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
-        <section className="bg-[#07131A] px-5 py-24">
+        <section className="bg-[#111827] px-5 py-24">
           <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
         </section>
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
@@ -625,11 +625,11 @@ function ServicePage({ page }) {
             <SectionLabel>Delivery approach</SectionLabel>
             <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Planned, coordinated and documented.</h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#004A78]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
-        <section className="bg-[#07131A] px-5 py-24">
+        <section className="bg-[#111827] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project controls</SectionLabel>
             <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety, quality and handover built into the work.</h2>
@@ -647,17 +647,17 @@ function ServicePage({ page }) {
 function Footer() {
   return <footer className="border-t border-white/10 bg-[#050505] px-5 py-14 text-slate-300">
     <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-20 w-auto" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-cyan-200">{page.navLabel}</a>)}</div></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-cyan-200">Why JJDS</a><a href="/#gallery" className="hover:text-cyan-200">Project Gallery</a><a href="/#compliance" className="hover:text-cyan-200">HSEQ & Quality</a><a href="/#contact" className="hover:text-cyan-200">Request a Quote</a></div></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-cyan-200">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-cyan-200">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
+      <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-28 w-auto object-contain" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-[#99C8FF]">{page.navLabel}</a>)}</div></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/#gallery" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/#compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
+      <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
     <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
   </footer>;
 }
 
 function MobileButtons() {
-  return <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2 md:hidden"><a href={`tel:${phoneClean}`} className="rounded-full bg-gradient-to-r from-[#004A78] via-[#00A8C8] to-[#F59E0B] px-5 py-3 text-sm font-black text-white shadow-2xl">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="rounded-full bg-white/15 px-5 py-3 text-sm font-black text-white backdrop-blur">SMS JJDS</a></div>;
+  return <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2 md:hidden"><a href={`tel:${phoneClean}`} className="rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-5 py-3 text-sm font-black text-white shadow-2xl">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="rounded-full bg-white/15 px-5 py-3 text-sm font-black text-white backdrop-blur">SMS JJDS</a></div>;
 }
 
 export default function App() {
@@ -666,5 +666,3 @@ export default function App() {
   if (page) return <ServicePage page={page} />;
   return <HomePage />;
 }
-
-
