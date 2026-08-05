@@ -221,7 +221,23 @@ const navItems = [
 const menuGroups = [
   {
     label: "Services",
-    items: seoPages.slice(0, 8).map((page) => ({ label: page.navLabel, href: page.path, text: page.eyebrow })),
+    items: [
+      "/industrial-plant-installation",
+      "/mechanical-installation-contractor",
+      "/structural-steel-fabrication",
+      "/process-pipework-australia",
+      "/site-welding-australia",
+      "/shutdown-contractors-australia",
+      "/industrial-maintenance-australia",
+      "/hseq-compliance",
+    ]
+      .map((path) => seoPages.find((page) => page.path === path))
+      .filter(Boolean)
+      .map((page) => ({
+        label: page.navLabel,
+        href: page.path,
+        text: page.eyebrow,
+      })),
   },
   {
     label: "Industries",
@@ -455,129 +471,38 @@ function useMeta(page) {
       : "JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and industrial plant installation services across Australia.";
 
     const canonicalUrl = `${siteUrl}${page?.path || "/"}`;
-    const imageUrl = page?.image
-      ? page.image.startsWith("http")
-        ? page.image
-        : `${siteUrl}${page.image}`
-      : `${siteUrl}/jjds-logo.png`;
 
     document.title = title;
 
     const setMeta = (name, content, property = false) => {
       const key = property ? "property" : "name";
       let tag = document.querySelector(`meta[${key}="${name}"]`);
+
       if (!tag) {
         tag = document.createElement("meta");
         tag.setAttribute(key, name);
         document.head.appendChild(tag);
       }
+
       tag.setAttribute("content", content);
     };
 
     setMeta("description", description);
-    setMeta("robots", "index, follow, max-image-preview:large");
-    setMeta("theme-color", "#050505");
+    setMeta("robots", "index, follow");
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
-    setMeta("og:type", page ? "article" : "website", true);
+    setMeta("og:type", "website", true);
     setMeta("og:url", canonicalUrl, true);
-    setMeta("og:image", imageUrl, true);
-    setMeta("og:site_name", "JJDS Industries", true);
-    setMeta("og:locale", "en_AU", true);
-    setMeta("twitter:card", "summary_large_image");
-    setMeta("twitter:title", title);
-    setMeta("twitter:description", description);
-    setMeta("twitter:image", imageUrl);
 
     let canonical = document.querySelector('link[rel="canonical"]');
+
     if (!canonical) {
       canonical = document.createElement("link");
-      canonical.rel = "canonical";
+      canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.href = canonicalUrl;
 
-    const graph = [
-      {
-        "@type": "Organization",
-        "@id": `${siteUrl}/#organization`,
-        name: "JJDS Industries",
-        legalName: "JJDS Industries Pty Ltd",
-        url: siteUrl,
-        logo: { "@type": "ImageObject", url: `${siteUrl}/jjds-logo.png` },
-        email: BRAND.email,
-        telephone: "+61 427 626 101",
-        identifier: [
-          { "@type": "PropertyValue", name: "ABN", value: BRAND.abn },
-          { "@type": "PropertyValue", name: "ACN", value: BRAND.acn }
-        ],
-        areaServed: { "@type": "Country", name: "Australia" },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+61 427 626 101",
-          email: BRAND.email,
-          contactType: "project enquiries",
-          areaServed: "AU",
-          availableLanguage: "English"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${siteUrl}/#website`,
-        url: siteUrl,
-        name: "JJDS Industries",
-        publisher: { "@id": `${siteUrl}/#organization` },
-        inLanguage: "en-AU"
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${canonicalUrl}#webpage`,
-        url: canonicalUrl,
-        name: title,
-        description,
-        isPartOf: { "@id": `${siteUrl}/#website` },
-        about: { "@id": `${siteUrl}/#organization` },
-        primaryImageOfPage: { "@type": "ImageObject", url: imageUrl },
-        inLanguage: "en-AU"
-      }
-    ];
-
-    if (page) {
-      graph.push(
-        {
-          "@type": "Service",
-          "@id": `${canonicalUrl}#service`,
-          name: page.title,
-          serviceType: page.eyebrow,
-          description: page.description,
-          url: canonicalUrl,
-          provider: { "@id": `${siteUrl}/#organization` },
-          areaServed: { "@type": "Country", name: "Australia" },
-          image: imageUrl
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": `${canonicalUrl}#breadcrumb`,
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
-            { "@type": "ListItem", position: 2, name: "Services", item: `${siteUrl}/#services` },
-            { "@type": "ListItem", position: 3, name: page.title, item: canonicalUrl }
-          ]
-        }
-      );
-    }
-
-    let schema = document.getElementById("jjds-schema");
-    if (!schema) {
-      schema = document.createElement("script");
-      schema.type = "application/ld+json";
-      schema.id = "jjds-schema";
-      document.head.appendChild(schema);
-    }
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": graph
-    });
+    canonical.setAttribute("href", canonicalUrl);
   }, [page]);
 }
 
