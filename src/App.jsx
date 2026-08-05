@@ -83,6 +83,31 @@ const seoPages = [
     bullets: ["Frames, platforms, supports and brackets", "Site measure, fabrication and installation", "Industrial access and support steel", "Structural rectification and modifications", "Project-ready compliance documentation"],
     sectors: ["Industrial", "Commercial", "Civil infrastructure", "Process plants", "Remote works"],
     image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778048301/IMG_3476_1_xdtko1.jpg",
+    galleryTitle: "Structural Steel Project Gallery",
+    galleryIntro:
+      "Structural steel fabrication, installation, access steel, supports, frames and site modification works delivered by JJDS Industries.",
+    gallery: [
+      {
+        src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778048301/IMG_3476_1_xdtko1.jpg",
+        alt: "JJDS Industries structural steel installation",
+        label: "Structural Steel",
+      },
+      {
+        src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023020/db4bd0d3-d81e-41a9-bacd-d92cb50e17fd_up3see.jpg",
+        alt: "JJDS Industries bridge and structural steel works",
+        label: "Bridge Steel",
+      },
+      {
+        src: "/IMG_0966.jpeg",
+        alt: "JJDS Industries fabrication and structural installation",
+        label: "Fabrication",
+      },
+      {
+        src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023022/IMG_6580_mqac9q.png",
+        alt: "JJDS Industries civil and structural steel works",
+        label: "Civil Steelwork",
+      },
+    ],
   },
   {
     path: "/industrial-maintenance-australia",
@@ -150,6 +175,31 @@ const seoPages = [
     bullets: ["Process equipment placement and assembly", "Pumps, motors, drives and rotating equipment", "Conveyors, skids, tanks and packaged systems", "Precision alignment and mechanical completion", "Commissioning and handover support"],
     sectors: ["Manufacturing", "Water", "Waste", "Food processing", "Heavy industry"],
     image: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
+    galleryTitle: "Mechanical Installation Project Gallery",
+    galleryIntro:
+      "A selection of JJDS mechanical installation, process equipment, plant upgrade and industrial site works.",
+    gallery: [
+      {
+        src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg",
+        alt: "JJDS Industries mechanical installation works",
+        label: "Mechanical Installation",
+      },
+      {
+        src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051790/IMG_0963_1_hiqc4w.jpg",
+        alt: "JJDS Industries process equipment and pipework installation",
+        label: "Process Equipment",
+      },
+      {
+        src: "/IMG_0961.jpeg",
+        alt: "JJDS Industries industrial process plant works",
+        label: "Process Plant",
+      },
+      {
+        src: "/IMG_4075 1.JPG",
+        alt: "JJDS Industries industrial mechanical works",
+        label: "Industrial Works",
+      },
+    ],
   },
   {
     path: "/shutdown-contractors-australia",
@@ -442,6 +492,52 @@ function BridgeConditionGallery() {
             <GradientButton href="/#contact">Discuss a Bridge Project</GradientButton>
             <GhostButton href={`tel:${phoneClean}`}>Call JJDS</GhostButton>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+function ServiceGallery({ page }) {
+  if (!page.gallery?.length) return null;
+
+  return (
+    <section className="border-y border-[#C9CDD2]/15 bg-[#050505] px-5 py-24">
+      <div className="mx-auto max-w-7xl">
+        <SectionLabel light>Project photography</SectionLabel>
+
+        <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
+            {page.galleryTitle || `${page.title} Gallery`}
+          </h2>
+
+          <p className="text-lg leading-8 text-slate-300">
+            {page.galleryIntro ||
+              "Real JJDS project photography showing installation, fabrication and site delivery capability."}
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {page.gallery.map((photo, index) => (
+            <figure
+              key={`${photo.src}-${index}`}
+              className="group overflow-hidden rounded-[1.8rem] border border-[#C9CDD2]/20 bg-[#111827] shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
+            >
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#C9E3FF] backdrop-blur">
+                  {photo.label}
+                </span>
+              </div>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
@@ -756,6 +852,9 @@ function ServicePage({ page }) {
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
+
+        <ServiceGallery page={page} />
+
         {page.path === "/civil-infrastructure" && <BridgeConditionGallery />}
 
         <section className="bg-[#111827] px-5 py-24">
