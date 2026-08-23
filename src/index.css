@@ -34,47 +34,56 @@ body {
   color: #ffffff;
 }
 
-/*
- * JJDS header branding
- * The source logo has a large square canvas, so a small visual scale makes it
- * look undersized even when its CSS height is large. Scaling the artwork
- * slightly inside its existing layout box gives it more presence without
- * making the navigation bar excessively tall.
- */
+/* JJDS header branding: keep the full square logo contained and balanced. */
+header > div:first-child {
+  min-height: 104px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+header a[href="/"] {
+  gap: 18px !important;
+  align-items: center;
+}
+
 header a[href="/"] > img[src="/jjds-logo.png"] {
-  transform: scale(1.16) translateY(1px);
-  transform-origin: left center;
-  filter: drop-shadow(0 8px 18px rgba(0, 91, 255, 0.18));
-  transition: transform 220ms ease, filter 220ms ease;
+  height: 96px !important;
+  width: 96px !important;
+  flex: 0 0 96px;
+  object-fit: contain;
+  transform: none !important;
+  filter: drop-shadow(0 7px 16px rgba(47, 141, 255, 0.16));
+  transition: filter 180ms ease, opacity 180ms ease;
 }
 
 header a[href="/"]:hover > img[src="/jjds-logo.png"] {
-  transform: scale(1.19) translateY(1px);
-  filter: drop-shadow(0 10px 24px rgba(47, 141, 255, 0.28));
+  transform: none !important;
+  filter: drop-shadow(0 9px 20px rgba(47, 141, 255, 0.25));
+  opacity: 0.98;
 }
 
-/* Keep the wordmark beside the logo balanced instead of competing with it. */
+/* Wordmark is readable but secondary to the logo. */
 header a[href="/"] > div p:first-child {
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
+  line-height: 1;
 }
 
 header a[href="/"] > div p:last-child {
-  letter-spacing: 0.24em;
-  opacity: 0.82;
+  margin-top: 8px;
+  letter-spacing: 0.20em;
+  line-height: 1.35;
+  opacity: 0.76;
 }
 
-/* Footer logo should read clearly but stay secondary to the page content. */
 footer img[src="/jjds-logo.png"] {
-  transform: scale(1.08);
-  transform-origin: left center;
-  filter: drop-shadow(0 8px 20px rgba(0, 91, 255, 0.14));
+  transform: none;
+  filter: drop-shadow(0 8px 20px rgba(47, 141, 255, 0.12));
 }
 
-/* Subtle chrome treatment for the sticky navigation edge. */
 header {
   box-shadow:
     0 1px 0 rgba(201, 205, 210, 0.08),
-    0 18px 45px rgba(0, 0, 0, 0.34);
+    0 14px 36px rgba(0, 0, 0, 0.30);
 }
 
 a,
@@ -94,13 +103,29 @@ img {
   max-width: 100%;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 1280px) {
   header a[href="/"] > img[src="/jjds-logo.png"] {
-    transform: scale(1.08);
+    height: 108px !important;
+    width: 108px !important;
+    flex-basis: 108px;
   }
 
-  header a[href="/"]:hover > img[src="/jjds-logo.png"] {
-    transform: scale(1.08);
+  header > div:first-child {
+    min-height: 124px;
+  }
+}
+
+@media (max-width: 639px) {
+  header > div:first-child {
+    min-height: 82px;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+  }
+
+  header a[href="/"] > img[src="/jjds-logo.png"] {
+    height: 68px !important;
+    width: 68px !important;
+    flex-basis: 68px;
   }
 }
 
