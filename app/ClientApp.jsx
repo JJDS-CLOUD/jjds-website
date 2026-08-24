@@ -1,7 +1,9 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import App from "../src/App";
 
 export default function ClientApp() {
-  return <App />;
+  const pathname = usePathname();
+  return <App pathname={pathname} />;
 }
