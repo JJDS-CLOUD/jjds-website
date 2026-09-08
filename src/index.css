@@ -75,6 +75,17 @@ header a[href="/"] > div p:last-child {
   opacity: 0.76;
 }
 
+/* Keep desktop hover menus open long enough to move into them comfortably. */
+header nav > .group > div.absolute {
+  transition-property: opacity, transform, visibility !important;
+  transition-duration: 180ms, 180ms, 0s !important;
+  transition-delay: 1500ms, 1500ms, 1500ms !important;
+}
+
+header nav > .group:hover > div.absolute {
+  transition-delay: 0ms, 0ms, 0ms !important;
+}
+
 footer img[src="/jjds-logo.png"] {
   transform: none;
   filter: drop-shadow(0 8px 20px rgba(47, 141, 255, 0.12));
