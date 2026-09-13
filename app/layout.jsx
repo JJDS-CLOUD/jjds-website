@@ -1,4 +1,5 @@
 import "../src/index.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const SITE = "https://www.jjdsindustries.com.au";
 
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
