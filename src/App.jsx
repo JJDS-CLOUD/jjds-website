@@ -303,6 +303,7 @@ const menuGroups = [
     label: "Company",
     items: [
       { label: "Tier 1 Ready", href: "/#tier-ready", text: "Compliance-ready contractor presentation" },
+      { label: "LIVE JOBS", href: "/live-job-library", text: "Active project feed" },
       { label: "Gallery", href: "/#gallery", text: "Real JJDS site delivery photos" },
       { label: "Compliance", href: "/#compliance", text: "SWMS, permits, records and handover" },
       { label: "Contact", href: "/#contact", text: "Send drawings, photos or an RFQ" },
