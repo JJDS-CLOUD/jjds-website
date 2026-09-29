@@ -19,6 +19,7 @@ const routes = [
   "/conveyor-installation",
   "/pump-station-installation",
   "/brownfield-plant-upgrades",
+  "/live-job-library",
 ];
 
 export default function sitemap() {
