@@ -87,6 +87,107 @@ export default function LiveJobLibraryPage() {
         </div>
       </section>
 
+
+      <section className="border-b border-white/10 bg-black px-5 py-20 md:py-28">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.35em] text-[#99C8FF]">
+                What we are working on now
+              </p>
+              <h2 className="mt-4 max-w-6xl text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.86] tracking-[-0.065em]">
+                Live from the work front.
+              </h2>
+            </div>
+            <p className="max-w-xl text-base leading-7 text-slate-400 md:text-lg">
+              Current JJDS field activity, progress photography and project delivery
+              updates — presented as the work happens.
+            </p>
+          </div>
+
+          {liveJobs.map((job) => (
+            <div key={`now-${job.id}`} className="space-y-5">
+              <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[260px_260px]">
+                <div className="group relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-2xl lg:col-span-7 lg:row-span-2">
+                  <Image
+                    src={job.images[0] || job.coverImage}
+                    alt={`${job.title} current project feature`}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 58vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge>{job.status}</Badge>
+                      <Badge>{job.location}</Badge>
+                    </div>
+                    <h3 className="mt-4 max-w-4xl text-3xl font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-5xl">
+                      {job.title}
+                    </h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 md:text-base">
+                      {job.update}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
+                  <Image
+                    src={job.images[1] || job.coverImage}
+                    alt={`${job.title} field progress`}
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 p-5">
+                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
+                      Field progress
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
+                  <Image
+                    src={job.images[2] || job.coverImage}
+                    alt={`${job.title} active works`}
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 p-5">
+                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
+                      Active works
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {job.images.length > 3 && (
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                  {job.images.slice(3, 7).map((image, index) => (
+                    <div
+                      key={image}
+                      className="group relative h-64 overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/5"
+                    >
+                      <Image
+                        src={image}
+                        alt={`${job.title} gallery image ${index + 4}`}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
