@@ -91,13 +91,20 @@ export default function LiveJobLibraryPage() {
       <section className="border-b border-white/10 bg-black px-5 py-20 md:py-28">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.35em] text-[#99C8FF]">
-                What we are working on now
-              </p>
-              <h2 className="mt-4 max-w-6xl text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.86] tracking-[-0.065em]">
-                Live from the work front.
+            <div className="w-full">
+              <div className="inline-flex rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] shadow-[0_0_40px_rgba(47,141,255,0.18)]">
+                Current Project Feed
+              </div>
+              <h2 className="mt-5 max-w-[1400px] text-[clamp(4rem,10vw,10rem)] font-black uppercase leading-[0.78] tracking-[-0.075em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)]">
+                What We Are
+                <span className="block bg-gradient-to-r from-[#99C8FF] via-[#2F8DFF] to-[#005BFF] bg-clip-text text-transparent">
+                  Working On Now
+                </span>
               </h2>
+              <div className="mt-6 h-1 w-36 rounded-full bg-gradient-to-r from-[#2F8DFF] to-transparent" />
+              <p className="mt-6 max-w-3xl text-xl font-bold leading-8 text-slate-300 md:text-2xl">
+                Live from the work front — current JJDS industrial delivery, progress photography and active site updates.
+              </p>
             </div>
             <p className="max-w-xl text-base leading-7 text-slate-400 md:text-lg">
               Current JJDS field activity, progress photography and project delivery
