@@ -170,14 +170,14 @@ detail_page('BUILT AROUND YOUR SITE.', '03 / SECTORS & WORK ENVIRONMENTS',
     ('Remote & regional delivery', 'Mobile crews for difficult-access projects requiring mechanical, steel, pipework and civil support.', ['Mobilisation and site coordination','Shutdown and upgrade packages','RFQ-to-handover communication']),
 ],4)
 
-detail_page('BEYOND THE CRANE.<br/>EXPERIENCE ON THE GROUND.', '04 / EXPERIENCE AROUND HELICOPTER LIFTS',
-    'JJDS has experience working around helicopter lift operations on site. Our role is in the agreed ground-based construction and installation scope. JJDS does not provide helicopter operators or perform aviation operations.', [
-    ('Experience alongside aerial lifts', 'Familiarity with working on sites where specialist aviation providers carry out helicopter lifting.', ['Ground-based site experience','Working alongside specialist teams','Construction and installation context']),
+detail_page('BEYOND THE CRANE.<br/>WORKING ALONGSIDE.', '04 / WORKING ALONGSIDE HELICOPTER LIFT OPERATORS',
+    'JJDS works alongside specialist helicopter lift operators, bringing experienced ground-based construction and installation support to the site. We coordinate our agreed works with the aviation team, from preparation through to installation and handover.', [
+    ('Working alongside specialists', 'Experienced in working alongside helicopter lift teams, supporting the construction and installation scope on the ground.', ['Ground-based site experience','Coordination with specialist teams','Agreed construction and installation']),
     ('Understand the site interfaces', 'Coordinate the agreed JJDS work scope with the client, site management and appointed aviation provider.', ['Clear division of responsibilities','Installation access and sequencing','Defined work-area interfaces']),
     ('Construction preparation', 'Prepare the agreed fabrication and installation works to suit the project delivery sequence.', ['Component and connection readiness','Site fabrication and modifications','Installation documentation']),
     ('Work within site controls', 'JJDS personnel follow the project and aviation provider requirements relevant to their assigned work.', ['Site briefings and communication','Access and exclusion-area controls','Work timing agreed with site leads']),
     ('Installation after delivery', 'Undertake agreed mechanical and structural installation when components are released for that work.', ['Fit-up and assembly','Welding and structural connections','Inspection and handover records']),
-    ('Aviation remains specialist-led', 'Helicopters, pilots, flight operations and aerial-lift planning are provided and controlled by others.', ['No JJDS helicopter operators','No JJDS aviation service offering','Ground scope agreed per project']),
+    ('Specialist aviation. JJDS support.', 'Specialist operators manage aircraft, pilots and aerial-lift planning. JJDS works alongside them within the agreed ground scope.', ['Operator-led flight and lift activities','JJDS construction and installation','Clear roles and coordinated delivery']),
 ],5)
 
 detail_page('CONTROLLED. DOCUMENTED.<br/>READY FOR HANDOVER.', '05 / HSEQ, QUALITY & PROJECT CONTROLS',
