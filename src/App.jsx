@@ -892,7 +892,7 @@ function Footer() {
       <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/#gallery" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/#compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
       <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
-    <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>{BRAND.owner} • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
+    <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>JJDS Industries Pty Ltd • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
   </footer>;
 }
 
