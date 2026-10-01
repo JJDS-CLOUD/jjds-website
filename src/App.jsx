@@ -706,7 +706,7 @@ function HomePage() {
       <Header />
       <main id="top" className="bg-[#050505] text-white">
         <section className="relative min-h-screen overflow-hidden">
-          <img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/f_auto,q_auto,w_2400/IMG_1739_dxsrjp.jpg" alt="JJDS Industries industrial site works" className="absolute inset-0 h-full w-full scale-105 object-cover brightness-105" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(47,141,255,0.32),transparent_34%),radial-gradient(circle_at_80%_28%,rgba(201,205,210,0.12),transparent_28%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
           <div className="relative z-10 flex min-h-screen items-center px-5 pt-24 md:px-16">
             <div className="max-w-7xl">
@@ -754,7 +754,7 @@ function HomePage() {
         </section>
 
         <section id="services" className="relative overflow-hidden px-5 py-24 text-slate-950">
-          <img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778057917/IMG_4075_1_vxg2uo.jpg" alt="JJDS capabilities background" className="absolute inset-0 h-full w-full object-cover opacity-55" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#020617,#07131A_55%,#020617)]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#07131A]/88 to-[#020617]/82" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel light>Core capability</SectionLabel>
@@ -802,14 +802,22 @@ function HomePage() {
         <section className="border-y border-white/10 bg-[#070B12] px-5 py-14"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-10 flex gap-5 overflow-x-auto pb-4">{["Huntly Waste Treatment","Process Pipework","Structural and Access Steel","Plant Installation"].map((title)=><a key={title} href="/live-job-library" className="min-w-[80%] rounded-[1.6rem] border border-white/10 bg-[#111827] p-6 sm:min-w-[46%] lg:min-w-[30%]"><span className="text-xs font-black uppercase tracking-[0.2em] text-[#99C8FF]">Active project</span><h3 className="mt-6 text-2xl font-black uppercase text-white">{title}</h3><p className="mt-3 text-slate-400">Open the live feed for current progress and site photography.</p></a>)}</div></div></section><section id="gallery" className="bg-[#050505] px-5 py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
-            <div className="mt-12 grid auto-rows-[260px] gap-4 md:grid-cols-4">{galleryImages.map((img) => <figure key={img.src} className={`group relative overflow-hidden rounded-[1.7rem] bg-white/10 shadow-2xl ${img.featured ? "md:col-span-2 md:row-span-2" : ""}`}><img src={img.src} alt={img.alt} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" /><figcaption className="absolute bottom-0 p-5"><span className="rounded-full bg-[#005BFF]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#C9E3FF] backdrop-blur">{img.label}</span></figcaption></figure>)}</div>
+            <div className="mt-12 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#0B1118,#050505)] p-8 md:p-12">
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">Gallery refresh in progress</p>
+              <p className="mt-4 max-w-3xl text-2xl font-black uppercase text-white md:text-4xl">Only current, approved JJDS project photos will be shown here.</p>
+            </div>
           </div>
         </section>
 
         <section id="remote" className="bg-[#111827] px-5 py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
-            <div className="grid gap-5"><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023022/IMG_5758_vw57hk.jpg" alt="JJDS remote site works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /><img src="https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png" alt="JJDS regional civil works" className="h-72 w-full rounded-[1.7rem] object-cover shadow-2xl" /></div>
+            <div className="grid gap-5">
+              <div className="min-h-72 rounded-[1.7rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_35%),linear-gradient(135deg,#0B1118,#050505)] p-8 shadow-2xl">
+                <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">Current imagery</p>
+                <p className="mt-5 max-w-md text-2xl font-black uppercase text-white">New verified project photography will appear here as it is approved from the live project feed.</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -840,7 +848,7 @@ function ServicePage({ page }) {
       <Header />
       <main className="bg-[#050505] text-white">
         <section className="relative overflow-hidden px-5 py-24 md:py-32">
-          <img src={page.image} alt={page.title} className="absolute inset-0 h-full w-full object-cover opacity-35" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-10 pt-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-5 text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.88] tracking-[-0.075em]">{page.title}</h1><p className="mt-7 max-w-3xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 backdrop-blur md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
@@ -856,7 +864,7 @@ function ServicePage({ page }) {
 
         <ServiceGallery page={page} />
 
-        {page.path === "/civil-infrastructure" && <BridgeConditionGallery />}
+        
 
         <section className="bg-[#111827] px-5 py-24">
           <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
@@ -877,7 +885,7 @@ function ServicePage({ page }) {
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-black text-white">✓ {item}</div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-5 py-24 text-slate-950"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><img src={page.image} alt={`${page.title} by JJDS Industries`} className="h-96 w-full rounded-[2rem] object-cover shadow-2xl" /></div></section>
+        <section className="bg-white px-5 py-24 text-slate-950"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
