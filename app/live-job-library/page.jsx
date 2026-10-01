@@ -116,14 +116,18 @@ export default function LiveJobLibraryPage() {
             <div key={`now-${job.id}`} className="space-y-5">
               <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[260px_260px]">
                 <div className="group relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-2xl lg:col-span-7 lg:row-span-2">
-                  <Image
-                    src={job.images[0] || job.coverImage}
-                    alt={`${job.title} current project feature`}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 58vw, 100vw"
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                  />
+                  {job.images[0] || job.coverImage ? (
+                    <Image
+                      src={job.images[0] || job.coverImage}
+                      alt={`${job.title} current project feature`}
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 58vw, 100vw"
+                      className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_35%),linear-gradient(135deg,#0B1118,#050505)]" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                     <div className="flex flex-wrap gap-2">
@@ -140,13 +144,17 @@ export default function LiveJobLibraryPage() {
                 </div>
 
                 <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
-                  <Image
-                    src={job.images[1] || job.coverImage}
-                    alt={`${job.title} field progress`}
-                    fill
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                  />
+                  {job.images[1] || job.coverImage ? (
+                    <Image
+                      src={job.images[1] || job.coverImage}
+                      alt={`${job.title} field progress`}
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      className="object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1118,#050505)]" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute bottom-0 p-5">
                     <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
@@ -156,13 +164,17 @@ export default function LiveJobLibraryPage() {
                 </div>
 
                 <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
-                  <Image
-                    src={job.images[2] || job.coverImage}
-                    alt={`${job.title} active works`}
-                    fill
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                  />
+                  {job.images[2] || job.coverImage ? (
+                    <Image
+                      src={job.images[2] || job.coverImage}
+                      alt={`${job.title} active works`}
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      className="object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1118,#050505)]" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute bottom-0 p-5">
                     <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
@@ -221,13 +233,17 @@ export default function LiveJobLibraryPage() {
               >
                 <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
                   <div className="relative min-h-[360px]">
-                    <Image
-                      src={job.coverImage}
-                      alt={job.title}
-                      fill
-                      sizes="(min-width: 1024px) 52vw, 100vw"
-                      className="object-cover"
-                    />
+                    {job.coverImage ? (
+                      <Image
+                        src={job.coverImage}
+                        alt={job.title}
+                        fill
+                        sizes="(min-width: 1024px) 52vw, 100vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_35%),linear-gradient(135deg,#0B1118,#050505)]" />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                     <div className="absolute bottom-5 left-5 flex flex-wrap gap-2">
                       <Badge>{job.status}</Badge>
