@@ -14,8 +14,8 @@ export const liveJobs = [
       "Ducting and plant interface works",
       "QA records and commissioning support",
     ],
-    coverImage: "/IMG_4075 1.JPG",
-    images: ["/IMG_4075 1.JPG", "/IMG_0961.jpeg", "/IMG_0966.jpeg"],
+    coverImage: null,
+    images: [],
     updated: "29 September 2026",
     update:
       "Current project feed is now live. Approved daily site photography and public-safe progress updates will be added here as the works progress.",
