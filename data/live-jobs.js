@@ -14,11 +14,11 @@ export const liveJobs = [
       "Ducting and plant interface works",
       "QA records and commissioning support",
     ],
-    coverImage: null,
-    images: [],
-    updated: "29 September 2026",
+    coverImage: "/live-jobs/huntly-20260925-004001978.jpg",
+    images: ["/live-jobs/huntly-20260925-004001978.jpg"],
+    updated: "1 October 2026",
     update:
-      "Current project feed is now live. Approved daily site photography and public-safe progress updates will be added here as the works progress.",
+      "Latest approved site photography shows mechanical installation progressing across process equipment, pipework and supporting steelwork at the Huntly waste treatment project.",
   },
 ];
 
