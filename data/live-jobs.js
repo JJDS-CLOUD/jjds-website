@@ -14,8 +14,18 @@ export const liveJobs = [
       "Ducting and plant interface works",
       "QA records and commissioning support",
     ],
-    coverImage: null,
-    images: [],
+    coverImage: "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQAytWJoG1clSYA011_tSZ3oAfC94X2KoANZyzKk6Nr6_vw?download=1",
+    images: [
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQC1x5jdTSbCQKjuPisGl7YEAXhGF4BDFYo-mZ7Uf8aJc5Q?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQDEypiMSMvcRq3YLJ1Bm0KpAYY2i4_YfEbNk11g-RnCbGw?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQBjk1VNkwSyR7JA9H3gVictAe4W8pP7rKoSDhITntDcxLE?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQAytWJoG1clSYA011_tSZ3oAfC94X2KoANZyzKk6Nr6_vw?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQCDRIxQKlgqS6JoNLn6KinaAcAwebKyNpNyeMxTvEIY-4E?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQC69_0rDuHiTajCFkP8NVWbAY6mNfi2M__AYQc4L-8uV_Q?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQBwfpkFTWpvRID4l5Xsreq-AY487qVU7_RanXqAUxzYOzE?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQDzj3RxQRjHT7VdHH0MMI0HAbM7OFEdLpCReiJ5Nn4Y5hA?download=1",
+          "https://rqn9s3axsdbjmfou.sharepoint.com/:i:/g/IQByiPCvhbY9So0wKF02TkYGAUVhYTgmwkFM-4ykQW2QV0I?download=1"
+    ],
     updated: "1 October 2026",
     update:
       "Latest approved site photography shows mechanical installation progressing across process equipment, pipework and supporting steelwork at the Huntly waste treatment project.",
