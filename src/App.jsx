@@ -298,17 +298,7 @@ const complianceItems = [
 ];
 
 
-const galleryImages = [
-  { src: "/IMG_0961.jpeg", alt: "JJDS Industries process plant works", label: "Process Plant" },
-  { src: "/IMG_0966.jpeg", alt: "JJDS Industries fabrication and installation", label: "Fabrication" },
-  { src: "/IMG_4075 1.JPG", alt: "JJDS Industries industrial site works", label: "Industrial" },
-  { src: "/IMG_4767 1.jpeg", alt: "JJDS Industries regional site works", label: "Regional" },
-  { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778048301/IMG_3476_1_xdtko1.jpg", alt: "JJDS Industries structural steel installation", label: "Structural Steel", featured: true },
-  { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051790/IMG_0963_1_hiqc4w.jpg", alt: "JJDS Industries mechanical installation works", label: "Mechanical Works", featured: true },
-  { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023020/db4bd0d3-d81e-41a9-bacd-d92cb50e17fd_up3see.jpg", alt: "JJDS Industries bridge works", label: "Bridge Works", featured: true },
-  { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778023022/IMG_6580_mqac9q.png", alt: "JJDS Industries civil works", label: "Civil" },
-  { src: "https://res.cloudinary.com/dbjdq6ahz/image/upload/v1778051271/IMG_6585_mlcgr4.png", alt: "JJDS Industries regional works", label: "Regional Works" },
-];
+const galleryImages = [];
 
 
 const bridgeConditionGallery = [];
@@ -393,9 +383,9 @@ function BridgeConditionGallery() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
             <GradientButton href="/#contact">Discuss a Bridge Project</GradientButton>
-            <GhostButton href={`tel:${phoneClean}`}>Call JJDS</GhostButton>
+            <GhostButton href={`tel:${phoneClean}`} className="w-full sm:w-auto">Call JJDS</GhostButton>
           </div>
         </div>
       </div>
@@ -563,9 +553,9 @@ function Header() {
   const closeMenu = () => setMobileOpen(false);
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/90 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-5 px-5 py-4 md:px-10">
-        <a href="/" className="flex min-w-0 items-center gap-5" onClick={closeMenu}>
-          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-24 w-auto object-contain md:h-36 xl:h-40" />
+      <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-3 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4 md:px-10">
+        <a href="/" className="flex min-w-0 items-center gap-3 sm:gap-5" onClick={closeMenu}>
+          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-16 w-auto object-contain sm:h-20 md:h-28 xl:h-36" />
           <div className="hidden min-w-0 sm:block">
             <p className="text-2xl font-black uppercase tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
             <p className="mt-2 max-w-[720px] text-[11px] font-black uppercase tracking-[0.38em] text-[#C9E3FF] md:text-sm">{BRAND.tagline}</p>
@@ -577,10 +567,10 @@ function Header() {
           <GradientButton href="/#contact" className="ml-2 px-8 py-4 text-base">Get a Quote</GradientButton>
         </nav>
 
-        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="rounded-full border border-white/10 bg-white/10 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
+        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
       </div>
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-[#050505]/98 px-5 py-5 xl:hidden">
+        <div className="max-h-[calc(100svh-72px)] overflow-y-auto border-t border-white/10 bg-[#050505]/98 px-4 py-4 sm:px-5 sm:py-5 xl:hidden">
           <div className="grid gap-4">
             {menuGroups.map((group) => (
               <div key={group.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-3">
@@ -609,16 +599,16 @@ function HomePage() {
     <>
       <Header />
       <main id="top" className="bg-[#050505] text-white">
-        <section className="relative min-h-screen overflow-hidden">
+        <section className="relative min-h-[78svh] overflow-hidden md:min-h-screen">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(47,141,255,0.32),transparent_34%),radial-gradient(circle_at_80%_28%,rgba(201,205,210,0.12),transparent_28%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
-          <div className="relative z-10 flex min-h-screen items-center px-5 pt-24 md:px-16">
+          <div className="relative z-10 flex min-h-[78svh] items-center px-4 pb-14 pt-10 sm:px-5 md:min-h-screen md:px-16 md:pb-20 md:pt-24">
             <div className="max-w-7xl">
               <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries • Industrial project delivery</div>
-            <h1 className="mt-6 max-w-7xl text-[clamp(3rem,8vw,8rem)] font-black uppercase leading-[0.86] tracking-[-0.08em] text-white">
+            <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-black uppercase leading-[0.88] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
                 Australia's Industrial Installation Specialists
               </h1>
-             <p className="mt-7 max-w-4xl rounded-3xl border border-white/10 bg-black/50 p-6 text-lg leading-8 text-white/95 shadow-2xl backdrop-blur md:text-xl">JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and complete industrial installation packages for EPC contractors, principal contractors and asset owners across Australia.</p>
+             <p className="mt-5 max-w-4xl rounded-[1.4rem] border border-white/10 bg-black/50 p-5 text-base leading-7 text-white/95 shadow-2xl backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and complete industrial installation packages for EPC contractors, principal contractors and asset owners across Australia.</p>
               <div className="mt-7 grid gap-3 text-sm font-black text-white/90 sm:grid-cols-3 lg:max-w-4xl">
                {[
                   "Australia-wide mobilisation",
@@ -634,9 +624,9 @@ function HomePage() {
                 ))}
               </div>
              <div className="mt-10 flex flex-wrap gap-4">
-  <GradientButton href="/#contact">Request a Quote</GradientButton>
+  <GradientButton href="/#contact" className="w-full sm:w-auto">Request a Quote</GradientButton>
 
-  <GhostButton href="/JJDS-Capability-Statement.pdf">
+  <GhostButton href="/JJDS-Capability-Statement.pdf" className="w-full sm:w-auto">
     Capability Statement
   </GhostButton>
 
@@ -648,7 +638,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="relative px-5 py-20">
+        <section className="relative px-4 py-14 sm:px-5 sm:py-20">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
           <div className="relative mx-auto max-w-7xl">
             <div className="grid gap-5 md:grid-cols-4">
@@ -657,7 +647,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="services" className="relative overflow-hidden px-5 py-24 text-slate-950">
+        <section id="services" className="relative overflow-hidden px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#020617,#07131A_55%,#020617)]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#07131A]/88 to-[#020617]/82" />
           <div className="relative mx-auto max-w-7xl">
@@ -669,7 +659,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="tier-ready" className="bg-[#111827] px-5 py-24">
+        <section id="tier-ready" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
               <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to deliver to principal-contractor expectations.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS operates with a contractor mindset: defined scope, planned work fronts, competent supervision, controlled installation, clear reporting and accountable handover. We provide more than labour — we take ownership of delivery.</p></div>
@@ -689,21 +679,21 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="industries" className="bg-white px-5 py-24 text-slate-950">
+        <section id="industries" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Supporting the industries that keep Australia moving.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
-        <section className="bg-black px-5 py-24">
+        <section className="bg-black px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Specialist capability, clearly defined.</h2>
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#070B12] px-5 py-14"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-10 flex gap-5 overflow-x-auto pb-4">{["Huntly Waste Treatment","Process Pipework","Structural and Access Steel","Plant Installation"].map((title)=><a key={title} href="/live-job-library" className="min-w-[80%] rounded-[1.6rem] border border-white/10 bg-[#111827] p-6 sm:min-w-[46%] lg:min-w-[30%]"><span className="text-xs font-black uppercase tracking-[0.2em] text-[#99C8FF]">Active project</span><h3 className="mt-6 text-2xl font-black uppercase text-white">{title}</h3><p className="mt-3 text-slate-400">Open the live feed for current progress and site photography.</p></a>)}</div></div></section><section id="gallery" className="bg-[#050505] px-5 py-24">
+        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:mt-10 sm:gap-5">{["Huntly Waste Treatment","Process Pipework","Structural and Access Steel","Plant Installation"].map((title)=><a key={title} href="/live-job-library" className="min-w-[86%] snap-start rounded-[1.5rem] border border-white/10 bg-[#111827] p-5 sm:min-w-[46%] sm:rounded-[1.6rem] sm:p-6 lg:min-w-[30%]"><span className="text-xs font-black uppercase tracking-[0.2em] text-[#99C8FF]">Active project</span><h3 className="mt-6 text-2xl font-black uppercase text-white">{title}</h3><p className="mt-3 text-slate-400">Open the live feed for current progress and site photography.</p></a>)}</div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
             <div className="mt-12 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#0B1118,#050505)] p-8 md:p-12">
@@ -713,7 +703,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="remote" className="bg-[#111827] px-5 py-24">
+        <section id="remote" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
             <div className="grid gap-5">
@@ -725,14 +715,14 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="compliance" className="bg-white px-5 py-24 text-slate-950">
+        <section id="compliance" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Compliance and quality controls that support delivery.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS integrates safety, quality and documentation into the work itself. Project controls are established before mobilisation and maintained through installation, testing, closeout and handover.</p></div>
             <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
-        <section id="contact" className="bg-white px-5 py-24 text-slate-950">
+        <section id="contact" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send the drawings, specifications, photos or RFQ package. JJDS will review the scope and respond with practical delivery input, defined inclusions, assumptions, programme considerations and the next steps required to move forward.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
@@ -751,15 +741,15 @@ function ServicePage({ page }) {
     <>
       <Header />
       <main className="bg-[#050505] text-white">
-        <section className="relative overflow-hidden px-5 py-24 md:py-32">
+        <section className="relative overflow-hidden px-4 py-14 sm:px-5 sm:py-20 md:py-32">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
-          <div className="relative mx-auto grid max-w-7xl gap-10 pt-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-5 text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.88] tracking-[-0.075em]">{page.title}</h1><p className="mt-7 max-w-3xl rounded-3xl border border-white/10 bg-black/40 p-6 text-lg leading-8 text-white/90 backdrop-blur md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
+          <div className="relative mx-auto grid max-w-7xl gap-8 pt-4 sm:gap-10 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-12">
+            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-black uppercase leading-[0.9] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-5 max-w-3xl rounded-[1.4rem] border border-white/10 bg-black/40 p-5 text-base leading-7 text-white/90 backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
           </div>
         </section>
-        <section className="bg-white px-5 py-24 text-slate-950">
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Complete delivery support for industrial projects.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
@@ -770,7 +760,7 @@ function ServicePage({ page }) {
 
         
 
-        <section className="bg-[#111827] px-5 py-24">
+        <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
         </section>
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
@@ -782,14 +772,14 @@ function ServicePage({ page }) {
             </div>
           </div>
         </section>
-        <section className="bg-[#111827] px-5 py-24">
+        <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project controls</SectionLabel>
             <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety, quality and handover built into the work.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-black text-white">✓ {item}</div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-5 py-24 text-slate-950"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -810,7 +800,7 @@ function Footer() {
 }
 
 function MobileButtons() {
-  return <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2 md:hidden"><a href={`tel:${phoneClean}`} className="rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-5 py-3 text-sm font-black text-white shadow-2xl">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="rounded-full bg-white/15 px-5 py-3 text-sm font-black text-white backdrop-blur">SMS JJDS</a></div>;
+  return <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-[1.2rem] border border-white/10 bg-[#050505]/90 p-2 shadow-2xl backdrop-blur-xl md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-3 text-sm font-black text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white">SMS JJDS</a></div>;
 }
 
 export default function App() {
