@@ -153,3 +153,12 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+@media (max-width: 767px) {
+  html { scroll-padding-top: 76px; }
+  body { overflow-x: hidden; padding-bottom: 78px; }
+  a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+}
