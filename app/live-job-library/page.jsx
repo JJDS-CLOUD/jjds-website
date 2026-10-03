@@ -28,18 +28,18 @@ export default function LiveJobLibraryPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4">
           <a href="/" className="flex items-center gap-4">
             <Image
               src="/jjds-logo.png"
               alt="JJDS Industries"
               width={84}
               height={84}
-              className="h-16 w-16 object-contain md:h-20 md:w-20"
+              className="h-12 w-12 object-contain sm:h-14 sm:w-14 md:h-20 md:w-20"
               priority
             />
             <div>
-              <p className="text-lg font-black uppercase tracking-[0.18em] md:text-2xl">
+              <p className="text-sm font-black uppercase tracking-[0.14em] sm:text-lg sm:tracking-[0.18em] md:text-2xl">
                 JJDS Industries
               </p>
               <p className="mt-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#C9E3FF] md:text-xs">
@@ -56,7 +56,7 @@ export default function LiveJobLibraryPage() {
             </a>
             <a
               href="/#contact"
-              className="rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-5 py-3 text-xs font-black uppercase tracking-[0.14em]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.12em] sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
             >
               Enquire
             </a>
@@ -64,7 +64,7 @@ export default function LiveJobLibraryPage() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-white/10 px-5 py-20 md:py-28">
+      <section className="relative overflow-hidden border-b border-white/10 px-4 py-14 sm:px-5 sm:py-20 md:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.28),transparent_34%),linear-gradient(180deg,#050505,#09111c)]" />
         <div className="relative mx-auto max-w-7xl">
           <div className="flex flex-wrap gap-2">
@@ -72,7 +72,7 @@ export default function LiveJobLibraryPage() {
             <Badge>Approved site updates</Badge>
             <Badge>Australia-wide</Badge>
           </div>
-          <h1 className="mt-6 max-w-6xl text-[clamp(3.2rem,8vw,7.5rem)] font-black uppercase leading-[0.86] tracking-[-0.07em]">
+          <h1 className="mt-5 max-w-6xl text-[clamp(2.5rem,12vw,7.5rem)] font-black uppercase leading-[0.88] tracking-[-0.055em] sm:mt-6 sm:tracking-[-0.07em]">
             Live Job Library
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
@@ -88,14 +88,14 @@ export default function LiveJobLibraryPage() {
       </section>
 
 
-      <section className="border-b border-white/10 bg-black px-5 py-20 md:py-28">
+      <section className="border-b border-white/10 bg-black px-4 py-14 sm:px-5 sm:py-20 md:py-28">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="w-full">
               <div className="inline-flex rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] shadow-[0_0_40px_rgba(47,141,255,0.18)]">
                 Current Project Feed
               </div>
-              <h2 className="mt-5 max-w-[1400px] text-[clamp(4rem,10vw,10rem)] font-black uppercase leading-[0.78] tracking-[-0.075em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)]">
+              <h2 className="mt-4 max-w-[1400px] text-[clamp(2.8rem,14vw,10rem)] font-black uppercase leading-[0.82] tracking-[-0.06em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)] sm:mt-5 sm:tracking-[-0.075em]">
                 What We Are
                 <span className="block bg-gradient-to-r from-[#99C8FF] via-[#2F8DFF] to-[#005BFF] bg-clip-text text-transparent">
                   Working On Now
@@ -114,8 +114,8 @@ export default function LiveJobLibraryPage() {
 
           {liveJobs.map((job) => (
             <div key={`now-${job.id}`} className="space-y-5">
-              <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[260px_260px]">
-                <div className="group relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-2xl lg:col-span-7 lg:row-span-2">
+              <div className="grid gap-4 sm:gap-5 lg:grid-cols-12 lg:grid-rows-[260px_260px]">
+                <div className="group relative min-h-[420px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 shadow-2xl sm:min-h-[500px] sm:rounded-[2.2rem] lg:col-span-7 lg:row-span-2 lg:min-h-0">
                   {job.images[0] || job.coverImage ? (
                     <Image
                       src={job.images[0] || job.coverImage}
@@ -143,7 +143,7 @@ export default function LiveJobLibraryPage() {
                   </div>
                 </div>
 
-                <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
+                <div className="group relative min-h-[230px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 sm:min-h-[260px] sm:rounded-[2.2rem] lg:col-span-5">
                   {job.images[1] || job.coverImage ? (
                     <Image
                       src={job.images[1] || job.coverImage}
@@ -163,7 +163,7 @@ export default function LiveJobLibraryPage() {
                   </div>
                 </div>
 
-                <div className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 lg:col-span-5">
+                <div className="group relative min-h-[230px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 sm:min-h-[260px] sm:rounded-[2.2rem] lg:col-span-5">
                   {job.images[2] || job.coverImage ? (
                     <Image
                       src={job.images[2] || job.coverImage}
@@ -207,7 +207,7 @@ export default function LiveJobLibraryPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20">
+      <section className="px-4 py-14 sm:px-5 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -284,11 +284,11 @@ export default function LiveJobLibraryPage() {
                 </div>
 
                 <div className="border-t border-white/10 p-5 md:p-7">
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                     {job.images.map((image, index) => (
                       <div
                         key={image}
-                        className="relative h-64 overflow-hidden rounded-2xl bg-white/5"
+                        className="relative h-44 overflow-hidden rounded-2xl bg-white/5 sm:h-64"
                       >
                         <Image
                           src={image}
@@ -307,7 +307,7 @@ export default function LiveJobLibraryPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#0B1118] px-5 py-20">
+      <section className="border-y border-white/10 bg-[#0B1118] px-4 py-14 sm:px-5 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">
