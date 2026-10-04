@@ -69,21 +69,14 @@ export default function LiveJobLibraryPage() {
         <div className="relative mx-auto max-w-7xl">
           <div className="flex flex-wrap gap-2">
             <Badge>Current projects</Badge>
-            <Badge>Approved site updates</Badge>
             <Badge>Australia-wide</Badge>
           </div>
           <h1 className="mt-5 max-w-6xl text-[clamp(2.5rem,12vw,7.5rem)] font-black uppercase leading-[0.88] tracking-[-0.055em] sm:mt-6 sm:tracking-[-0.07em]">
             Live Job Library
           </h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-            A live look at JJDS Industries project delivery. Approved progress
-            photos and public-safe site updates are added as current works move
-            through installation, QA and handover.
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
+            Current JJDS Industries projects, capabilities and site photography.
           </p>
-          <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm font-bold text-emerald-200">
-            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-            Feed active
-          </div>
         </div>
       </section>
 
@@ -93,23 +86,20 @@ export default function LiveJobLibraryPage() {
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="w-full">
               <div className="inline-flex rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] shadow-[0_0_40px_rgba(47,141,255,0.18)]">
-                Current Project Feed
+                Current Projects
               </div>
               <h2 className="mt-4 max-w-[1400px] text-[clamp(2.8rem,14vw,10rem)] font-black uppercase leading-[0.82] tracking-[-0.06em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)] sm:mt-5 sm:tracking-[-0.075em]">
-                What We Are
+                Industrial
                 <span className="block bg-gradient-to-r from-[#99C8FF] via-[#2F8DFF] to-[#005BFF] bg-clip-text text-transparent">
-                  Working On Now
+                  Project Delivery
                 </span>
               </h2>
               <div className="mt-6 h-1 w-36 rounded-full bg-gradient-to-r from-[#2F8DFF] to-transparent" />
               <p className="mt-6 max-w-3xl text-xl font-bold leading-8 text-slate-300 md:text-2xl">
-                Live from the work front — current JJDS industrial delivery, progress photography and active site updates.
+                Mechanical installation, process pipework, structural steel and industrial project support.
               </p>
             </div>
-            <p className="max-w-xl text-base leading-7 text-slate-400 md:text-lg">
-              Current JJDS field activity, progress photography and project delivery
-              updates — presented as the work happens.
-            </p>
+
           </div>
 
           {liveJobs.map((job) => (
@@ -135,9 +125,7 @@ export default function LiveJobLibraryPage() {
                     <h3 className="mt-4 max-w-4xl text-3xl font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-5xl">
                       {job.title}
                     </h3>
-                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300 md:text-base">
-                      {job.update}
-                    </p>
+
                   </div>
                 </div>
 
@@ -153,11 +141,7 @@ export default function LiveJobLibraryPage() {
                     <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1118,#050505)]" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 p-5">
-                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
-                      Field progress
-                    </p>
-                  </div>
+
                 </div>
 
                 <div className="group relative min-h-[230px] overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 sm:min-h-[260px] sm:rounded-[2.2rem] lg:col-span-5">
@@ -172,11 +156,7 @@ export default function LiveJobLibraryPage() {
                     <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1118,#050505)]" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 p-5">
-                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C9E3FF]">
-                      Active works
-                    </p>
-                  </div>
+
                 </div>
               </div>
 
@@ -213,11 +193,7 @@ export default function LiveJobLibraryPage() {
                 Projects in the field
               </h2>
             </div>
-            <p className="max-w-xl text-sm leading-6 text-slate-400">
-              Only client-approved, non-confidential project information is
-              published. Drawings, pricing, personnel details and sensitive site
-              records remain private.
-            </p>
+
           </div>
 
           <div className="grid gap-8">
@@ -268,12 +244,7 @@ export default function LiveJobLibraryPage() {
                       ))}
                     </div>
 
-                    <div className="mt-8 rounded-2xl border border-[#2F8DFF]/20 bg-[#005BFF]/10 p-5">
-                      <p className="text-xs font-black uppercase tracking-[0.22em] text-[#99C8FF]">
-                        Latest update • {job.updated}
-                      </p>
-                      <p className="mt-3 leading-7 text-slate-200">{job.update}</p>
-                    </div>
+
                   </div>
                 </div>
 
