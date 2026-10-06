@@ -13,6 +13,25 @@ const BRAND = {
 };
 
 const phoneClean = BRAND.phone.replaceAll(" ", "");
+
+const latestProjectImages = [
+  "/live-jobs/IMG_7819.jpg",
+  "/live-jobs/IMG_7818.jpg",
+  "/live-jobs/IMG_7817.jpg",
+  "/live-jobs/IMG_7816.jpg",
+  "/live-jobs/IMG_7814.jpg",
+  "/live-jobs/IMG_7813.jpg",
+  "/live-jobs/IMG_7812.jpg",
+  "/live-jobs/IMG_7811.jpg",
+  "/live-jobs/IMG_7806.jpg",
+  "/live-jobs/IMG_7805.jpg",
+  "/live-jobs/IMG_7795.jpg",
+  "/live-jobs/IMG_7794.jpg",
+  "/live-jobs/IMG_7792.jpg",
+  "/live-jobs/IMG_7167.jpg",
+];
+
+
 const siteUrl = "https://www.jjdsindustries.com.au";
 
 const seoPages = [
@@ -693,12 +712,23 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 sm:mt-10 sm:gap-5">{["Huntly Waste Treatment","Process Pipework","Structural and Access Steel","Plant Installation"].map((title)=><a key={title} href="/live-job-library" className="min-w-[86%] snap-start rounded-[1.5rem] border border-white/10 bg-[#111827] p-5 sm:min-w-[46%] sm:rounded-[1.6rem] sm:p-6 lg:min-w-[30%]"><span className="text-xs font-black uppercase tracking-[0.2em] text-[#99C8FF]">Active project</span><h3 className="mt-6 text-2xl font-black uppercase text-white">{title}</h3><p className="mt-3 text-slate-400">Open the live feed for current progress and site photography.</p></a>)}</div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
+        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+  {latestProjectImages.slice(0, 8).map((image, index) => (
+    <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
+      <img src={image} alt={`Current JJDS project photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+      {index === 0 && <div className="absolute bottom-5 left-5"><span className="rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
+    </a>
+  ))}
+</div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
-            <div className="mt-12 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#0B1118,#050505)] p-8 md:p-12">
-              <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">Gallery refresh in progress</p>
-              <p className="mt-4 max-w-3xl text-2xl font-black uppercase text-white md:text-4xl">Only current, approved JJDS project photos will be shown here.</p>
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+              {latestProjectImages.map((image, index) => (
+                <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
+                  <img src={image} alt={`JJDS current project site photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -707,10 +737,10 @@ function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
             <div className="grid gap-5">
-              <div className="min-h-72 rounded-[1.7rem] border border-white/10 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_35%),linear-gradient(135deg,#0B1118,#050505)] p-8 shadow-2xl">
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">Current imagery</p>
-                <p className="mt-5 max-w-md text-2xl font-black uppercase text-white">New verified project photography will appear here as it is approved from the live project feed.</p>
-              </div>
+              <a href="/live-job-library" className="group relative min-h-72 overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0B1118] shadow-2xl">
+                <img src={latestProjectImages[8]} alt="JJDS current industrial project works" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              </a>
             </div>
           </div>
         </section>
