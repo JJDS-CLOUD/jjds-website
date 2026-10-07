@@ -28,7 +28,6 @@ const latestProjectImages = [
   "/live-jobs/IMG_7795.jpg",
   "/live-jobs/IMG_7794.jpg",
   "/live-jobs/IMG_7792.jpg",
-  "/live-jobs/IMG_7167.jpg",
 ];
 
 
