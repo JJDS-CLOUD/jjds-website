@@ -25,7 +25,6 @@ export const liveJobs = [
       "/live-jobs/20260925_031011581_iOS.jpg",
       "/live-jobs/20260925_031023570_iOS.jpg",
       "/live-jobs/20260925_031032002_iOS.jpg",
-      "/live-jobs/IMG_7167.jpg",
       "/live-jobs/IMG_7792.jpg",
       "/live-jobs/IMG_7794.jpg",
       "/live-jobs/IMG_7795.jpg",
