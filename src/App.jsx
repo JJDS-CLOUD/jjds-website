@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
-  tagline: "Australia's Industrial Installation Specialists",
+  tagline: "Industrial installation and mechanical works",
   slogan:
     "Mechanical Installation • Structural Steel • Process Pipework • Shutdowns • Water & Wastewater • EPC Contractor Support",
   phone: "0427 626 101",
@@ -261,8 +261,8 @@ const menuGroups = [
   {
     label: "Company",
     items: [
-      { label: "Tier 1 Ready", href: "/#tier-ready", text: "Compliance-ready contractor presentation" },
-      { label: "LIVE JOBS", href: "/live-job-library", text: "Active project feed" },
+      { label: "Why JJDS", href: "/#tier-ready", text: "How we work with clients and site teams" },
+      { label: "LIVE JOBS", href: "/live-job-library", text: "Current project photos" },
       { label: "Gallery", href: "/#gallery", text: "Real JJDS site delivery photos" },
       { label: "Compliance", href: "/#compliance", text: "SWMS, permits, records and handover" },
       { label: "Contact", href: "/#contact", text: "Send drawings, photos or an RFQ" },
@@ -271,12 +271,12 @@ const menuGroups = [
 ];
 
 const capabilityCards = [
-  ["01", "Industrial Plant Installation", "Complete installation packages for process equipment, skids, conveyors, pumps, tanks, vessels and production systems."],
-  ["02", "Mechanical Construction", "Equipment placement, alignment, assembly, commissioning support, upgrades and brownfield modifications."],
-  ["03", "Process Pipework", "Stainless steel, carbon steel, HDPE and specialty process systems, including supports, testing and handover."],
-  ["04", "Structural Steel", "Platforms, access steel, support frames, pipe racks, stairs, handrails and structural modifications."],
-  ["05", "Shutdowns & Maintenance", "Planned shutdowns, breakdown response, replacement works, plant improvements and critical-path support."],
-  ["06", "HSEQ & QA Delivery", "Project-specific SWMS, ITPs, permits, inspections, progress records, variations and completion documentation."],
+  ["01", "Plant installation", "Installation of process equipment, skids, conveyors, pumps, tanks and associated plant."],
+  ["02", "Mechanical works", "Equipment assembly, alignment, upgrades, modifications and commissioning support."],
+  ["03", "Process pipework", "Stainless steel, carbon steel and HDPE pipework, supports, testing and site installation."],
+  ["04", "Structural steel", "Platforms, support frames, pipe racks, stairs, handrails and site modifications."],
+  ["05", "Shutdowns and maintenance", "Planned shutdown work, repairs, replacements, plant upgrades and breakdown support."],
+  ["06", "Site documentation", "SWMS, ITPs, permits, inspections, progress records and handover documentation."],
 ];
 
 const industries = [
@@ -284,35 +284,35 @@ const industries = [
 ];
 
 const tierProof = [
-  { title: "Compliance first", text: "Project-specific SWMS, permits, pre-starts, site records and handover documents are treated as part of delivery, not an afterthought." },
-  { title: "Practical site leadership", text: "Boilermaker-led, site-ready thinking for constructability, sequencing, access, lifts, shutdowns, modifications and live-site works." },
-  { title: "Multi-trade capability", text: "Steel, mechanical, civil, pipework, coatings, plant installation and field welding support under one practical contractor." },
-  { title: "Professional response", text: "Clear RFQ review, scope breakdowns, inclusions, exclusions, assumptions, risk notes, photos and job communication." },
+  { title: "Safe, organised work", text: "SWMS, permits, pre-starts and site records are prepared for the job and kept current while the work is underway." },
+  { title: "Experienced supervision", text: "Practical site supervision with a focus on access, sequencing, lifts, shutdowns, modifications and getting the job built." },
+  { title: "One contractor, broad capability", text: "Mechanical installation, structural steel, pipework, field welding and associated site works can be coordinated through one team." },
+  { title: "Clear communication", text: "Straight answers on scope, inclusions, exclusions, changes, progress and what is needed next." },
 ];
 
 const deliverySteps = [
-  ["01", "Scope review", "Review drawings, specifications, interfaces, access constraints and programme requirements."],
-  ["02", "Planning", "Develop methodology, resourcing, procurement, SWMS, ITPs, permits and installation sequencing."],
-  ["03", "Mobilisation", "Deploy site-ready supervision, trades, plant, tooling and project controls."],
-  ["04", "Installation", "Deliver mechanical, structural, pipework and associated works with active coordination."],
-  ["05", "Verification", "Complete inspections, test records, punch-list closeout and commissioning support."],
-  ["06", "Handover", "Provide completion records, marked-up documentation, photos and practical closeout support."],
+  ["01", "Review the job", "We review the drawings, scope, access, interfaces and programme before work starts."],
+  ["02", "Plan the work", "We set the sequence, labour, plant, materials, permits and documentation required for the job."],
+  ["03", "Mobilise", "Supervision, trades, tools and site requirements are organised before arriving on site."],
+  ["04", "Install", "The work is carried out with day-to-day coordination around other trades and site conditions."],
+  ["05", "Check the work", "Inspections, testing, defects and commissioning items are worked through as the job progresses."],
+  ["06", "Hand over", "Completion records, marked-up information and outstanding items are closed out with the client."],
 ];
 
 const trustStats = [
-  ["Australia-wide", "Mobilisation capability"],
-  ["Integrated", "Steel • Mechanical • Process"],
-  ["Project-ready", "HSEQ and QA systems"],
-  ["Direct", "Accountable communication"],
+  ["Australia-wide", "Project mobilisation"],
+  ["Mechanical", "Plant and equipment installation"],
+  ["Structural", "Steel and access works"],
+  ["Process", "Pipework and site systems"],
 ];
 
 const complianceItems = [
   "Project-specific SWMS and risk controls",
-  "Inspection and Test Plans (ITPs)",
-  "Permits, pre-starts and daily records",
-  "Material and weld traceability where required",
-  "Progress photos and site reporting",
-  "Variation, punch-list and handover control",
+  "Inspection and Test Plans where required",
+  "Permits, pre-starts and daily site records",
+  "Material and weld records where required",
+  "Progress photos and job reporting",
+  "Defect closeout and handover records",
 ];
 
 
@@ -473,7 +473,7 @@ function useMeta(page) {
   useEffect(() => {
     const title = page
       ? `${page.title} | JJDS Industries`
-      : "Australia's Industrial Installation Specialists | JJDS Industries";
+      : "Industrial installation done properly | JJDS Industries";
 
     const description = page
       ? page.description
@@ -525,15 +525,15 @@ function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
   const update = (field) => (event) => setForm({ ...form, [field]: event.target.value });
   return (
     <form className={`rounded-[2rem] bg-[#111827] ${compact ? "p-5" : "p-6 md:p-8"} shadow-2xl`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-[#C9E3FF]">Fast enquiry</p>
-      <h3 className="mt-2 text-3xl font-black text-white">Send the scope</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-300">Attach drawings, photos or RFQ docs after your email opens.</p>
+      <p className="text-xs font-black uppercase tracking-[0.3em] text-[#C9E3FF]">Project enquiry</p>
+      <h3 className="mt-2 text-3xl font-black text-white">Tell us about the job</h3>
+      <p className="mt-3 text-sm leading-6 text-slate-300">Add drawings or photos when your email opens.</p>
       <div className="mt-6 grid gap-4">
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
         <textarea className="min-h-36 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
-        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-black uppercase tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Submit enquiry</button>
+        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-black uppercase tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Open email</button>
       </div>
     </form>
   );
@@ -622,11 +622,11 @@ function HomePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
           <div className="relative z-10 flex min-h-[78svh] items-center px-4 pb-14 pt-10 sm:px-5 md:min-h-screen md:px-16 md:pb-20 md:pt-24">
             <div className="max-w-7xl">
-              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries • Industrial project delivery</div>
+              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
             <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-black uppercase leading-[0.88] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
                 Australia's Industrial Installation Specialists
               </h1>
-             <p className="mt-5 max-w-4xl rounded-[1.4rem] border border-white/10 bg-black/50 p-5 text-base leading-7 text-white/95 shadow-2xl backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and complete industrial installation packages for EPC contractors, principal contractors and asset owners across Australia.</p>
+             <p className="mt-5 max-w-4xl rounded-[1.4rem] border border-white/10 bg-black/50 p-5 text-base leading-7 text-white/95 shadow-2xl backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">We install, modify and maintain industrial plant. Our work covers mechanical equipment, structural steel, process pipework, shutdowns and site upgrades.</p>
               <div className="mt-7 grid gap-3 text-sm font-black text-white/90 sm:grid-cols-3 lg:max-w-4xl">
                {[
                   "Australia-wide mobilisation",
@@ -669,8 +669,8 @@ function HomePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#020617,#07131A_55%,#020617)]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#07131A]/88 to-[#020617]/82" />
           <div className="relative mx-auto max-w-7xl">
-            <SectionLabel light>Core capability</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Integrated capability for demanding industrial projects.</h2>
+            <SectionLabel light>What we do</SectionLabel>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Practical support for industrial projects.</h2>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#005BFF] text-sm font-black text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
             </div>
@@ -680,7 +680,7 @@ function HomePage() {
         <section id="tier-ready" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-              <div><SectionLabel light>Tier 1 presentation</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built to deliver to principal-contractor expectations.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS operates with a contractor mindset: defined scope, planned work fronts, competent supervision, controlled installation, clear reporting and accountable handover. We provide more than labour — we take ownership of delivery.</p></div>
+              <div><SectionLabel light>Working with principal contractors</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Easy to work with on site.</h2><p className="mt-6 text-lg leading-8 text-slate-300">We take on defined packages of work and manage them properly from mobilisation through to handover. That means good supervision, organised work fronts, clear communication and no guessing about who is responsible for what.</p></div>
               <div className="grid gap-5 sm:grid-cols-2">{tierProof.map((item) => <article key={item.title} className="rounded-[2rem] border border-white/10 bg-white/10 p-7"><h3 className="text-2xl font-black">{item.title}</h3><p className="mt-4 leading-7 text-slate-300">{item.text}</p></article>)}</div>
             </div>
           </div>
@@ -688,9 +688,9 @@ function HomePage() {
 
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel>How we deliver</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">A controlled path from RFQ to handover.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">Every project is approached with clear scope ownership, practical planning and documentation that keeps clients informed and work fronts moving.</p>
+            <SectionLabel>How we work</SectionLabel>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">From quote to handover.</h2>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">We review the job, plan it properly, keep the client informed and close the work out cleanly.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
@@ -699,19 +699,19 @@ function HomePage() {
 
         <section id="industries" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Supporting the industries that keep Australia moving.</h2>
+            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Industrial work across a range of sectors.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section className="bg-black px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Service pages</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Specialist capability, clearly defined.</h2>
+            <SectionLabel light>Services</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">More detail on our services.</h2>
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">What We Are Working On Now</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Current JJDS field activity and live project progress.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">Current work</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Recent project photos from active JJDS work.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
   {latestProjectImages.slice(0, 8).map((image, index) => (
     <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
       <img src={image} alt={`Current JJDS project photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} />
@@ -721,7 +721,7 @@ function HomePage() {
   ))}
 </div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Proven JJDS site delivery.</h2>
+            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Recent work on site.</h2>
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
               {latestProjectImages.map((image, index) => (
                 <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
@@ -734,7 +734,7 @@ function HomePage() {
 
         <section id="remote" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Built for difficult sites and critical work fronts.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS mobilises for regional, remote and access-constrained projects where planning, self-sufficiency and practical construction leadership matter. We support shutdown windows, brownfield interfaces, infrastructure upgrades and complex installation packages.</p></div>
+            <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Regional and difficult-access work.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS can mobilise to regional and remote sites for installation, shutdowns, upgrades and repair work where access and logistics need to be planned properly.</p></div>
             <div className="grid gap-5">
               <a href="/live-job-library" className="group relative min-h-72 overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0B1118] shadow-2xl">
                 <img src={latestProjectImages[8]} alt="JJDS current industrial project works" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
@@ -746,14 +746,14 @@ function HomePage() {
 
         <section id="compliance" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Compliance you can trust</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Compliance and quality controls that support delivery.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS integrates safety, quality and documentation into the work itself. Project controls are established before mobilisation and maintained through installation, testing, closeout and handover.</p></div>
+            <div><SectionLabel>Safety and quality</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">The paperwork is part of the job.</h2><p className="mt-6 text-lg leading-8 text-slate-600">SWMS, permits, inspections and handover records are managed alongside the work so the site team and client have what they need.</p></div>
             <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Get a quote</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send drawings, RFQs or project scope.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send the drawings, specifications, photos or RFQ package. JJDS will review the scope and respond with practical delivery input, defined inclusions, assumptions, programme considerations and the next steps required to move forward.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -780,7 +780,7 @@ function ServicePage({ page }) {
         </section>
         <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Complete delivery support for industrial projects.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
+            <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Site capability that matches the work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
             <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
@@ -790,12 +790,12 @@ function ServicePage({ page }) {
         
 
         <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Built for clients who require controlled, accountable delivery.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
+          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Where our crews are a good fit.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
         </section>
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Delivery approach</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Planned, coordinated and documented.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Plan it. Build it. Close it out.</h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
@@ -804,11 +804,11 @@ function ServicePage({ page }) {
         <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project controls</SectionLabel>
-            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety, quality and handover built into the work.</h2>
+            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety and quality kept with the job.</h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-black text-white">✓ {item}</div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A contractor that takes ownership.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS combines experienced trades, direct supervision, constructability thinking, site controls and disciplined closeout. The result is a safer work front, clearer communication and fewer unmanaged interfaces for the client.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
