@@ -329,7 +329,7 @@ function BridgeConditionGallery() {
 
         <div className="mt-4 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
+            <h2 className="text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
               Existing Structure Condition Assessment
             </h2>
           </div>
@@ -361,13 +361,13 @@ function BridgeConditionGallery() {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#C9E3FF] backdrop-blur">
+                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-semibold tracking-[0.22em] text-[#C9E3FF] backdrop-blur">
                   {photo.label}
                 </span>
               </div>
 
               <figcaption className="p-6">
-                <h3 className="text-2xl font-black text-white">{photo.title}</h3>
+                <h3 className="text-2xl font-semibold text-white">{photo.title}</h3>
                 <p className="mt-3 leading-7 text-slate-300">{photo.text}</p>
               </figcaption>
             </figure>
@@ -375,7 +375,7 @@ function BridgeConditionGallery() {
         </div>
 
         <div className="mt-14 rounded-[2rem] border border-[#005BFF]/30 bg-gradient-to-br from-[#111827] via-[#0B1220] to-[#050505] p-8 shadow-[0_25px_65px_rgba(0,91,255,0.16)] md:p-10">
-          <h3 className="text-3xl font-black uppercase text-white">
+          <h3 className="text-3xl font-semibold text-white">
             Bridge Rehabilitation & Replacement Capability
           </h3>
 
@@ -393,7 +393,7 @@ function BridgeConditionGallery() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-[#C9CDD2]/15 bg-black/35 p-5 font-black text-white"
+                className="rounded-2xl border border-[#C9CDD2]/15 bg-black/35 p-5 font-semibold text-white"
               >
                 <span className="mr-2 text-[#2F8DFF]">✓</span>
                 {item}
@@ -421,7 +421,7 @@ function ServiceGallery({ page }) {
         <SectionLabel light>Project photography</SectionLabel>
 
         <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
+          <h2 className="text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-white md:text-6xl">
             {page.galleryTitle || `${page.title} Gallery`}
           </h2>
 
@@ -445,7 +445,7 @@ function ServiceGallery({ page }) {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#C9E3FF] backdrop-blur">
+                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#C9E3FF] backdrop-blur">
                   {photo.label}
                 </span>
               </div>
@@ -458,15 +458,15 @@ function ServiceGallery({ page }) {
 }
 
 function SectionLabel({ children, light = false }) {
-  return <p className={`text-xs font-black uppercase tracking-[0.34em] ${light ? "text-[#99C8FF]" : "text-[#005BFF]"}`}>{children}</p>;
+  return <p className={`text-xs font-semibold tracking-[0.34em] ${light ? "text-[#99C8FF]" : "text-[#005BFF]"}`}>{children}</p>;
 }
 
 function GradientButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
 }
 
 function GhostButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
 }
 
 function useMeta(page) {
@@ -525,15 +525,15 @@ function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
   const update = (field) => (event) => setForm({ ...form, [field]: event.target.value });
   return (
     <form className={`rounded-[2rem] bg-[#111827] ${compact ? "p-5" : "p-6 md:p-8"} shadow-2xl`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
-      <p className="text-xs font-black uppercase tracking-[0.3em] text-[#C9E3FF]">Project enquiry</p>
-      <h3 className="mt-2 text-3xl font-black text-white">Tell us about the job</h3>
+      <p className="text-xs font-semibold tracking-[0.3em] text-[#C9E3FF]">Project enquiry</p>
+      <h3 className="mt-2 text-3xl font-semibold text-white">Tell us about the job</h3>
       <p className="mt-3 text-sm leading-6 text-slate-300">Add drawings or photos when your email opens.</p>
       <div className="mt-6 grid gap-4">
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
         <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
         <textarea className="min-h-36 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
-        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-black uppercase tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Open email</button>
+        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-semibold tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Open email</button>
       </div>
     </form>
   );
@@ -544,19 +544,19 @@ function DropdownMenu({ group }) {
     <div className="group relative">
       <button
         type="button"
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-black uppercase tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
+        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
       >
         {group.label}
         <span className="text-[#99C8FF] transition group-hover:rotate-180">⌄</span>
       </button>
       <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 rounded-[1.7rem] border border-white/10 bg-[#0B1118] p-4 opacity-0 shadow-[0_25px_70px_rgba(0,0,0,0.75)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#003C8F]/70 via-[#005BFF]/35 to-[#C9CDD2]/15 px-4 py-3 text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">
+        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#003C8F]/70 via-[#005BFF]/35 to-[#C9CDD2]/15 px-4 py-3 text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">
           {group.label} Menu
         </div>
         <div className="grid gap-2">
           {group.items.map((item) => (
             <a key={item.href + item.label} href={item.href} className="rounded-2xl border border-slate-700 bg-[#17212B] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#99C8FF]/70 hover:bg-[#005BFF] hover:shadow-xl">
-              <span className="block text-sm font-black text-white">{item.label}</span>
+              <span className="block text-sm font-semibold text-white">{item.label}</span>
               <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
             </a>
           ))}
@@ -575,8 +575,8 @@ function Header() {
         <a href="/" className="flex min-w-0 items-center gap-3 sm:gap-5" onClick={closeMenu}>
           <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-16 w-auto object-contain sm:h-20 md:h-28 xl:h-36" />
           <div className="hidden min-w-0 sm:block">
-            <p className="text-2xl font-black uppercase tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
-            <p className="mt-2 max-w-[720px] text-[11px] font-black uppercase tracking-[0.38em] text-[#C9E3FF] md:text-sm">{BRAND.tagline}</p>
+            <p className="text-2xl font-semibold tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
+            <p className="mt-2 max-w-[720px] text-[11px] font-semibold tracking-[0.38em] text-[#C9E3FF] md:text-sm">{BRAND.tagline}</p>
           </div>
         </a>
 
@@ -585,18 +585,18 @@ function Header() {
           <GradientButton href="/#contact" className="ml-2 px-8 py-4 text-base">Get a Quote</GradientButton>
         </nav>
 
-        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
+        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-[11px] font-semibold tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
       </div>
       {mobileOpen && (
         <div className="max-h-[calc(100svh-72px)] overflow-y-auto border-t border-white/10 bg-[#050505]/98 px-4 py-4 sm:px-5 sm:py-5 xl:hidden">
           <div className="grid gap-4">
             {menuGroups.map((group) => (
               <div key={group.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-3">
-                <p className="px-2 pb-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF]">{group.label}</p>
+                <p className="px-2 pb-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">{group.label}</p>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {group.items.map((item) => (
                     <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="rounded-2xl bg-white/10 px-4 py-3">
-                      <span className="block font-black text-white">{item.label}</span>
+                      <span className="block font-semibold text-white">{item.label}</span>
                       <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
                     </a>
                   ))}
@@ -622,12 +622,12 @@ function HomePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
           <div className="relative z-10 flex min-h-[78svh] items-center px-4 pb-14 pt-10 sm:px-5 md:min-h-screen md:px-16 md:pb-20 md:pt-24">
             <div className="max-w-7xl">
-              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
-            <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-black uppercase leading-[0.88] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
+              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
+            <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-semibold leading-[0.95] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
                 Australia's Industrial Installation Specialists
               </h1>
              <p className="mt-5 max-w-4xl rounded-[1.4rem] border border-white/10 bg-black/50 p-5 text-base leading-7 text-white/95 shadow-2xl backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">We install, modify and maintain industrial plant. Our work covers mechanical equipment, structural steel, process pipework, shutdowns and site upgrades.</p>
-              <div className="mt-7 grid gap-3 text-sm font-black text-white/90 sm:grid-cols-3 lg:max-w-4xl">
+              <div className="mt-7 grid gap-3 text-sm font-semibold text-white/90 sm:grid-cols-3 lg:max-w-4xl">
                {[
                   "Australia-wide mobilisation",
                   "Mechanical • Structural • Process",
@@ -660,7 +660,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
           <div className="relative mx-auto max-w-7xl">
             <div className="grid gap-5 md:grid-cols-4">
-              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#003C8F]/80 via-[#005BFF]/25 to-[#111827] p-6 shadow-2xl"><span className="text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-black tracking-[-0.05em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
+              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#003C8F]/80 via-[#005BFF]/25 to-[#111827] p-6 shadow-2xl"><span className="text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-semibold tracking-[-0.02em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
             </div>
           </div>
         </section>
@@ -670,9 +670,9 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#07131A]/88 to-[#020617]/82" />
           <div className="relative mx-auto max-w-7xl">
             <SectionLabel light>What we do</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Practical support for industrial projects.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Practical support for industrial projects.</h2>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#005BFF] text-sm font-black text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
+              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#005BFF] text-sm font-semibold text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
@@ -689,39 +689,39 @@ function HomePage() {
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
             <SectionLabel>How we work</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">From quote to handover.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">From quote to handover.</h2>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">We review the job, plan it properly, keep the client informed and close the work out cleanly.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
 
         <section id="industries" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Industrial work across a range of sectors.</h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
+            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Industrial work across a range of sectors.</h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section className="bg-black px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Services</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">More detail on our services.</h2>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-black uppercase tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-black uppercase tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
+            <SectionLabel light>Services</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">More detail on our services.</h2>
+            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-semibold tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
           </div>
         </section>
 
-        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] text-white md:text-6xl">Current work</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Recent project photos from active JJDS work.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">Current work</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Recent project photos from active JJDS work.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
   {latestProjectImages.slice(0, 8).map((image, index) => (
     <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
       <img src={image} alt={`Current JJDS project photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-      {index === 0 && <div className="absolute bottom-5 left-5"><span className="rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
+      {index === 0 && <div className="absolute bottom-5 left-5"><span className="rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[11px] font-semibold tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
     </a>
   ))}
 </div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Recent work on site.</h2>
+            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Recent work on site.</h2>
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
               {latestProjectImages.map((image, index) => (
                 <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
@@ -747,13 +747,13 @@ function HomePage() {
         <section id="compliance" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Safety and quality</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">The paperwork is part of the job.</h2><p className="mt-6 text-lg leading-8 text-slate-600">SWMS, permits, inspections and handover records are managed alongside the work so the site team and client have what they need.</p></div>
-            <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
+            <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -774,14 +774,14 @@ function ServicePage({ page }) {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 pt-4 sm:gap-10 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-12">
-            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-black uppercase leading-[0.9] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-5 max-w-3xl rounded-[1.4rem] border border-white/10 bg-black/40 p-5 text-base leading-7 text-white/90 backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
+            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-5 max-w-3xl rounded-[1.4rem] border border-white/10 bg-black/40 p-5 text-base leading-7 text-white/90 backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
           </div>
         </section>
         <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">Site capability that matches the work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
-            <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-black text-slate-800">✓ {item}</div>)}</div>
+            <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Site capability that matches the work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
+            <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
           </div>
         </section>
 
@@ -790,25 +790,25 @@ function ServicePage({ page }) {
         
 
         <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Where our crews are a good fit.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-black text-white">{item}</div>)}</div></div>
+          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Where our crews are a good fit.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-semibold text-white">{item}</div>)}</div></div>
         </section>
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Delivery approach</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Plan it. Build it. Close it out.</h2>
+            <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Plan it. Build it. Close it out.</h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-black text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
         <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project controls</SectionLabel>
-            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Safety and quality kept with the job.</h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-black text-white">✓ {item}</div>)}</div>
+            <h2 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Safety and quality kept with the job.</h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-semibold text-white">✓ {item}</div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-black tracking-[-0.04em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-black uppercase tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -820,16 +820,16 @@ function Footer() {
   return <footer className="border-t border-white/10 bg-[#050505] px-5 py-14 text-slate-300">
     <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-28 w-auto object-contain" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-[#99C8FF]">{page.navLabel}</a>)}</div></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/#gallery" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/#compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
-      <div><p className="font-black uppercase tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
+      <div><p className="font-semibold tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-[#99C8FF]">{page.navLabel}</a>)}</div></div>
+      <div><p className="font-semibold tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/#gallery" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/#compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
+      <div><p className="font-semibold tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
     <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>JJDS Industries Pty Ltd • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
   </footer>;
 }
 
 function MobileButtons() {
-  return <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-[1.2rem] border border-white/10 bg-[#050505]/90 p-2 shadow-2xl backdrop-blur-xl md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-3 text-sm font-black text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-black text-white">SMS JJDS</a></div>;
+  return <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-[1.2rem] border border-white/10 bg-[#050505]/90 p-2 shadow-2xl backdrop-blur-xl md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-3 text-sm font-semibold text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white">SMS JJDS</a></div>;
 }
 
 export default function App() {
