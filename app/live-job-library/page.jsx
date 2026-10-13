@@ -18,7 +18,7 @@ const phone = "0427626101";
 
 function Badge({ children }) {
   return (
-    <span className="rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-3 py-1 text-[11px] font-black uppercase tracking-[0.2em] text-[#C9E3FF]">
+    <span className="rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-[#C9E3FF]">
       {children}
     </span>
   );
@@ -39,24 +39,24 @@ export default function LiveJobLibraryPage() {
               priority
             />
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.14em] sm:text-lg sm:tracking-[0.18em] md:text-2xl">
+              <p className="text-sm font-semibold tracking-[0.14em] sm:text-lg sm:tracking-[0.18em] md:text-2xl">
                 JJDS Industries
               </p>
-              <p className="mt-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#C9E3FF] md:text-xs">
-                Live Job Library
+              <p className="mt-1 text-[10px] font-semibold tracking-[0.24em] text-[#C9E3FF] md:text-xs">
+                Current Projects
               </p>
             </div>
           </a>
           <div className="flex items-center gap-3">
             <a
               href="/"
-              className="hidden rounded-full border border-white/15 px-5 py-3 text-xs font-black uppercase tracking-[0.14em] sm:inline-flex"
+              className="hidden rounded-full border border-white/15 px-5 py-3 text-xs font-semibold tracking-[0.14em] sm:inline-flex"
             >
               Back to website
             </a>
             <a
               href="/#contact"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.12em] sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-2.5 text-[11px] font-semibold tracking-[0.12em] sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.14em]"
             >
               Enquire
             </a>
@@ -71,11 +71,11 @@ export default function LiveJobLibraryPage() {
             <Badge>Current projects</Badge>
             <Badge>Australia-wide</Badge>
           </div>
-          <h1 className="mt-5 max-w-6xl text-[clamp(2.5rem,12vw,7.5rem)] font-black uppercase leading-[0.88] tracking-[-0.055em] sm:mt-6 sm:tracking-[-0.07em]">
+          <h1 className="mt-5 max-w-6xl text-[clamp(2.5rem,12vw,7.5rem)] font-semibold leading-[0.88] tracking-[-0.055em] sm:mt-6 sm:tracking-[-0.07em]">
             Live Job Library
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-            Current JJDS Industries projects, capabilities and site photography.
+            Current JJDS Industries project photography and a clear look at the work we carry out.
           </p>
         </div>
       </section>
@@ -85,18 +85,18 @@ export default function LiveJobLibraryPage() {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="w-full">
-              <div className="inline-flex rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-4 py-2 text-xs font-black uppercase tracking-[0.28em] text-[#C9E3FF] shadow-[0_0_40px_rgba(47,141,255,0.18)]">
+              <div className="inline-flex rounded-full border border-[#2F8DFF]/40 bg-[#005BFF]/15 px-4 py-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF] shadow-[0_0_40px_rgba(47,141,255,0.18)]">
                 Current Projects
               </div>
-              <h2 className="mt-4 max-w-[1400px] text-[clamp(2.8rem,14vw,10rem)] font-black uppercase leading-[0.82] tracking-[-0.06em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)] sm:mt-5 sm:tracking-[-0.075em]">
-                Industrial
+              <h2 className="mt-4 max-w-[1400px] text-[clamp(2.8rem,14vw,10rem)] font-semibold leading-[0.82] tracking-[-0.06em] text-white drop-shadow-[0_0_28px_rgba(47,141,255,0.24)] sm:mt-5 sm:tracking-[-0.075em]">
+                Current
                 <span className="block bg-gradient-to-r from-[#99C8FF] via-[#2F8DFF] to-[#005BFF] bg-clip-text text-transparent">
-                  Project Delivery
+                  Project Work
                 </span>
               </h2>
               <div className="mt-6 h-1 w-36 rounded-full bg-gradient-to-r from-[#2F8DFF] to-transparent" />
               <p className="mt-6 max-w-3xl text-xl font-bold leading-8 text-slate-300 md:text-2xl">
-                Mechanical installation, process pipework, structural steel and industrial project support.
+                Mechanical installation, process pipework, structural steel and site works.
               </p>
             </div>
 
@@ -122,7 +122,7 @@ export default function LiveJobLibraryPage() {
                       <Badge>{job.status}</Badge>
                       <Badge>{job.location}</Badge>
                     </div>
-                    <h3 className="mt-4 max-w-4xl text-3xl font-black uppercase leading-[0.95] tracking-[-0.045em] md:text-5xl">
+                    <h3 className="mt-4 max-w-4xl text-3xl font-semibold leading-[0.95] tracking-[-0.045em] md:text-5xl">
                       {job.title}
                     </h3>
 
@@ -186,11 +186,11 @@ export default function LiveJobLibraryPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">
-                Current work
+              <p className="text-xs font-semibold tracking-[0.28em] text-[#99C8FF]">
+                On site now
               </p>
-              <h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] md:text-6xl">
-                Projects in the field
+              <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+                Current project
               </h2>
             </div>
 
@@ -222,10 +222,10 @@ export default function LiveJobLibraryPage() {
                   </div>
 
                   <div className="p-7 md:p-10">
-                    <p className="text-xs font-black uppercase tracking-[0.24em] text-[#99C8FF]">
+                    <p className="text-xs font-semibold tracking-[0.24em] text-[#99C8FF]">
                       {job.location}
                     </p>
-                    <h3 className="mt-4 text-3xl font-black uppercase leading-tight tracking-[-0.04em] md:text-5xl">
+                    <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
                       {job.title}
                     </h3>
                     <p className="mt-5 text-lg leading-8 text-slate-300">
@@ -274,28 +274,26 @@ export default function LiveJobLibraryPage() {
       <section className="border-y border-white/10 bg-[#0B1118] px-4 py-14 sm:px-5 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-[#99C8FF]">
+            <p className="text-xs font-semibold tracking-[0.28em] text-[#99C8FF]">
               Need a crew?
             </p>
-            <h2 className="mt-3 text-4xl font-black uppercase tracking-[-0.04em] md:text-6xl">
-              Put JJDS on your next work front.
+            <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+              Need a contractor for your next job?
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-              Mechanical installation, structural steel, process pipework,
-              shutdowns, maintenance and industrial project support across
-              Australia.
+              Mechanical installation, structural steel, process pipework, shutdowns and maintenance.
             </p>
           </div>
           <div className="flex flex-wrap gap-4 lg:justify-end">
             <a
               href="/#contact"
-              className="rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-4 font-black uppercase tracking-[0.12em]"
+              className="rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-4 font-semibold tracking-[0.12em]"
             >
               Send an RFQ
             </a>
             <a
               href={`tel:${phone}`}
-              className="rounded-full border border-white/15 bg-white/5 px-7 py-4 font-black uppercase tracking-[0.12em]"
+              className="rounded-full border border-white/15 bg-white/5 px-7 py-4 font-semibold tracking-[0.12em]"
             >
               Call JJDS
             </a>
