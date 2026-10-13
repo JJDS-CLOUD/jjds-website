@@ -1,9 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import App from "../src/App";
 
-const LegacyApp = dynamic(() => import("../src/App"), { ssr: false });
-
-export default function ClientApp() {
-  return <LegacyApp />;
+export default function ClientApp({ path = "/" }) {
+  return <App path={path} />;
 }

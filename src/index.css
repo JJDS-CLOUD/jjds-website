@@ -39,8 +39,8 @@ body {
 }
 
 /* JJDS header branding: keep the full square logo contained and balanced. */
-header > div:first-child {
-  min-height: 104px;
+header > div {
+  min-height: 88px;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
@@ -51,9 +51,9 @@ header a[href="/"] {
 }
 
 header a[href="/"] > img[src="/jjds-logo.png"] {
-  height: 96px !important;
-  width: 96px !important;
-  flex: 0 0 96px;
+  height: 72px !important;
+  width: 72px !important;
+  flex: 0 0 72px;
   object-fit: contain;
   transform: none !important;
   filter: drop-shadow(0 7px 16px rgba(47, 141, 255, 0.16));
@@ -77,17 +77,6 @@ header a[href="/"] > div p:last-child {
   letter-spacing: 0.20em;
   line-height: 1.35;
   opacity: 0.76;
-}
-
-/* Keep desktop hover menus open long enough to move into them comfortably. */
-header nav > .group > div.absolute {
-  transition-property: opacity, transform, visibility !important;
-  transition-duration: 180ms, 180ms, 0s !important;
-  transition-delay: 1500ms, 1500ms, 1500ms !important;
-}
-
-header nav > .group:hover > div.absolute {
-  transition-delay: 0ms, 0ms, 0ms !important;
 }
 
 footer img[src="/jjds-logo.png"] {
@@ -120,13 +109,13 @@ img {
 
 @media (min-width: 1280px) {
   header a[href="/"] > img[src="/jjds-logo.png"] {
-    height: 108px !important;
-    width: 108px !important;
-    flex-basis: 108px;
+    height: 80px !important;
+    width: 80px !important;
+    flex-basis: 80px;
   }
 
   header > div:first-child {
-    min-height: 124px;
+    min-height: 96px;
   }
 }
 
@@ -194,3 +183,14 @@ strong,
 b {
   font-weight: 650;
 }
+
+html { scroll-padding-top: 112px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-150%); border-radius: 8px; background: #fff; color: #050505; padding: 12px 20px; font-weight: 600; }
+.skip-link:focus { transform: translateY(0); }
+main:focus { outline: none; }
+summary:focus-visible { outline: 2px solid #99C8FF; outline-offset: 6px; }
+@media (min-width: 640px) and (max-width: 1279px) { header a[href="/"] > div p:first-child { font-size: 1.5rem; } }
+@media (max-width: 767px) { html { scroll-padding-top: 100px; } body { padding-bottom: calc(90px + env(safe-area-inset-bottom)); } }
+
+#contact .grid > *, form, label, input, textarea { min-width: 0; }
+#contact a[href^="mailto:"] { overflow-wrap: anywhere; }
