@@ -677,11 +677,44 @@ function HomePage() {
           </div>
         </section>
 
-        <section id="tier-ready" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-              <div><SectionLabel light>Working with principal contractors</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Easy to work with on site.</h2><p className="mt-6 text-lg leading-8 text-slate-300">We take on defined packages of work and manage them properly from mobilisation through to handover. That means good supervision, organised work fronts, clear communication and no guessing about who is responsible for what.</p></div>
-              <div className="grid gap-5 sm:grid-cols-2">{tierProof.map((item) => <article key={item.title} className="rounded-[2rem] border border-white/10 bg-white/10 p-7"><h3 className="text-2xl font-black">{item.title}</h3><p className="mt-4 leading-7 text-slate-300">{item.text}</p></article>)}</div>
+        <section id="tier-ready" className="border-y border-white/10 bg-[#0A1320]">
+          <div className="mx-auto max-w-[1720px]">
+            <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+              <div className="relative overflow-hidden border-b border-white/10 px-5 py-14 sm:px-8 md:px-12 lg:border-b-0 lg:border-r lg:py-20">
+                <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:48px_48px]" />
+                <div className="relative">
+                  <SectionLabel light>For principal contractors</SectionLabel>
+                  <h2 className="mt-8 max-w-xl text-5xl font-semibold leading-[0.95] tracking-[-0.035em] text-white md:text-7xl">
+                    A site team you can rely on.
+                  </h2>
+                  <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
+                    Defined scope, practical supervision and straight communication from mobilisation through to handover.
+                  </p>
+                  <div className="mt-10 border-l-2 border-[#2F8DFF] pl-5">
+                    <p className="text-sm leading-7 text-slate-400">
+                      We work as part of the project team, coordinate with other trades and keep the client informed when site conditions change.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2">
+                {[
+                  ["01", "Plan the work", "Access, sequencing, lifts, shutdown windows and interfaces are worked through before the crew starts."],
+                  ["02", "Run the work front", "Supervision stays close to the job so decisions are made quickly and the work keeps moving."],
+                  ["03", "Keep it clear", "Scope, changes, progress and hold points are communicated without burying the client in paperwork."],
+                  ["04", "Close it out", "Inspections, defects and handover records are finished with the work, not weeks later."],
+                ].map(([num, title, text]) => (
+                  <article key={num} className="group min-h-[285px] border-b border-white/10 p-7 sm:border-r sm:p-9 [&:nth-child(even)]:sm:border-r-0">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium tracking-[0.14em] text-[#6E8BAE]">{num}</span>
+                      <span className="h-px w-10 bg-white/15 transition-all group-hover:w-16 group-hover:bg-[#2F8DFF]" />
+                    </div>
+                    <h3 className="mt-12 text-2xl font-semibold tracking-[-0.02em] text-white">{title}</h3>
+                    <p className="mt-4 max-w-sm leading-7 text-slate-400">{text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
