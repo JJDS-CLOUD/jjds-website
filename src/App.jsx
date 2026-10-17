@@ -626,7 +626,7 @@ function HomePage() {
             <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-semibold leading-[0.95] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
                 Australia's Industrial Installation Specialists
               </h1>
-             <p className="mt-5 max-w-4xl rounded-[1.4rem] border border-white/10 bg-black/50 p-5 text-base leading-7 text-white/95 shadow-2xl backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">We install, modify and maintain industrial plant. Our work covers mechanical equipment, structural steel, process pipework, shutdowns and site upgrades.</p>
+             <p className="mt-6 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">We install, modify and maintain industrial plant. Our work covers mechanical equipment, structural steel, process pipework, shutdowns and site upgrades.</p>
               <div className="mt-7 grid gap-3 text-sm font-semibold text-white/90 sm:grid-cols-3 lg:max-w-4xl">
                {[
                   "Australia-wide mobilisation",
@@ -733,14 +733,14 @@ function HomePage() {
         <section id="industries" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Industrial work across a range of sectors.</h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
+            <div className="mt-10 grid border-t border-slate-300 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item, index) => <div key={item} className="flex min-h-24 items-center border-b border-slate-300 px-2 py-4 sm:border-r sm:px-6"><span className="mr-4 text-xs font-medium text-slate-400">0{index + 1}</span><span className="text-lg font-semibold text-slate-800">{item}</span></div>)}</div>
           </div>
         </section>
 
         <section className="bg-black px-4 py-16 sm:px-5 sm:py-24">
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Services</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">More detail on our services.</h2>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group rounded-[2rem] border border-white/10 bg-white/10 p-6 transition hover:-translate-y-1 hover:bg-white/15"><p className="text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">{page.eyebrow}</p><h3 className="mt-4 text-2xl font-black tracking-tight text-white">{page.title}</h3><p className="mt-4 leading-7 text-slate-300">{page.hero}</p><span className="mt-6 inline-block text-sm font-semibold tracking-widest text-[#C9E3FF]">Open page →</span></a>)}</div>
+            <div className="mt-10 grid border-t border-white/15 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group border-b border-white/15 p-6 transition hover:bg-white/[0.03] md:border-r"><p className="text-[11px] font-medium tracking-[0.14em] text-[#7FB3FF]">{page.eyebrow}</p><h3 className="mt-6 text-xl font-semibold tracking-[-0.02em] text-white">{page.title}</h3><p className="mt-3 leading-7 text-slate-400">{page.hero}</p><span className="mt-6 inline-block text-sm font-semibold text-[#9CCEFF]">View service →</span></a>)}</div>
           </div>
         </section>
 
@@ -780,13 +780,13 @@ function HomePage() {
         <section id="compliance" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Safety and quality</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">The paperwork is part of the job.</h2><p className="mt-6 text-lg leading-8 text-slate-600">SWMS, permits, inspections and handover records are managed alongside the work so the site team and client have what they need.</p></div>
-            <div className="grid gap-4 sm:grid-cols-2">{complianceItems.map((item) => <div key={item} className="rounded-[2rem] bg-slate-100 p-6 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
+            <div className="border-t border-slate-300">{complianceItems.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-slate-300 py-5"><span className="text-xs font-medium text-slate-400">0{index + 1}</span><span className="text-base font-semibold text-slate-800">{item}</span></div>)}</div>
           </div>
         </section>
 
         <section id="contact" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 grid gap-4"><a href={`tel:${phoneClean}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="rounded-3xl bg-slate-100 p-5 font-black transition hover:bg-blue-50">EM {BRAND.email}</a></div></div>
+            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 border-t border-slate-300"><a href={`tel:${phoneClean}`} className="block border-b border-slate-300 py-4 font-semibold text-slate-900">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="block border-b border-slate-300 py-4 font-semibold text-slate-900">EM {BRAND.email}</a></div></div>
             <EnquiryForm pageTitle="Website enquiry" />
           </div>
         </section>
@@ -807,14 +807,14 @@ function ServicePage({ page }) {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 pt-4 sm:gap-10 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-12">
-            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-5 max-w-3xl rounded-[1.4rem] border border-white/10 bg-black/40 p-5 text-base leading-7 text-white/90 backdrop-blur sm:mt-7 sm:rounded-3xl sm:p-6 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
+            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
           </div>
         </section>
         <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel>Scope and capability</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Site capability that matches the work.</h2><p className="mt-6 text-lg leading-8 text-slate-600">{page.description}</p></div>
-            <div className="grid gap-4">{page.bullets.map((item) => <div key={item} className="rounded-[1.5rem] bg-slate-100 p-5 text-lg font-semibold text-slate-800">✓ {item}</div>)}</div>
+            <div className="border-t border-slate-300">{page.bullets.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-slate-300 py-5"><span className="text-xs font-medium text-slate-400">0{index + 1}</span><span className="text-base font-semibold text-slate-800">{item}</span></div>)}</div>
           </div>
         </section>
 
@@ -823,7 +823,7 @@ function ServicePage({ page }) {
         
 
         <section className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Where our crews are a good fit.</h2><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{page.sectors.map((item) => <div key={item} className="rounded-[2rem] border border-white/10 bg-white/10 p-6 text-center font-semibold text-white">{item}</div>)}</div></div>
+          <div className="mx-auto max-w-7xl"><SectionLabel light>Best fit sectors</SectionLabel><h2 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Where our crews are a good fit.</h2><div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/15 pt-6">{page.sectors.map((item) => <span key={item} className="text-base font-semibold text-white">{item}</span>)}</div></div>
         </section>
         <section className="bg-slate-100 px-5 py-24 text-slate-950">
           <div className="mx-auto max-w-7xl">
@@ -838,10 +838,10 @@ function ServicePage({ page }) {
           <div className="mx-auto max-w-7xl">
             <SectionLabel light>Project controls</SectionLabel>
             <h2 className="mt-3 max-w-4xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Safety and quality kept with the job.</h2>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{complianceItems.map((item) => <div key={item} className="rounded-[1.7rem] border border-white/10 bg-white/10 p-6 font-semibold text-white">✓ {item}</div>)}</div>
+            <div className="mt-10 border-t border-white/15">{complianceItems.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-white/15 py-5"><span className="text-xs font-medium text-slate-500">0{index + 1}</span><span className="font-semibold text-white">{item}</span></div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex items-center justify-center rounded-full bg-slate-950 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white">Back home</a></div></div><div className="min-h-96 rounded-[2rem] border border-slate-200 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.16),transparent_35%),linear-gradient(135deg,#eef4fb,#ffffff)] shadow-2xl" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex min-h-12 items-center justify-center border border-slate-950 px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-950 hover:text-white">Back home</a></div></div><div className="min-h-72 border-l border-slate-300 bg-[linear-gradient(135deg,#f8fafc,#eef4fb)]" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -862,7 +862,7 @@ function Footer() {
 }
 
 function MobileButtons() {
-  return <div className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-2 gap-2 rounded-[1.2rem] border border-white/10 bg-[#050505]/90 p-2 shadow-2xl backdrop-blur-xl md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-4 py-3 text-sm font-semibold text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white">SMS JJDS</a></div>;
+  return <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/10 bg-[#050505]/95 backdrop-blur md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-14 items-center justify-center bg-[#005BFF] px-4 text-sm font-semibold text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-14 items-center justify-center border-l border-white/10 px-4 text-sm font-semibold text-white">SMS JJDS</a></div>;
 }
 
 export default function App() {
