@@ -352,7 +352,7 @@ function BridgeConditionGallery() {
           {bridgeConditionGallery.map((photo) => (
             <figure
               key={photo.src}
-              className="group overflow-hidden rounded-[1.8rem] border border-[#C9CDD2]/20 bg-[#111827] shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
+              className="group overflow-hidden border-y border-white/10 bg-[#111827]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -361,7 +361,7 @@ function BridgeConditionGallery() {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-semibold tracking-[0.22em] text-[#C9E3FF] backdrop-blur">
+                <span className="absolute bottom-4 left-4 border-l-2 border-[#2F8DFF] pl-3 text-xs font-semibold tracking-[0.12em] text-white">
                   {photo.label}
                 </span>
               </div>
@@ -374,7 +374,7 @@ function BridgeConditionGallery() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-[2rem] border border-[#005BFF]/30 bg-gradient-to-br from-[#111827] via-[#0B1220] to-[#050505] p-8 shadow-[0_25px_65px_rgba(0,91,255,0.16)] md:p-10">
+        <div className="mt-14 border-y border-[#005BFF]/30 py-8 md:py-10">
           <h3 className="text-3xl font-semibold text-white">
             Bridge Rehabilitation & Replacement Capability
           </h3>
@@ -393,7 +393,7 @@ function BridgeConditionGallery() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-2xl border border-[#C9CDD2]/15 bg-black/35 p-5 font-semibold text-white"
+                className="border-b border-white/10 py-4 font-semibold text-white"
               >
                 <span className="mr-2 text-[#2F8DFF]">✓</span>
                 {item}
@@ -435,7 +435,7 @@ function ServiceGallery({ page }) {
           {page.gallery.map((photo, index) => (
             <figure
               key={`${photo.src}-${index}`}
-              className="group overflow-hidden rounded-[1.8rem] border border-[#C9CDD2]/20 bg-[#111827] shadow-[0_20px_55px_rgba(0,0,0,0.45)]"
+              className="group overflow-hidden border-y border-white/10 bg-[#111827]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -445,7 +445,7 @@ function ServiceGallery({ page }) {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full border border-[#99C8FF]/35 bg-black/60 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[#C9E3FF] backdrop-blur">
+                <span className="absolute bottom-4 left-4 border-l-2 border-[#2F8DFF] pl-3 text-xs font-semibold tracking-[0.12em] text-white">
                   {photo.label}
                 </span>
               </div>
@@ -462,11 +462,11 @@ function SectionLabel({ children, light = false }) {
 }
 
 function GradientButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center  bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white shadow-xl shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-2xl ${className}`}>{children}</a>;
 }
 
 function GhostButton({ href, children, className = "", onClick }) {
-  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center rounded-full border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
+  return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center  border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
 }
 
 function useMeta(page) {
@@ -524,16 +524,16 @@ function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
   }, [form, pageTitle]);
   const update = (field) => (event) => setForm({ ...form, [field]: event.target.value });
   return (
-    <form className={`rounded-[2rem] bg-[#111827] ${compact ? "p-5" : "p-6 md:p-8"} shadow-2xl`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
+    <form className={`${compact ? "py-2" : "py-2"}`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
       <p className="text-xs font-semibold tracking-[0.3em] text-[#C9E3FF]">Project enquiry</p>
       <h3 className="mt-2 text-3xl font-semibold text-white">Tell us about the job</h3>
       <p className="mt-3 text-sm leading-6 text-slate-300">Add drawings or photos when your email opens.</p>
       <div className="mt-6 grid gap-4">
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
-        <input className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
-        <textarea className="min-h-36 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
-        <button type="submit" className="rounded-2xl bg-gradient-to-r from-[#003C8F] via-[#005BFF] to-[#2F8DFF] px-6 py-4 font-semibold tracking-[0.12em] text-white shadow-xl transition hover:-translate-y-0.5">Open email</button>
+        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
+        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
+        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
+        <textarea className="min-h-36 border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
+        <button type="submit" className="border border-[#2F8DFF] bg-[#005BFF] px-6 py-4 font-semibold text-white transition hover:bg-[#176DFF]">Open email</button>
       </div>
     </form>
   );
@@ -544,18 +544,18 @@ function DropdownMenu({ group }) {
     <div className="group relative">
       <button
         type="button"
-        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
+        className="inline-flex items-center gap-2 px-2 py-3 text-sm font-semibold tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
       >
         {group.label}
         <span className="text-[#99C8FF] transition group-hover:rotate-180">⌄</span>
       </button>
-      <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 rounded-[1.7rem] border border-white/10 bg-[#0B1118] p-4 opacity-0 shadow-[0_25px_70px_rgba(0,0,0,0.75)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-        <div className="mb-2 rounded-2xl bg-gradient-to-r from-[#003C8F]/70 via-[#005BFF]/35 to-[#C9CDD2]/15 px-4 py-3 text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">
+      <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 border border-white/10 bg-[#0B1118] p-3 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.45)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="mb-2 border-b border-white/10 px-2 py-3 text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">
           {group.label} Menu
         </div>
         <div className="grid gap-2">
           {group.items.map((item) => (
-            <a key={item.href + item.label} href={item.href} className="rounded-2xl border border-slate-700 bg-[#17212B] px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#99C8FF]/70 hover:bg-[#005BFF] hover:shadow-xl">
+            <a key={item.href + item.label} href={item.href} className="border-b border-white/10 px-2 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#99C8FF]/70 hover:bg-[#005BFF] hover:shadow-xl">
               <span className="block text-sm font-semibold text-white">{item.label}</span>
               <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
             </a>
@@ -585,17 +585,17 @@ function Header() {
           <GradientButton href="/#contact" className="ml-2 px-8 py-4 text-base">Get a Quote</GradientButton>
         </nav>
 
-        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-[11px] font-semibold tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
+        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center border border-white/15 px-4 py-2.5 text-[11px] font-semibold tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
       </div>
       {mobileOpen && (
         <div className="max-h-[calc(100svh-72px)] overflow-y-auto border-t border-white/10 bg-[#050505]/98 px-4 py-4 sm:px-5 sm:py-5 xl:hidden">
           <div className="grid gap-4">
             {menuGroups.map((group) => (
-              <div key={group.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-3">
+              <div key={group.label} className="border-b border-white/10 py-2">
                 <p className="px-2 pb-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">{group.label}</p>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {group.items.map((item) => (
-                    <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="rounded-2xl bg-white/10 px-4 py-3">
+                    <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="border-b border-white/10 px-2 py-3">
                       <span className="block font-semibold text-white">{item.label}</span>
                       <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
                     </a>
@@ -622,7 +622,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
           <div className="relative z-10 flex min-h-[78svh] items-center px-4 pb-14 pt-10 sm:px-5 md:min-h-screen md:px-16 md:pb-20 md:pt-24">
             <div className="max-w-7xl">
-              <div className="inline-flex rounded-full border border-cyan-200/20 bg-black/35 px-4 py-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
+              <div className="inline-flex border-l-2 border-[#2F8DFF] pl-3 py-1 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
             <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-semibold leading-[0.95] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
                 Australia's Industrial Installation Specialists
               </h1>
@@ -635,7 +635,7 @@ function HomePage() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/10 px-4 py-3 text-center backdrop-blur"
+                    className="border-b border-white/10 px-2 py-3 text-left"
                   >
                     {item}
                   </span>
@@ -660,7 +660,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
           <div className="relative mx-auto max-w-7xl">
             <div className="grid gap-5 md:grid-cols-4">
-              {trustStats.map(([value, label], index) => <article key={value} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#003C8F]/80 via-[#005BFF]/25 to-[#111827] p-6 shadow-2xl"><span className="text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-semibold tracking-[-0.02em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
+              {trustStats.map(([value, label], index) => <article key={value} className="border-b border-white/10 py-6"><span className="text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-semibold tracking-[-0.02em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
             </div>
           </div>
         </section>
@@ -672,7 +672,7 @@ function HomePage() {
             <SectionLabel light>What we do</SectionLabel>
             <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Practical support for industrial projects.</h2>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative overflow-hidden rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"><div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#005BFF] text-sm font-semibold text-white">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
+              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative border-b border-white/15 py-7 transition"><div className="mb-6 text-xs font-semibold text-[#7FB3FF]">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
@@ -725,7 +725,7 @@ function HomePage() {
             <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">From quote to handover.</h2>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">We review the job, plan it properly, keep the client informed and close the work out cleanly.</p>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-lg"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="border-b border-slate-300 py-6"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
@@ -746,10 +746,10 @@ function HomePage() {
 
         <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">Current work</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Recent project photos from active JJDS work.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
   {latestProjectImages.slice(0, 8).map((image, index) => (
-    <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
+    <a key={image} href="/live-job-library" className={`group relative overflow-hidden border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
       <img src={image} alt={`Current JJDS project photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-      {index === 0 && <div className="absolute bottom-5 left-5"><span className="rounded-full border border-white/15 bg-black/50 px-3 py-1.5 text-[11px] font-semibold tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
+      {index === 0 && <div className="absolute bottom-5 left-5"><span className="border-l-2 border-[#2F8DFF] pl-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
     </a>
   ))}
 </div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
@@ -757,7 +757,7 @@ function HomePage() {
             <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Recent work on site.</h2>
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
               {latestProjectImages.map((image, index) => (
-                <a key={image} href="/live-job-library" className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
+                <a key={image} href="/live-job-library" className={`group relative overflow-hidden border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
                   <img src={image} alt={`JJDS current project site photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
                 </a>
               ))}
@@ -769,7 +769,7 @@ function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Regional and difficult-access work.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS can mobilise to regional and remote sites for installation, shutdowns, upgrades and repair work where access and logistics need to be planned properly.</p></div>
             <div className="grid gap-5">
-              <a href="/live-job-library" className="group relative min-h-72 overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0B1118] shadow-2xl">
+              <a href="/live-job-library" className="group relative min-h-72 overflow-hidden border-y border-white/10 bg-[#0B1118]">
                 <img src={latestProjectImages[8]} alt="JJDS current industrial project works" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               </a>
@@ -830,7 +830,7 @@ function ServicePage({ page }) {
             <SectionLabel>Delivery approach</SectionLabel>
             <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Plan it. Build it. Close it out.</h2>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="rounded-[2rem] bg-white p-7 shadow-lg"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
+              {deliverySteps.map(([num, title, text]) => <article key={num} className="border-b border-slate-300 py-6"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-4 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
             </div>
           </div>
         </section>
