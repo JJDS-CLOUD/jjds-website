@@ -38,11 +38,12 @@ export const liveJobs = [
       "/live-jobs/IMG_7817.jpg",
       "/live-jobs/IMG_7818.jpg",
       "/live-jobs/IMG_7819.jpg",
-      "/live-jobs/20261006_treatment-vessel-lift.jpg"
+      "/live-jobs/20261006_treatment-vessel-lift.jpg",
+      "/live-jobs/20261016_huntly-progress.jpg"
     ],
-    updated: "6 October 2026",
+    updated: "16 October 2026",
     update:
-      "Latest approved site photography shows a major treatment component being lifted into position, with mechanical installation and ducting works continuing across the Huntly project.",
+      "Approved site photography from 16 October shows further progress across the Huntly installation, including additional ducting and air-treatment works visible from the elevated site view.",
   },
 ];
 
