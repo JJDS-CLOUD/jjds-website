@@ -402,7 +402,7 @@ function BridgeConditionGallery() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
-            <GradientButton href="/#contact">Discuss a Bridge Project</GradientButton>
+            <GradientButton href="/">Discuss a Bridge Project</GradientButton>
             <GhostButton href={`tel:${phoneClean}`} className="w-full sm:w-auto">Call JJDS</GhostButton>
           </div>
         </div>
@@ -567,227 +567,215 @@ function DropdownMenu({ group }) {
 }
 
 function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const closeMenu = () => setMobileOpen(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/90 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-[1720px] items-center justify-between gap-3 px-4 py-3 sm:gap-5 sm:px-5 sm:py-4 md:px-10">
-        <a href="/" className="flex min-w-0 items-center gap-3 sm:gap-5" onClick={closeMenu}>
-          <img src="/jjds-logo.png" alt="JJDS Industries logo" className="h-16 w-auto object-contain sm:h-20 md:h-28 xl:h-36" />
-          <div className="hidden min-w-0 sm:block">
-            <p className="text-2xl font-semibold tracking-[0.24em] text-white md:text-3xl xl:text-[2.4rem] xl:leading-none">{BRAND.name}</p>
-            <p className="mt-2 max-w-[720px] text-[11px] font-semibold tracking-[0.38em] text-[#C9E3FF] md:text-sm">{BRAND.tagline}</p>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050A12]/96 backdrop-blur-xl">
+      <div className="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:h-[88px] lg:px-10">
+        <a href="/" className="flex items-center gap-3">
+          <img src="/jjds-logo.png" alt="JJDS Industries" className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16" />
+          <div>
+            <p className="text-sm font-semibold tracking-[0.1em] text-white sm:text-base">JJDS INDUSTRIES</p>
+            <p className="mt-1 hidden text-[11px] text-slate-400 sm:block">Industrial installation & mechanical works</p>
           </div>
         </a>
 
-        <nav className="hidden items-center gap-3 xl:flex">
-          {menuGroups.map((group) => <DropdownMenu key={group.label} group={group} />)}
-          <GradientButton href="/#contact" className="ml-2 px-8 py-4 text-base">Get a Quote</GradientButton>
-        </nav>
-
-        <button type="button" onClick={() => setMobileOpen((open) => !open)} className="inline-flex min-h-11 items-center justify-center border border-white/15 px-4 py-2.5 text-[11px] font-semibold tracking-[0.18em] text-white xl:hidden" aria-label="Toggle navigation menu">{mobileOpen ? "Close" : "Menu"}</button>
+        <a
+          href="/live-job-library"
+          className="inline-flex min-h-11 items-center justify-center border border-[#2F8DFF] px-5 text-sm font-semibold text-white transition hover:bg-[#005BFF]"
+        >
+          Gallery
+        </a>
       </div>
-      {mobileOpen && (
-        <div className="max-h-[calc(100svh-72px)] overflow-y-auto border-t border-white/10 bg-[#050505]/98 px-4 py-4 sm:px-5 sm:py-5 xl:hidden">
-          <div className="grid gap-4">
-            {menuGroups.map((group) => (
-              <div key={group.label} className="border-b border-white/10 py-2">
-                <p className="px-2 pb-2 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">{group.label}</p>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {group.items.map((item) => (
-                    <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="border-b border-white/10 px-2 py-3">
-                      <span className="block font-semibold text-white">{item.label}</span>
-                      <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-            <GradientButton href="/#contact" className="w-full" onClick={closeMenu}>Get Quote</GradientButton>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
 
 function HomePage() {
   useMeta(null);
+  const [activeTab, setActiveTab] = useState("overview");
+
+  const tabs = [
+    ["overview", "Overview"],
+    ["capabilities", "Capabilities"],
+    ["industries", "Industries"],
+    ["why", "Why JJDS"],
+    ["contact", "Contact"],
+  ];
+
   return (
     <>
       <Header />
-      <main id="top" className="bg-[#050505] text-white">
-        <section className="relative min-h-[78svh] overflow-hidden md:min-h-screen">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(47,141,255,0.32),transparent_34%),radial-gradient(circle_at_80%_28%,rgba(201,205,210,0.12),transparent_28%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,91,255,0.34),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(201,205,210,0.14),transparent_30%),linear-gradient(90deg,rgba(0,0,0,0.9),rgba(0,0,0,0.52),rgba(0,0,0,0.78))]" />
-          <div className="relative z-10 flex min-h-[78svh] items-center px-4 pb-14 pt-10 sm:px-5 md:min-h-screen md:px-16 md:pb-20 md:pt-24">
-            <div className="max-w-7xl">
-              <div className="inline-flex border-l-2 border-[#2F8DFF] pl-3 py-1 text-xs font-semibold tracking-[0.28em] text-[#C9E3FF] backdrop-blur">JJDS Industries</div>
-            <h1 className="mt-5 max-w-7xl text-[clamp(2.55rem,12vw,8rem)] font-semibold leading-[0.95] tracking-[-0.065em] text-white sm:mt-6 sm:tracking-[-0.08em]">
-                Australia's Industrial Installation Specialists
-              </h1>
-             <p className="mt-6 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">We install, modify and maintain industrial plant. Our work covers mechanical equipment, structural steel, process pipework, shutdowns and site upgrades.</p>
-              <div className="mt-7 grid gap-3 text-sm font-semibold text-white/90 sm:grid-cols-3 lg:max-w-4xl">
-               {[
-                  "Australia-wide mobilisation",
-                  "Mechanical • Structural • Process",
-                  "Shutdowns • Installation • Handover",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="border-b border-white/10 px-2 py-3 text-left"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-             <div className="mt-10 flex flex-wrap gap-4">
-  <GradientButton href="/#contact" className="w-full sm:w-auto">Request a Quote</GradientButton>
-
-  <GhostButton href="/JJDS-Capability-Statement.pdf" className="w-full sm:w-auto">
-    Capability Statement
-  </GhostButton>
-
-  <GhostButton href={`tel:${phoneClean}`}>
-    Call JJDS
-  </GhostButton>
-</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative px-4 py-14 sm:px-5 sm:py-20">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-[#07131A] to-black" />
-          <div className="relative mx-auto max-w-7xl">
-            <div className="grid gap-5 md:grid-cols-4">
-              {trustStats.map(([value, label], index) => <article key={value} className="border-b border-white/10 py-6"><span className="text-xs font-semibold tracking-[0.28em] text-[#C9E3FF]">0{index + 1}</span><h2 className="mt-8 text-3xl font-semibold tracking-[-0.02em]">{value}</h2><p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-slate-300">{label}</p></article>)}
-            </div>
-          </div>
-        </section>
-
-        <section id="services" className="relative overflow-hidden px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(47,141,255,0.18),transparent_35%),linear-gradient(135deg,#020617,#07131A_55%,#020617)]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/95 via-[#07131A]/88 to-[#020617]/82" />
-          <div className="relative mx-auto max-w-7xl">
-            <SectionLabel light>What we do</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)] md:text-6xl">Practical support for industrial projects.</h2>
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {capabilityCards.map(([num, title, text]) => <article key={title} className="relative border-b border-white/15 py-7 transition"><div className="mb-6 text-xs font-semibold text-[#7FB3FF]">{num}</div><h3 className="text-2xl font-black tracking-tight">{title}</h3><p className="mt-4 leading-7 text-slate-600">{text}</p></article>)}
-            </div>
-          </div>
-        </section>
-
-        <section id="tier-ready" className="border-y border-white/10 bg-[#0A1320]">
-          <div className="mx-auto max-w-[1720px]">
-            <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-              <div className="relative overflow-hidden border-b border-white/10 px-5 py-14 sm:px-8 md:px-12 lg:border-b-0 lg:border-r lg:py-20">
-                <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:48px_48px]" />
-                <div className="relative">
-                  <SectionLabel light>For principal contractors</SectionLabel>
-                  <h2 className="mt-8 max-w-xl text-5xl font-semibold leading-[0.95] tracking-[-0.035em] text-white md:text-7xl">
-                    A site team you can rely on.
-                  </h2>
-                  <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
-                    Defined scope, practical supervision and straight communication from mobilisation through to handover.
-                  </p>
-                  <div className="mt-10 border-l-2 border-[#2F8DFF] pl-5">
-                    <p className="text-sm leading-7 text-slate-400">
-                      We work as part of the project team, coordinate with other trades and keep the client informed when site conditions change.
-                    </p>
-                  </div>
+      <main className="min-h-screen bg-[#050A12] text-white">
+        <section className="border-b border-white/10">
+          <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="relative flex min-h-[500px] flex-col justify-center px-5 py-14 sm:px-8 md:px-12 lg:min-h-[650px] lg:border-r lg:border-white/10 lg:px-16">
+              <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.15)_1px,transparent_1px)] [background-size:52px_52px]" />
+              <div className="relative">
+                <SectionLabel light>JJDS INDUSTRIES</SectionLabel>
+                <h1 className="mt-7 max-w-4xl text-[clamp(3.15rem,8vw,7.4rem)] font-semibold leading-[0.9] tracking-[-0.05em]">
+                  Industrial work.<br />Delivered properly.
+                </h1>
+                <p className="mt-7 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+                  Mechanical installation, process pipework, structural steel, shutdowns and plant upgrades for industrial projects.
+                </p>
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                  <GradientButton href="mailto:operations@jjdsindustries.com.au?subject=Project%20Enquiry%20-%20JJDS%20Industries">Send us the scope</GradientButton>
+                  <GhostButton href={`tel:${phoneClean}`}>Call {BRAND.phone}</GhostButton>
                 </div>
               </div>
+            </div>
 
-              <div className="grid sm:grid-cols-2">
-                {[
-                  ["01", "Plan the work", "Access, sequencing, lifts, shutdown windows and interfaces are worked through before the crew starts."],
-                  ["02", "Run the work front", "Supervision stays close to the job so decisions are made quickly and the work keeps moving."],
-                  ["03", "Keep it clear", "Scope, changes, progress and hold points are communicated without burying the client in paperwork."],
-                  ["04", "Close it out", "Inspections, defects and handover records are finished with the work, not weeks later."],
-                ].map(([num, title, text]) => (
-                  <article key={num} className="group min-h-[285px] border-b border-white/10 p-7 sm:border-r sm:p-9 [&:nth-child(even)]:sm:border-r-0">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium tracking-[0.14em] text-[#6E8BAE]">{num}</span>
-                      <span className="h-px w-10 bg-white/15 transition-all group-hover:w-16 group-hover:bg-[#2F8DFF]" />
-                    </div>
-                    <h3 className="mt-12 text-2xl font-semibold tracking-[-0.02em] text-white">{title}</h3>
-                    <p className="mt-4 max-w-sm leading-7 text-slate-400">{text}</p>
-                  </article>
-                ))}
+            <div className="relative min-h-[420px] lg:min-h-[650px]">
+              <img
+                src={latestProjectImages[0]}
+                alt="JJDS industrial project installation"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050A12]/90 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 border-t border-white/15 bg-[#050A12]/80 px-5 py-5 backdrop-blur-sm sm:px-8">
+                <p className="text-[10px] font-semibold tracking-[0.16em] text-[#86C0F4]">CURRENT PROJECT</p>
+                <h2 className="mt-2 text-xl font-semibold sm:text-2xl">Waste treatment plant installation</h2>
+                <p className="mt-1 text-sm text-slate-300">Huntly, Victoria</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-slate-100 px-5 py-24 text-slate-950">
-          <div className="mx-auto max-w-7xl">
-            <SectionLabel>How we work</SectionLabel>
-            <h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">From quote to handover.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">We review the job, plan it properly, keep the client informed and close the work out cleanly.</p>
-            <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {deliverySteps.map(([num, title, text]) => <article key={num} className="border-b border-slate-300 py-6"><span className="text-sm font-semibold text-[#005BFF]">{num}</span><h3 className="mt-5 text-2xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}
-            </div>
-          </div>
-        </section>
-
-        <section id="industries" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl">
-            <SectionLabel>Industries served</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Industrial work across a range of sectors.</h2>
-            <div className="mt-10 grid border-t border-slate-300 sm:grid-cols-2 lg:grid-cols-3">{industries.map((item, index) => <div key={item} className="flex min-h-24 items-center border-b border-slate-300 px-2 py-4 sm:border-r sm:px-6"><span className="mr-4 text-xs font-medium text-slate-400">0{index + 1}</span><span className="text-lg font-semibold text-slate-800">{item}</span></div>)}</div>
-          </div>
-        </section>
-
-        <section className="bg-black px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Services</SectionLabel><h2 className="mt-3 max-w-5xl text-4xl font-semibold tracking-[-0.015em] md:text-6xl">More detail on our services.</h2>
-            <div className="mt-10 grid border-t border-white/15 md:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="group border-b border-white/15 p-6 transition hover:bg-white/[0.03] md:border-r"><p className="text-[11px] font-medium tracking-[0.14em] text-[#7FB3FF]">{page.eyebrow}</p><h3 className="mt-6 text-xl font-semibold tracking-[-0.02em] text-white">{page.title}</h3><p className="mt-3 leading-7 text-slate-400">{page.hero}</p><span className="mt-6 inline-block text-sm font-semibold text-[#9CCEFF]">View service →</span></a>)}</div>
-          </div>
-        </section>
-
-        <section className="border-y border-white/10 bg-[#070B12] px-4 py-14 sm:px-5"><div className="mx-auto max-w-7xl"><div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel light>Current project feed</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">Current work</h2><p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Recent project photos from active JJDS work.</p></div><GradientButton href="/live-job-library">View Live Jobs</GradientButton></div><div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-  {latestProjectImages.slice(0, 8).map((image, index) => (
-    <a key={image} href="/live-job-library" className={`group relative overflow-hidden border border-white/10 bg-[#111827] ${index === 0 ? "col-span-2 row-span-2 min-h-[420px] sm:min-h-[520px]" : "min-h-[210px] sm:min-h-[250px]"}`}>
-      <img src={image} alt={`Current JJDS project photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-      {index === 0 && <div className="absolute bottom-5 left-5"><span className="border-l-2 border-[#2F8DFF] pl-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-white backdrop-blur">Current project</span></div>}
-    </a>
-  ))}
-</div></div></section><section id="gallery" className="bg-[#050505] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto max-w-7xl">
-            <SectionLabel light>Project gallery</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Recent work on site.</h2>
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-              {latestProjectImages.map((image, index) => (
-                <a key={image} href="/live-job-library" className={`group relative overflow-hidden border border-white/10 bg-white/5 ${index === 0 || index === 5 ? "col-span-2 min-h-[320px] sm:min-h-[420px]" : "min-h-[190px] sm:min-h-[250px]"}`}>
-                  <img src={image} alt={`JJDS current project site photo ${index + 1}`} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                </a>
+        <section className="border-b border-white/10 bg-[#08111E]">
+          <div className="mx-auto max-w-[1600px] overflow-x-auto px-4 sm:px-6 lg:px-10">
+            <div className="flex min-w-max">
+              {tabs.map(([id, label]) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => setActiveTab(id)}
+                  className={`min-h-16 border-b-2 px-5 text-sm font-semibold transition sm:px-7 ${
+                    activeTab === id
+                      ? "border-[#2F8DFF] text-white"
+                      : "border-transparent text-slate-400 hover:text-white"
+                  }`}
+                >
+                  {label}
+                </button>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="remote" className="bg-[#111827] px-4 py-16 sm:px-5 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel light>Remote / regional</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">Regional and difficult-access work.</h2><p className="mt-6 text-lg leading-8 text-slate-300">JJDS can mobilise to regional and remote sites for installation, shutdowns, upgrades and repair work where access and logistics need to be planned properly.</p></div>
-            <div className="grid gap-5">
-              <a href="/live-job-library" className="group relative min-h-72 overflow-hidden border-y border-white/10 bg-[#0B1118]">
-                <img src={latestProjectImages[8]} alt="JJDS current industrial project works" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              </a>
-            </div>
-          </div>
-        </section>
+        <section className="bg-white text-slate-950">
+          <div className="mx-auto max-w-[1500px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+            {activeTab === "overview" && (
+              <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+                <div>
+                  <SectionLabel>OVERVIEW</SectionLabel>
+                  <h2 className="mt-7 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    Built for industrial site work.
+                  </h2>
+                </div>
+                <div className="border-t border-slate-300">
+                  {[
+                    ["01", "Mechanical", "Plant and equipment installation, alignment, upgrades and modifications."],
+                    ["02", "Structural", "Platforms, support steel, pipe racks, stairs, handrails and site modifications."],
+                    ["03", "Process", "Stainless, carbon steel and HDPE pipework with supports, tie-ins and testing support."],
+                    ["04", "Shutdowns", "Planned shutdown work, repairs, replacements and critical-path installation."],
+                  ].map(([n,t,x]) => (
+                    <div key={n} className="grid gap-3 border-b border-slate-300 py-6 sm:grid-cols-[56px_180px_1fr] sm:gap-6">
+                      <span className="text-xs font-medium text-slate-400">{n}</span>
+                      <h3 className="text-lg font-semibold text-[#0A1625]">{t}</h3>
+                      <p className="text-sm leading-6 text-slate-600">{x}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
-        <section id="compliance" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Safety and quality</SectionLabel><h2 className="mt-3 text-5xl font-black leading-[0.9] tracking-[-0.055em] md:text-7xl">The paperwork is part of the job.</h2><p className="mt-6 text-lg leading-8 text-slate-600">SWMS, permits, inspections and handover records are managed alongside the work so the site team and client have what they need.</p></div>
-            <div className="border-t border-slate-300">{complianceItems.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-slate-300 py-5"><span className="text-xs font-medium text-slate-400">0{index + 1}</span><span className="text-base font-semibold text-slate-800">{item}</span></div>)}</div>
-          </div>
-        </section>
+            {activeTab === "capabilities" && (
+              <div className="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+                <div>
+                  <SectionLabel>CAPABILITIES</SectionLabel>
+                  <h2 className="mt-7 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    One contractor across the install package.
+                  </h2>
+                  <p className="mt-6 max-w-lg leading-7 text-slate-600">
+                    Mechanical, structural and process scopes coordinated through one site team.
+                  </p>
+                </div>
+                <div className="border-t border-slate-300">
+                  {capabilityCards.map(([num,title,text]) => (
+                    <div key={num} className="grid gap-3 border-b border-slate-300 py-6 sm:grid-cols-[56px_210px_1fr] sm:gap-6">
+                      <span className="text-xs font-medium text-slate-400">{num}</span>
+                      <h3 className="text-lg font-semibold text-[#0A1625]">{title}</h3>
+                      <p className="text-sm leading-6 text-slate-600">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
-        <section id="contact" className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
-            <div><SectionLabel>Talk to us about your job</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">Send through the job details.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Send us the drawings, photos or scope. We will review it and come back to you with what we can take on, what we need clarified and the next step.</p><div className="mt-8 border-t border-slate-300"><a href={`tel:${phoneClean}`} className="block border-b border-slate-300 py-4 font-semibold text-slate-900">PH {BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="block border-b border-slate-300 py-4 font-semibold text-slate-900">EM {BRAND.email}</a></div></div>
-            <EnquiryForm pageTitle="Website enquiry" />
+            {activeTab === "industries" && (
+              <div>
+                <div className="max-w-3xl">
+                  <SectionLabel>INDUSTRIES</SectionLabel>
+                  <h2 className="mt-7 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    Industrial sectors we work across.
+                  </h2>
+                </div>
+                <div className="mt-10 grid border-t border-slate-300 sm:grid-cols-2 lg:grid-cols-3">
+                  {industries.map((item,index) => (
+                    <div key={item} className="flex min-h-24 items-center border-b border-slate-300 py-5 sm:border-r sm:px-6">
+                      <span className="mr-4 text-xs font-medium text-slate-400">{String(index + 1).padStart(2,"0")}</span>
+                      <span className="text-lg font-semibold text-[#0A1625]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "why" && (
+              <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+                <div>
+                  <SectionLabel>WHY JJDS</SectionLabel>
+                  <h2 className="mt-7 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    Easy to deal with. Ready for site.
+                  </h2>
+                  <p className="mt-6 max-w-lg leading-7 text-slate-600">
+                    Defined scope, practical supervision, clear communication and clean handover.
+                  </p>
+                </div>
+                <div className="border-t border-slate-300">
+                  {[
+                    ["01","Plan the work","Access, sequencing, lifts, shutdown windows and interfaces are worked through before the crew starts."],
+                    ["02","Run the work front","Supervision stays close to the job so decisions are made quickly and the work keeps moving."],
+                    ["03","Keep it clear","Scope, changes and progress are communicated without burying the client in paperwork."],
+                    ["04","Close it out","Inspections, defects and handover records are finished with the work."],
+                  ].map(([n,t,x]) => (
+                    <div key={n} className="grid gap-3 border-b border-slate-300 py-6 sm:grid-cols-[56px_190px_1fr] sm:gap-6">
+                      <span className="text-xs font-medium text-slate-400">{n}</span>
+                      <h3 className="text-lg font-semibold text-[#0A1625]">{t}</h3>
+                      <p className="text-sm leading-6 text-slate-600">{x}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "contact" && (
+              <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
+                <div>
+                  <SectionLabel>CONTACT</SectionLabel>
+                  <h2 className="mt-7 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    Send the scope.
+                  </h2>
+                  <p className="mt-6 max-w-lg leading-7 text-slate-600">
+                    Drawings, photos, specifications or an RFQ are enough to get started.
+                  </p>
+                  <div className="mt-8 border-t border-slate-300">
+                    <a href={`tel:${phoneClean}`} className="block border-b border-slate-300 py-4 font-semibold text-[#0A1625]">PH {BRAND.phone}</a>
+                    <a href={`mailto:${BRAND.email}`} className="block border-b border-slate-300 py-4 font-semibold text-[#0A1625]">EM {BRAND.email}</a>
+                  </div>
+                </div>
+                <EnquiryForm pageTitle="Website enquiry" />
+              </div>
+            )}
           </div>
         </section>
       </main>
@@ -807,7 +795,7 @@ function ServicePage({ page }) {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 pt-4 sm:gap-10 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-12">
-            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
+            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
           </div>
         </section>
@@ -841,7 +829,7 @@ function ServicePage({ page }) {
             <div className="mt-10 border-t border-white/15">{complianceItems.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-white/15 py-5"><span className="text-xs font-medium text-slate-500">0{index + 1}</span><span className="font-semibold text-white">{item}</span></div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex min-h-12 items-center justify-center border border-slate-950 px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-950 hover:text-white">Back home</a></div></div><div className="min-h-72 border-l border-slate-300 bg-[linear-gradient(135deg,#f8fafc,#eef4fb)]" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/">Start enquiry</GradientButton><a href="/" className="inline-flex min-h-12 items-center justify-center border border-slate-950 px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-950 hover:text-white">Back home</a></div></div><div className="min-h-72 border-l border-slate-300 bg-[linear-gradient(135deg,#f8fafc,#eef4fb)]" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -854,7 +842,7 @@ function Footer() {
     <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-28 w-auto object-contain" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
       <div><p className="font-semibold tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-[#99C8FF]">{page.navLabel}</a>)}</div></div>
-      <div><p className="font-semibold tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#tier-ready" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/#gallery" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/#compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
+      <div><p className="font-semibold tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/live-job-library" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/hseq-compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
       <div><p className="font-semibold tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
     <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>JJDS Industries Pty Ltd • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
