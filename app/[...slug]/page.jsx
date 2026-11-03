@@ -39,3 +39,4 @@ export default async function ServiceRoutePage({ params }) {
   if (path !== page.path) permanentRedirect(page.path);
   return <ClientApp path={page.path} />;
 }
+

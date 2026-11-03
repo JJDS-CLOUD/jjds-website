@@ -8,7 +8,8 @@ export const seoPages = [
     hero: "Stainless process pipework, pipe supports, site welding and mechanical installation for industrial facilities.",
     description: "JJDS Industries provides stainless steel process pipework, fabrication, welding, supports and installation support for industrial sites across Australia.",
     bullets: ["Stainless process pipework installation", "Site welding and fabrication modifications", "Pipe supports, brackets and access steel", "Shutdown and plant upgrade support", "SWMS, permits and site records"],
-    sectors: ["Waste processing", "Water treatment", "Industrial plants", "Manufacturing", "Remote sites"],    image: null,
+    sectors: ["Waste processing", "Water treatment", "Industrial plants", "Manufacturing", "Remote sites"],
+    image: null,
   },
   {
     path: "/industrial-plant-installation",
@@ -18,7 +19,8 @@ export const seoPages = [
     hero: "Mechanical installation, structural steel, equipment placement and plant upgrade crews for Australian industrial projects.",
     description: "JJDS Industries delivers industrial plant installation, mechanical works, structural steel, process equipment, shutdown support and site installation packages.",
     bullets: ["Mechanical and process equipment installation", "Structural supports, platforms and frames", "Plant upgrades and staged shutdown works", "Crew planning and site coordination", "Australia-wide mobilisation capability"],
-    sectors: ["Process plants", "Recycling facilities", "Food and industrial", "Civil infrastructure", "Regional projects"],    image: null,
+    sectors: ["Process plants", "Recycling facilities", "Food and industrial", "Civil infrastructure", "Regional projects"],
+    image: null,
   },
   {
     path: "/waste-processing-installation",
@@ -28,7 +30,8 @@ export const seoPages = [
     hero: "Installation support for depackers, resource recovery facilities, biofilter systems, pipework and structural site works.",
     description: "JJDS Industries supports waste processing and recycling facilities with plant installation, mechanical works, pipework, structural steel and compliance-ready delivery.",
     bullets: ["Depacker and processing equipment installation", "Pipework, ducting, supports and steelwork", "Shutdown and live-site installation support", "Fabrication repairs and site modifications", "Contractor supply and installation packages"],
-    sectors: ["Organics", "Recycling", "Resource recovery", "Biofilter systems", "Industrial waste facilities"],    image: null,
+    sectors: ["Organics", "Recycling", "Resource recovery", "Biofilter systems", "Industrial waste facilities"],
+    image: null,
   },
   {
     path: "/water-treatment-installation",
@@ -38,7 +41,8 @@ export const seoPages = [
     hero: "Pipework, pumps, skids, supports, access steel and mechanical installation support for water treatment assets.",
     description: "JJDS Industries provides installation support for water treatment plants, pump and pipe systems, access steel, site welding and compliance documentation.",
     bullets: ["Pipework and mechanical installation", "Pump, skid and equipment install support", "Steel supports, frames and access structures", "Site fabrication and rectification works", "Clear reporting and handover support"],
-    sectors: ["Water treatment", "Pump stations", "Process water", "Council assets", "Industrial facilities"],    image: null,
+    sectors: ["Water treatment", "Pump stations", "Process water", "Council assets", "Industrial facilities"],
+    image: null,
   },
   {
     path: "/site-welding-australia",
@@ -49,7 +53,8 @@ export const seoPages = [
     hero: "Boilermaker-led site welding, structural rectification, fabrication repairs and shutdown support nationwide.",
     description: "JJDS Industries provides site welding, fabrication repairs, structural rectification, mechanical modifications and shutdown support across Australia.",
     bullets: ["On-site welding and fabrication repairs", "Structural steel rectification and modifications", "Breakdown and shutdown support", "Brackets, supports, platforms and custom steelwork", "Mobile site-ready crews"],
-    sectors: ["Factories", "Plants", "Civil sites", "Councils", "Industrial contractors"],    image: null,
+    sectors: ["Factories", "Plants", "Civil sites", "Councils", "Industrial contractors"],
+    image: null,
   },
   {
     path: "/structural-steel-fabrication",
@@ -59,7 +64,8 @@ export const seoPages = [
     hero: "Frames, platforms, access steel, pipe supports, brackets and structural modification works for industrial sites.",
     description: "JJDS Industries supplies structural steel fabrication and installation support including frames, platforms, supports, access steel and industrial steelwork.",
     bullets: ["Frames, platforms, supports and brackets", "Site measure, fabrication and installation", "Industrial access and support steel", "Structural rectification and modifications", "Project-ready compliance documentation"],
-    sectors: ["Industrial", "Commercial", "Civil infrastructure", "Process plants", "Remote works"],    image: null,
+    sectors: ["Industrial", "Commercial", "Civil infrastructure", "Process plants", "Remote works"],
+    image: null,
     galleryTitle: "Structural Steel Project Gallery",
     galleryIntro:
       "Structural steel fabrication, installation, access steel, supports, frames and site modification works delivered by JJDS Industries.",
@@ -74,7 +80,8 @@ export const seoPages = [
     hero: "Maintenance crews for site repairs, breakdowns, shutdowns, mechanical modifications, steelwork and plant improvements.",
     description: "JJDS Industries assists industrial sites with maintenance, repairs, breakdown support, mechanical modifications, welding, steelwork and shutdown labour packages.",
     bullets: ["Shutdown and maintenance crews", "Mechanical and steel repairs", "Breakdown rectification support", "Plant modifications and improvement works", "Straight communication and practical delivery"],
-    sectors: ["Manufacturing", "Process plants", "Recycling", "Water assets", "Regional facilities"],    image: null,
+    sectors: ["Manufacturing", "Process plants", "Recycling", "Water assets", "Regional facilities"],
+    image: null,
   },
   {
     path: "/hseq-compliance",
@@ -84,7 +91,8 @@ export const seoPages = [
     hero: "SWMS, permits, mobilisation documents, site reporting and project compliance built into the way the job is delivered.",
     description: "JJDS Industries supports projects with SWMS, permits, site documentation, contractor compliance, reporting and practical safety systems.",
     bullets: ["SWMS, permits and site documentation", "Contractor compliance and mobilisation support", "Pre-start and site reporting systems", "Quality and handover documentation", "Compliance built into delivery"],
-    sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],    image: null,
+    sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],
+    image: null,
   },
   {
     path: "/remote-site-works",
@@ -94,7 +102,8 @@ export const seoPages = [
     hero: "Mobile crews for regional, remote and difficult-access works requiring practical steel, mechanical, civil and compliance delivery.",
     description: "JJDS Industries mobilises practical crews for remote, regional and difficult-access works including steel, civil, mechanical, pipework and installation.",
     bullets: ["Remote and regional mobilisation", "Steel, mechanical and civil site packages", "Shutdown, upgrade and access-constrained works", "Plant, bridge, culvert and infrastructure support", "Clear RFQ to handover communication"],
-    sectors: ["Regional Australia", "Remote sites", "Civil infrastructure", "Industrial plants", "Council assets"],    image: null,
+    sectors: ["Regional Australia", "Remote sites", "Civil infrastructure", "Industrial plants", "Council assets"],
+    image: null,
   },
   {
     path: "/epc-contractor-support",
@@ -104,7 +113,8 @@ export const seoPages = [
     hero: "Practical install crews, fabrication support, compliance documentation and site reporting for EPC and engineering teams.",
     description: "JJDS Industries supports EPC contractors and consulting engineers with installation crews, compliance documentation, fabrication, steelwork and mechanical installation.",
     bullets: ["RFQ review and install input", "Contractor supply and installation packages", "Mechanical, steel, civil and process plant support", "Site-ready documentation and reporting", "Straight communication with project teams"],
-    sectors: ["EPC contractors", "Consulting engineers", "Tier contractors", "Waste and water", "Industrial upgrades"],    image: null,
+    sectors: ["EPC contractors", "Consulting engineers", "Tier contractors", "Waste and water", "Industrial upgrades"],
+    image: null,
   },
   {
     path: "/civil-infrastructure",
@@ -114,7 +124,8 @@ export const seoPages = [
     hero: "Bridge component works, culvert relining, drainage upgrades, steel repairs, site welding and remote construction support.",
     description: "JJDS Industries assists civil and infrastructure projects with bridge works, culvert relining, drainage upgrades, steel repairs and remote support.",
     bullets: ["Bridge and civil component installation", "Culvert relining and drainage upgrades", "Structural repairs and site fabrication", "Remote access and regional support", "Compliance documentation and delivery records"],
-    sectors: ["Bridge works", "Drainage", "Culverts", "Councils", "Remote infrastructure"],    image: null,
+    sectors: ["Bridge works", "Drainage", "Culverts", "Councils", "Remote infrastructure"],
+    image: null,
   },
   {
     path: "/mechanical-installation-contractor",
@@ -124,7 +135,8 @@ export const seoPages = [
     hero: "Qualified installation crews for process equipment, pumps, conveyors, skids, tanks and complete mechanical packages.",
     description: "JJDS Industries delivers disciplined mechanical installation packages from site mobilisation and equipment placement through alignment, testing, commissioning assistance and handover.",
     bullets: ["Process equipment placement and assembly", "Pumps, motors, drives and rotating equipment", "Conveyors, skids, tanks and packaged systems", "Precision alignment and mechanical completion", "Commissioning and handover support"],
-    sectors: ["Manufacturing", "Water", "Waste", "Food processing", "Heavy industry"],    image: null,
+    sectors: ["Manufacturing", "Water", "Waste", "Food processing", "Heavy industry"],
+    image: null,
     galleryTitle: "Mechanical Installation Project Gallery",
     galleryIntro:
       "A selection of JJDS mechanical installation, process equipment, plant upgrade and industrial site works.",
@@ -138,7 +150,8 @@ export const seoPages = [
     hero: "Planned shutdown teams for mechanical replacement, steelwork, pipework, welding and critical-path plant maintenance.",
     description: "JJDS Industries supports planned shutdowns and outages with coordinated supervision, skilled trades, documented work fronts and practical delivery under tight programme constraints.",
     bullets: ["Shutdown planning and work-front coordination", "Mechanical replacement and overhaul support", "Pipework, steelwork and field fabrication", "Breakdown and emergent scope response", "Daily reporting and completion records"],
-    sectors: ["Process plants", "Manufacturing", "Recycling", "Water assets", "Regional facilities"],    image: null,
+    sectors: ["Process plants", "Manufacturing", "Recycling", "Water assets", "Regional facilities"],
+    image: null,
   },
   {
     path: "/stainless-steel-pipework",
@@ -148,7 +161,8 @@ export const seoPages = [
     hero: "Fabrication and installation of stainless process systems for hygienic, corrosive and industrial applications.",
     description: "JJDS Industries supplies and installs stainless process pipework, fittings, supports and associated steelwork with controlled fabrication, installation and quality documentation.",
     bullets: ["Stainless process piping and fittings", "Site fabrication and tie-in works", "Pipe supports and access steel", "Pressure testing and inspection support", "Traceable quality and handover records"],
-    sectors: ["Food and beverage", "Water", "Waste", "Chemical", "Manufacturing"],    image: null,
+    sectors: ["Food and beverage", "Water", "Waste", "Chemical", "Manufacturing"],
+    image: null,
   },
   {
     path: "/conveyor-installation",
@@ -158,7 +172,8 @@ export const seoPages = [
     hero: "Mechanical and structural installation support for conveyors, transfer systems, access platforms and plant interfaces.",
     description: "JJDS Industries installs conveyor systems and associated steelwork, guarding, supports and mechanical components for new plants, upgrades and shutdown replacements.",
     bullets: ["Conveyor frames and mechanical assembly", "Drives, rollers, belts and transfer interfaces", "Platforms, stairs, guarding and supports", "Alignment, adjustment and commissioning support", "Brownfield modifications and shutdown replacements"],
-    sectors: ["Recycling", "Quarrying", "Manufacturing", "Food processing", "Bulk handling"],    image: null,
+    sectors: ["Recycling", "Quarrying", "Manufacturing", "Food processing", "Bulk handling"],
+    image: null,
   },
   {
     path: "/pump-station-installation",
@@ -168,7 +183,8 @@ export const seoPages = [
     hero: "Installation of pumps, pipework, valves, supports, skids and access steel for water and industrial assets.",
     description: "JJDS Industries delivers pump station installation and upgrade packages, integrating mechanical equipment, pipework, supports and access structures with practical commissioning support.",
     bullets: ["Pump, motor and base installation", "Suction and discharge pipework", "Valves, supports and equipment frames", "Alignment and mechanical completion", "Testing and commissioning assistance"],
-    sectors: ["Water authorities", "Councils", "Industrial water", "Wastewater", "Remote assets"],    image: null,
+    sectors: ["Water authorities", "Councils", "Industrial water", "Wastewater", "Remote assets"],
+    image: null,
   },
   {
     path: "/brownfield-plant-upgrades",
@@ -178,8 +194,10 @@ export const seoPages = [
     hero: "Controlled modifications, tie-ins and equipment upgrades in operating industrial facilities.",
     description: "JJDS Industries plans and delivers brownfield works where access, live services, staging, shutdown windows and operational interfaces demand disciplined site execution.",
     bullets: ["Live-site planning and staged installation", "Equipment replacement and process tie-ins", "Structural and access modifications", "Shutdown integration and temporary works", "As-built, variation and handover records"],
-    sectors: ["Operating plants", "Manufacturing", "Water", "Waste", "Infrastructure"],    image: null,
+    sectors: ["Operating plants", "Manufacturing", "Water", "Waste", "Infrastructure"],
+    image: null,
   },
 
 ];
+
 
