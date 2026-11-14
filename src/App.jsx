@@ -1,4 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+"use client";
+
+import React, { useEffect, useId, useMemo, useRef, useState } from "react";
+import Image from "next/image";
+import { seoPages } from "../data/services";
 
 const BRAND = {
   name: "JJDS INDUSTRIES",
@@ -30,202 +34,6 @@ const latestProjectImages = [
   "/live-jobs/IMG_7792.jpg",
 ];
 
-
-const siteUrl = "https://www.jjdsindustries.com.au";
-
-const seoPages = [
-  {
-    path: "/process-pipework-australia",
-    aliases: ["/process-pipework-melbourne"],
-    navLabel: "Pipework",
-    eyebrow: "Process Pipework Australia",
-    title: "Process Pipework Installation Australia",
-    hero: "Stainless process pipework, pipe supports, site welding and mechanical installation for industrial facilities.",
-    description: "JJDS Industries provides stainless steel process pipework, fabrication, welding, supports and installation support for industrial sites across Australia.",
-    bullets: ["Stainless process pipework installation", "Site welding and fabrication modifications", "Pipe supports, brackets and access steel", "Shutdown and plant upgrade support", "SWMS, permits and site records"],
-    sectors: ["Waste processing", "Water treatment", "Industrial plants", "Manufacturing", "Remote sites"],    image: null,
-  },
-  {
-    path: "/industrial-plant-installation",
-    navLabel: "Plant Install",
-    eyebrow: "Industrial Plant Installation",
-    title: "Industrial Plant Installation Contractors",
-    hero: "Mechanical installation, structural steel, equipment placement and plant upgrade crews for Australian industrial projects.",
-    description: "JJDS Industries delivers industrial plant installation, mechanical works, structural steel, process equipment, shutdown support and site installation packages.",
-    bullets: ["Mechanical and process equipment installation", "Structural supports, platforms and frames", "Plant upgrades and staged shutdown works", "Crew planning and site coordination", "Australia-wide mobilisation capability"],
-    sectors: ["Process plants", "Recycling facilities", "Food and industrial", "Civil infrastructure", "Regional projects"],    image: null,
-  },
-  {
-    path: "/waste-processing-installation",
-    navLabel: "Waste Plants",
-    eyebrow: "Waste Processing Installation",
-    title: "Waste Processing Plant Installation",
-    hero: "Installation support for depackers, resource recovery facilities, biofilter systems, pipework and structural site works.",
-    description: "JJDS Industries supports waste processing and recycling facilities with plant installation, mechanical works, pipework, structural steel and compliance-ready delivery.",
-    bullets: ["Depacker and processing equipment installation", "Pipework, ducting, supports and steelwork", "Shutdown and live-site installation support", "Fabrication repairs and site modifications", "Contractor supply and installation packages"],
-    sectors: ["Organics", "Recycling", "Resource recovery", "Biofilter systems", "Industrial waste facilities"],    image: null,
-  },
-  {
-    path: "/water-treatment-installation",
-    navLabel: "Water Plants",
-    eyebrow: "Water Treatment Installation",
-    title: "Water Treatment Plant Installation",
-    hero: "Pipework, pumps, skids, supports, access steel and mechanical installation support for water treatment assets.",
-    description: "JJDS Industries provides installation support for water treatment plants, pump and pipe systems, access steel, site welding and compliance documentation.",
-    bullets: ["Pipework and mechanical installation", "Pump, skid and equipment install support", "Steel supports, frames and access structures", "Site fabrication and rectification works", "Clear reporting and handover support"],
-    sectors: ["Water treatment", "Pump stations", "Process water", "Council assets", "Industrial facilities"],    image: null,
-  },
-  {
-    path: "/site-welding-australia",
-    aliases: ["/site-welding-victoria"],
-    navLabel: "Site Welding",
-    eyebrow: "Site Welding Australia",
-    title: "Site Welding and Fabrication Australia",
-    hero: "Boilermaker-led site welding, structural rectification, fabrication repairs and shutdown support nationwide.",
-    description: "JJDS Industries provides site welding, fabrication repairs, structural rectification, mechanical modifications and shutdown support across Australia.",
-    bullets: ["On-site welding and fabrication repairs", "Structural steel rectification and modifications", "Breakdown and shutdown support", "Brackets, supports, platforms and custom steelwork", "Mobile site-ready crews"],
-    sectors: ["Factories", "Plants", "Civil sites", "Councils", "Industrial contractors"],    image: null,
-  },
-  {
-    path: "/structural-steel-fabrication",
-    navLabel: "Structural Steel",
-    eyebrow: "Structural Steel Fabrication",
-    title: "Structural Steel Fabrication and Installation",
-    hero: "Frames, platforms, access steel, pipe supports, brackets and structural modification works for industrial sites.",
-    description: "JJDS Industries supplies structural steel fabrication and installation support including frames, platforms, supports, access steel and industrial steelwork.",
-    bullets: ["Frames, platforms, supports and brackets", "Site measure, fabrication and installation", "Industrial access and support steel", "Structural rectification and modifications", "Project-ready compliance documentation"],
-    sectors: ["Industrial", "Commercial", "Civil infrastructure", "Process plants", "Remote works"],    image: null,
-    galleryTitle: "Structural Steel Project Gallery",
-    galleryIntro:
-      "Structural steel fabrication, installation, access steel, supports, frames and site modification works delivered by JJDS Industries.",
-    gallery: [],
-  },
-  {
-    path: "/industrial-maintenance-australia",
-    aliases: ["/industrial-maintenance-victoria"],
-    navLabel: "Maintenance",
-    eyebrow: "Industrial Maintenance Australia",
-    title: "Industrial Maintenance and Shutdown Support",
-    hero: "Maintenance crews for site repairs, breakdowns, shutdowns, mechanical modifications, steelwork and plant improvements.",
-    description: "JJDS Industries assists industrial sites with maintenance, repairs, breakdown support, mechanical modifications, welding, steelwork and shutdown labour packages.",
-    bullets: ["Shutdown and maintenance crews", "Mechanical and steel repairs", "Breakdown rectification support", "Plant modifications and improvement works", "Straight communication and practical delivery"],
-    sectors: ["Manufacturing", "Process plants", "Recycling", "Water assets", "Regional facilities"],    image: null,
-  },
-  {
-    path: "/hseq-compliance",
-    navLabel: "HSEQ",
-    eyebrow: "HSEQ Compliance",
-    title: "HSEQ and Contractor Compliance Support",
-    hero: "SWMS, permits, mobilisation documents, site reporting and project compliance built into the way the job is delivered.",
-    description: "JJDS Industries supports projects with SWMS, permits, site documentation, contractor compliance, reporting and practical safety systems.",
-    bullets: ["SWMS, permits and site documentation", "Contractor compliance and mobilisation support", "Pre-start and site reporting systems", "Quality and handover documentation", "Compliance built into delivery"],
-    sectors: ["Tier contractors", "EPC contractors", "Industrial sites", "Civil projects", "Remote works"],    image: null,
-  },
-  {
-    path: "/remote-site-works",
-    navLabel: "Remote Works",
-    eyebrow: "Remote Site Works",
-    title: "Remote and Regional Industrial Site Works",
-    hero: "Mobile crews for regional, remote and difficult-access works requiring practical steel, mechanical, civil and compliance delivery.",
-    description: "JJDS Industries mobilises practical crews for remote, regional and difficult-access works including steel, civil, mechanical, pipework and installation.",
-    bullets: ["Remote and regional mobilisation", "Steel, mechanical and civil site packages", "Shutdown, upgrade and access-constrained works", "Plant, bridge, culvert and infrastructure support", "Clear RFQ to handover communication"],
-    sectors: ["Regional Australia", "Remote sites", "Civil infrastructure", "Industrial plants", "Council assets"],    image: null,
-  },
-  {
-    path: "/epc-contractor-support",
-    navLabel: "EPC Support",
-    eyebrow: "EPC Contractor Support",
-    title: "Site Delivery Support for EPC Contractors",
-    hero: "Practical install crews, fabrication support, compliance documentation and site reporting for EPC and engineering teams.",
-    description: "JJDS Industries supports EPC contractors and consulting engineers with installation crews, compliance documentation, fabrication, steelwork and mechanical installation.",
-    bullets: ["RFQ review and install input", "Contractor supply and installation packages", "Mechanical, steel, civil and process plant support", "Site-ready documentation and reporting", "Straight communication with project teams"],
-    sectors: ["EPC contractors", "Consulting engineers", "Tier contractors", "Waste and water", "Industrial upgrades"],    image: null,
-  },
-  {
-    path: "/civil-infrastructure",
-    navLabel: "Civil Infra",
-    eyebrow: "Civil Infrastructure",
-    title: "Civil Infrastructure and Bridge Support Works",
-    hero: "Bridge component works, culvert relining, drainage upgrades, steel repairs, site welding and remote construction support.",
-    description: "JJDS Industries assists civil and infrastructure projects with bridge works, culvert relining, drainage upgrades, steel repairs and remote support.",
-    bullets: ["Bridge and civil component installation", "Culvert relining and drainage upgrades", "Structural repairs and site fabrication", "Remote access and regional support", "Compliance documentation and delivery records"],
-    sectors: ["Bridge works", "Drainage", "Culverts", "Councils", "Remote infrastructure"],    image: null,
-  },
-  {
-    path: "/mechanical-installation-contractor",
-    navLabel: "Mechanical Install",
-    eyebrow: "Mechanical Installation Contractor",
-    title: "Industrial Mechanical Installation Contractor",
-    hero: "Qualified installation crews for process equipment, pumps, conveyors, skids, tanks and complete mechanical packages.",
-    description: "JJDS Industries delivers disciplined mechanical installation packages from site mobilisation and equipment placement through alignment, testing, commissioning assistance and handover.",
-    bullets: ["Process equipment placement and assembly", "Pumps, motors, drives and rotating equipment", "Conveyors, skids, tanks and packaged systems", "Precision alignment and mechanical completion", "Commissioning and handover support"],
-    sectors: ["Manufacturing", "Water", "Waste", "Food processing", "Heavy industry"],    image: null,
-    galleryTitle: "Mechanical Installation Project Gallery",
-    galleryIntro:
-      "A selection of JJDS mechanical installation, process equipment, plant upgrade and industrial site works.",
-    gallery: [],
-  },
-  {
-    path: "/shutdown-contractors-australia",
-    navLabel: "Shutdowns",
-    eyebrow: "Industrial Shutdown Contractors",
-    title: "Shutdown and Outage Support Australia",
-    hero: "Planned shutdown teams for mechanical replacement, steelwork, pipework, welding and critical-path plant maintenance.",
-    description: "JJDS Industries supports planned shutdowns and outages with coordinated supervision, skilled trades, documented work fronts and practical delivery under tight programme constraints.",
-    bullets: ["Shutdown planning and work-front coordination", "Mechanical replacement and overhaul support", "Pipework, steelwork and field fabrication", "Breakdown and emergent scope response", "Daily reporting and completion records"],
-    sectors: ["Process plants", "Manufacturing", "Recycling", "Water assets", "Regional facilities"],    image: null,
-  },
-  {
-    path: "/stainless-steel-pipework",
-    navLabel: "Stainless Pipe",
-    eyebrow: "Stainless Steel Process Pipework",
-    title: "Stainless Steel Pipework Installation",
-    hero: "Fabrication and installation of stainless process systems for hygienic, corrosive and industrial applications.",
-    description: "JJDS Industries supplies and installs stainless process pipework, fittings, supports and associated steelwork with controlled fabrication, installation and quality documentation.",
-    bullets: ["Stainless process piping and fittings", "Site fabrication and tie-in works", "Pipe supports and access steel", "Pressure testing and inspection support", "Traceable quality and handover records"],
-    sectors: ["Food and beverage", "Water", "Waste", "Chemical", "Manufacturing"],    image: null,
-  },
-  {
-    path: "/conveyor-installation",
-    navLabel: "Conveyors",
-    eyebrow: "Conveyor Installation",
-    title: "Industrial Conveyor Installation",
-    hero: "Mechanical and structural installation support for conveyors, transfer systems, access platforms and plant interfaces.",
-    description: "JJDS Industries installs conveyor systems and associated steelwork, guarding, supports and mechanical components for new plants, upgrades and shutdown replacements.",
-    bullets: ["Conveyor frames and mechanical assembly", "Drives, rollers, belts and transfer interfaces", "Platforms, stairs, guarding and supports", "Alignment, adjustment and commissioning support", "Brownfield modifications and shutdown replacements"],
-    sectors: ["Recycling", "Quarrying", "Manufacturing", "Food processing", "Bulk handling"],    image: null,
-  },
-  {
-    path: "/pump-station-installation",
-    navLabel: "Pump Stations",
-    eyebrow: "Pump Station Installation",
-    title: "Pump Station Mechanical Installation",
-    hero: "Installation of pumps, pipework, valves, supports, skids and access steel for water and industrial assets.",
-    description: "JJDS Industries delivers pump station installation and upgrade packages, integrating mechanical equipment, pipework, supports and access structures with practical commissioning support.",
-    bullets: ["Pump, motor and base installation", "Suction and discharge pipework", "Valves, supports and equipment frames", "Alignment and mechanical completion", "Testing and commissioning assistance"],
-    sectors: ["Water authorities", "Councils", "Industrial water", "Wastewater", "Remote assets"],    image: null,
-  },
-  {
-    path: "/brownfield-plant-upgrades",
-    navLabel: "Plant Upgrades",
-    eyebrow: "Brownfield Plant Upgrades",
-    title: "Brownfield Industrial Plant Upgrades",
-    hero: "Controlled modifications, tie-ins and equipment upgrades in operating industrial facilities.",
-    description: "JJDS Industries plans and delivers brownfield works where access, live services, staging, shutdown windows and operational interfaces demand disciplined site execution.",
-    bullets: ["Live-site planning and staged installation", "Equipment replacement and process tie-ins", "Structural and access modifications", "Shutdown integration and temporary works", "As-built, variation and handover records"],
-    sectors: ["Operating plants", "Manufacturing", "Water", "Waste", "Infrastructure"],    image: null,
-  },
-
-];
-
-const navItems = [
-  { label: "Capabilities", href: "/#services" },
-  { label: "Industries", href: "/#industries" },
-  { label: "Tier 1", href: "/#tier-ready" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Compliance", href: "/#compliance" },
-  { label: "Contact", href: "/#contact" },
-];
 
 const menuGroups = [
   {
@@ -261,14 +69,16 @@ const menuGroups = [
   {
     label: "Company",
     items: [
-      { label: "Why JJDS", href: "/#tier-ready", text: "How we work with clients and site teams" },
+      { label: "Why JJDS", href: "/#why", text: "How we work with clients and site teams" },
       { label: "LIVE JOBS", href: "/live-job-library", text: "Current project photos" },
-      { label: "Gallery", href: "/#gallery", text: "Real JJDS site delivery photos" },
-      { label: "Compliance", href: "/#compliance", text: "SWMS, permits, records and handover" },
+      { label: "Gallery", href: "/live-job-library", text: "Real JJDS site delivery photos" },
+      { label: "Compliance", href: "/hseq-compliance", text: "SWMS, permits, records and handover" },
       { label: "Contact", href: "/#contact", text: "Send drawings, photos or an RFQ" },
     ],
   },
 ];
+
+const capabilityPaths = ["/industrial-plant-installation", "/mechanical-installation-contractor", "/process-pipework-australia", "/structural-steel-fabrication", "/shutdown-contractors-australia", "/hseq-compliance"];
 
 const capabilityCards = [
   ["01", "Plant installation", "Installation of process equipment, skids, conveyors, pumps, tanks and associated plant."],
@@ -469,128 +279,138 @@ function GhostButton({ href, children, className = "", onClick }) {
   return <a href={href} onClick={onClick} className={`inline-flex items-center justify-center  border border-[#C9CDD2]/45 bg-[#111827]/85 px-7 py-3.5 text-sm font-semibold tracking-[0.12em] text-white backdrop-blur transition hover:border-[#99C8FF] hover:bg-[#1A1D21] hover:text-[#C9E3FF] ${className}`}>{children}</a>;
 }
 
-function useMeta(page) {
-  useEffect(() => {
-    const title = page
-      ? `${page.title} | JJDS Industries`
-      : "Industrial installation done properly | JJDS Industries";
-
-    const description = page
-      ? page.description
-      : "JJDS Industries delivers mechanical installation, structural steel, process pipework, shutdowns, maintenance and industrial plant installation services across Australia.";
-
-    const canonicalUrl = `${siteUrl}${page?.path || "/"}`;
-
-    document.title = title;
-
-    const setMeta = (name, content, property = false) => {
-      const key = property ? "property" : "name";
-      let tag = document.querySelector(`meta[${key}="${name}"]`);
-
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute(key, name);
-        document.head.appendChild(tag);
-      }
-
-      tag.setAttribute("content", content);
-    };
-
-    setMeta("description", description);
-    setMeta("robots", "index, follow");
-    setMeta("og:title", title, true);
-    setMeta("og:description", description, true);
-    setMeta("og:type", "website", true);
-    setMeta("og:url", canonicalUrl, true);
-
-    let canonical = document.querySelector('link[rel="canonical"]');
-
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-
-    canonical.setAttribute("href", canonicalUrl);
-  }, [page]);
-}
-
-function EnquiryForm({ compact = false, pageTitle = "Website enquiry" }) {
+function EnquiryForm({ compact = false, light = false, pageTitle = "Website enquiry" }) {
+  const id = useId();
   const [form, setForm] = useState({ name: "", contact: "", location: "", message: "" });
-  const mailtoLink = useMemo(() => {
-    const subject = encodeURIComponent(`${pageTitle} - JJDS Industries`);
-    const body = encodeURIComponent(`Name / Company: ${form.name}\nEmail / Phone: ${form.contact}\nProject Location: ${form.location}\n\nJob Details:\n${form.message}\n\nSent from JJDS website.`);
-    return `mailto:${BRAND.email}?subject=${subject}&body=${body}`;
-  }, [form, pageTitle]);
-  const update = (field) => (event) => setForm({ ...form, [field]: event.target.value });
+  const [status, setStatus] = useState("");
+  const body = useMemo(() => `Name / Company: ${form.name}\nEmail / Phone: ${form.contact}\nProject Location: ${form.location}\n\nJob Details:\n${form.message}`, [form]);
+  const mailtoLink = `mailto:${BRAND.email}?subject=${encodeURIComponent(pageTitle + " - JJDS Industries")}&body=${encodeURIComponent(body)}`;
+  const update = (field) => (event) => { setForm({ ...form, [field]: event.target.value }); setStatus(""); };
+  const copyEnquiry = async () => {
+    try {
+      await navigator.clipboard.writeText(`To: ${BRAND.email}\nSubject: ${pageTitle}\n\n${body}`);
+      setStatus("Enquiry copied. Paste it into your email and send it to JJDS.");
+    } catch { setStatus("Copy is unavailable. Select your details and email " + BRAND.email + "."); }
+  };
+  const fieldClass = `w-full border-b px-0 py-4 outline-none placeholder:text-slate-400 focus:border-[#2F8DFF] ${light ? "border-slate-300 bg-white text-slate-950" : "border-white/20 bg-transparent text-white"}`;
+  const labelClass = `grid gap-2 text-sm font-medium ${light ? "text-slate-700" : "text-slate-200"}`;
   return (
-    <form className={`${compact ? "py-2" : "py-2"}`} onSubmit={(event) => { event.preventDefault(); window.location.href = mailtoLink; }}>
-      <p className="text-xs font-semibold tracking-[0.3em] text-[#C9E3FF]">Project enquiry</p>
-      <h3 className="mt-2 text-3xl font-semibold text-white">Tell us about the job</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-300">Add drawings or photos when your email opens.</p>
-      <div className="mt-6 grid gap-4">
-        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Name / Company" value={form.name} onChange={update("name")} />
-        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Email / Phone" value={form.contact} onChange={update("contact")} />
-        <input className="border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Project Location" value={form.location} onChange={update("location")} />
-        <textarea className="min-h-36 border-b border-white/20 bg-transparent px-0 py-4 font-semibold text-white outline-none placeholder:text-slate-400 focus:border-[#99C8FF]" placeholder="Tell us about the job" value={form.message} onChange={update("message")} />
-        <button type="submit" className="border border-[#2F8DFF] bg-[#005BFF] px-6 py-4 font-semibold text-white transition hover:bg-[#176DFF]">Open email</button>
+    <form className="enquiry-form py-2" onSubmit={(event) => {
+      event.preventDefault(); window.location.href = mailtoLink;
+      setStatus("Your email app should open with these details. Attach any drawings or photos, then send the email. If nothing opens, copy your enquiry below.");
+    }}>
+      <p className={`text-xs font-semibold tracking-[0.3em] ${light ? "text-[#005BFF]" : "text-[#C9E3FF]"}`}>Project enquiry</p>
+      <h3 className={`mt-2 text-3xl font-semibold ${light ? "text-slate-950" : "text-white"}`}>Tell us about the job</h3>
+      <p className={`mt-3 text-sm leading-6 ${light ? "text-slate-600" : "text-slate-300"}`}>This prepares an email in your email app. Add drawings or photos before sending.</p>
+      <noscript><p className="my-4">To enquire, <a className="underline" href={`mailto:${BRAND.email}`}>email {BRAND.email}</a> or call {BRAND.phone}.</p><style>{`.enquiry-form .enquiry-fields { display: none; }`}</style></noscript>
+      <div className="enquiry-fields mt-6 grid gap-4">
+        {[
+          ["name", "Name / company", "name", true],
+          ["contact", "Email or phone", "email", true],
+          ["location", "Project location", "address-level2", false],
+        ].map(([field, label, autoComplete, required]) => (
+          <label key={field} htmlFor={id + field} className={labelClass}>
+            {label}{required ? " *" : " (optional)"}
+            <input id={id + field} name={field} autoComplete={autoComplete} required={required} maxLength={150} className={fieldClass} value={form[field]} onChange={update(field)} />
+          </label>
+        ))}
+        <label htmlFor={id + "message"} className={labelClass}>
+          Job details *
+          <textarea id={id + "message"} name="message" required maxLength={2000} className={fieldClass + " min-h-32"} placeholder="Scope, timing and anything we need to know" value={form.message} onChange={update("message")} />
+        </label>
+        <button type="submit" className="bg-[#005BFF] px-6 py-4 font-semibold text-white transition hover:bg-[#003C8F]">Prepare enquiry email →</button>
+        <button type="button" onClick={copyEnquiry} className={`min-h-11 border px-4 py-3 text-sm font-medium ${light ? "border-slate-300 text-slate-950 hover:bg-slate-100" : "border-white/25 text-white hover:bg-white/10"}`}>Copy enquiry instead</button>
+        <p role="status" aria-live="polite" className={`text-sm leading-6 ${light ? "text-[#005BFF]" : "text-[#C9E3FF]"}`}>{status}</p>
+        <p className="break-words text-xs leading-5 text-slate-400">Or email <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a>. Your enquiry is sent only when you send the email.</p>
       </div>
     </form>
   );
 }
 
 function DropdownMenu({ group }) {
+  const [open, setOpen] = useState(false);
+  const root = useRef(null);
+  const trigger = useRef(null);
+  const id = useId();
+  useEffect(() => {
+    if (!open) return;
+    const dismiss = (event) => { if (!root.current?.contains(event.target)) setOpen(false); };
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  }, [open]);
   return (
-    <div className="group relative">
-      <button
-        type="button"
-        className="inline-flex items-center gap-2 px-2 py-3 text-sm font-semibold tracking-[0.12em] text-slate-200 transition hover:border-[#99C8FF]/40 hover:bg-white/10 hover:text-white"
-      >
-        {group.label}
-        <span className="text-[#99C8FF] transition group-hover:rotate-180">⌄</span>
+    <div ref={root} className="relative" onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }} onKeyDown={(event) => {
+      if (event.key === "Escape") { setOpen(false); trigger.current?.focus(); }
+    }}>
+      <button ref={trigger} type="button" aria-expanded={open} aria-controls={id} onClick={() => setOpen(!open)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-white/10">
+        {group.label}<span aria-hidden="true">{open ? "−" : "+"}</span>
       </button>
-      <div className="invisible absolute right-0 top-full z-50 mt-3 w-[360px] translate-y-2 border border-white/10 bg-[#0B1118] p-3 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.45)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-        <div className="mb-2 border-b border-white/10 px-2 py-3 text-xs font-semibold tracking-[0.25em] text-[#C9E3FF]">
-          {group.label} Menu
-        </div>
-        <div className="grid gap-2">
-          {group.items.map((item) => (
-            <a key={item.href + item.label} href={item.href} className="border-b border-white/10 px-2 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#99C8FF]/70 hover:bg-[#005BFF] hover:shadow-xl">
-              <span className="block text-sm font-semibold text-white">{item.label}</span>
-              <span className="mt-1 block text-xs leading-5 text-slate-200">{item.text}</span>
-            </a>
-          ))}
-        </div>
+      <div id={id} hidden={!open} className="absolute right-0 top-full z-50 mt-2 max-h-[70vh] w-[340px] overflow-y-auto rounded-2xl border border-white/15 bg-[#0B1118] p-3 shadow-2xl">
+        {group.items.map((item) => (
+          <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-3 hover:bg-[#005BFF]">
+            <span className="block text-sm font-semibold text-white">{item.label}</span>
+            <span className="mt-1 block text-xs leading-5 text-slate-300">{item.text}</span>
+          </a>
+        ))}
       </div>
     </div>
   );
 }
 
 function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const menuButton = useRef(null);
+  const root = useRef(null);
+  const closeMenu = () => setMobileOpen(false);
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const dismiss = (event) => {
+      if (event.type === "keydown" && event.key === "Escape") {
+        setMobileOpen(false);
+        menuButton.current?.focus();
+      } else if (event.type === "pointerdown" && !root.current?.contains(event.target)) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener("keydown", dismiss);
+    document.addEventListener("pointerdown", dismiss);
+    return () => {
+      document.removeEventListener("keydown", dismiss);
+      document.removeEventListener("pointerdown", dismiss);
+    };
+  }, [mobileOpen]);
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050A12]/96 backdrop-blur-xl">
-      <div className="mx-auto flex h-[76px] max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:h-[88px] lg:px-10">
-        <a href="/" className="flex items-center gap-3">
-          <img src="/jjds-logo.png" alt="JJDS Industries" className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16" />
-          <div>
-            <p className="text-sm font-semibold tracking-[0.1em] text-white sm:text-base">JJDS INDUSTRIES</p>
-            <p className="mt-1 hidden text-[11px] text-slate-400 sm:block">Industrial installation & mechanical works</p>
+    <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <header ref={root} className="sticky top-0 z-50 border-b border-white/10 bg-[#050A12]/[0.96] backdrop-blur-xl">
+        <div className="mx-auto flex min-h-[76px] max-w-[1600px] items-center justify-between gap-3 px-4 sm:px-6 lg:min-h-[88px] lg:px-10">
+          <a href="/" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
+            <img src="/jjds-logo.png" alt="JJDS Industries" className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16" />
+            <div className="hidden sm:block">
+              <p className="text-sm font-semibold tracking-[0.1em] text-white sm:text-base">JJDS INDUSTRIES</p>
+              <p className="mt-1 hidden text-[11px] text-slate-400 sm:block">Industrial installation & mechanical works</p>
+            </div>
+          </a>
+          <div className="flex items-center gap-3">
+            <nav aria-label="Main navigation" className="hidden items-center gap-3 xl:flex">
+              {menuGroups.map((group) => <DropdownMenu key={group.label} group={group} />)}
+            </nav>
+            <a href="/live-job-library" className="inline-flex min-h-11 items-center justify-center border border-[#2F8DFF] px-5 text-sm font-semibold text-white transition hover:bg-[#005BFF]">Gallery</a>
+            <button ref={menuButton} type="button" aria-label="Toggle navigation menu" aria-expanded={mobileOpen} aria-controls="mobile-navigation" onClick={() => setMobileOpen((open) => !open)} className="min-h-11 border border-white/20 px-4 text-sm font-semibold text-white xl:hidden">{mobileOpen ? "Close" : "Menu"}</button>
           </div>
-        </a>
-
-        <a
-          href="/live-job-library"
-          className="inline-flex min-h-11 items-center justify-center border border-[#2F8DFF] px-5 text-sm font-semibold text-white transition hover:bg-[#005BFF]"
-        >
-          Gallery
-        </a>
-      </div>
-    </header>
+        </div>
+        <nav id="mobile-navigation" hidden={!mobileOpen} aria-label="Mobile navigation" className="max-h-[calc(100svh-180px)] overflow-y-auto border-t border-white/10 bg-[#050A12] px-4 py-4 xl:hidden">
+          {menuGroups.map((group) => <div key={group.label} className="mb-5">
+            <p className="mb-2 text-xs font-semibold tracking-widest text-[#99C8FF]">{group.label}</p>
+            <div className="grid gap-2 sm:grid-cols-2">{group.items.map((item) => <a key={item.href + item.label} href={item.href} onClick={closeMenu} className="block border-b border-white/10 px-2 py-3 text-sm text-white">{item.label}</a>)}</div>
+          </div>)}
+        </nav>
+      </header>
+    </>
   );
 }
 
 function HomePage() {
-  useMeta(null);
   const [activeTab, setActiveTab] = useState("overview");
 
   const tabs = [
@@ -601,10 +421,28 @@ function HomePage() {
     ["contact", "Contact"],
   ];
 
+  useEffect(() => {
+    const syncSection = () => {
+      const aliases = { services: "capabilities", "tier-ready": "why", gallery: "overview", compliance: "why" };
+      const hash = window.location.hash.slice(1);
+      const section = aliases[hash] || hash;
+      setActiveTab(["overview", "capabilities", "industries", "why", "contact"].includes(section) ? section : "overview");
+    };
+    syncSection();
+    window.addEventListener("hashchange", syncSection);
+    return () => window.removeEventListener("hashchange", syncSection);
+  }, []);
+
+  useEffect(() => {
+    if (!window.location.hash) return;
+    document.getElementById(activeTab)?.scrollIntoView({ block: "start" });
+  }, [activeTab]);
+
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#050A12] text-white">
+      <noscript><style>{`[data-home-panel][hidden] { display: block !important; } [data-home-panel] + [data-home-panel] { margin-top: 3rem; }`}</style></noscript>
+      <main id="main-content" tabIndex={-1} className="min-h-screen bg-[#050A12] text-white">
         <section className="border-b border-white/10">
           <div className="mx-auto grid max-w-[1600px] lg:grid-cols-[0.92fr_1.08fr]">
             <div className="relative flex min-h-[500px] flex-col justify-center px-5 py-14 sm:px-8 md:px-12 lg:min-h-[650px] lg:border-r lg:border-white/10 lg:px-16">
@@ -618,14 +456,15 @@ function HomePage() {
                   Mechanical installation, process pipework, structural steel, shutdowns and plant upgrades for industrial projects.
                 </p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <GradientButton href="mailto:operations@jjdsindustries.com.au?subject=Project%20Enquiry%20-%20JJDS%20Industries">Send us the scope</GradientButton>
+                  <GradientButton href="/#contact">Send us the scope</GradientButton>
                   <GhostButton href={`tel:${phoneClean}`}>Call {BRAND.phone}</GhostButton>
                 </div>
               </div>
             </div>
 
             <div className="relative min-h-[420px] lg:min-h-[650px]">
-              <img
+              <Image
+                fill priority sizes="(min-width: 1024px) 54vw, 100vw"
                 src={latestProjectImages[0]}
                 alt="JJDS industrial project installation"
                 className="absolute inset-0 h-full w-full object-cover"
@@ -642,28 +481,29 @@ function HomePage() {
 
         <section className="border-b border-white/10 bg-[#08111E]">
           <div className="mx-auto max-w-[1600px] overflow-x-auto px-4 sm:px-6 lg:px-10">
-            <div className="flex min-w-max">
+            <nav aria-label="Homepage sections" className="flex min-w-max">
               {tabs.map(([id, label]) => (
-                <button
+                <a
                   key={id}
-                  type="button"
+                  href={`/#${id}`}
+                  aria-current={activeTab === id ? "location" : undefined}
                   onClick={() => setActiveTab(id)}
-                  className={`min-h-16 border-b-2 px-5 text-sm font-semibold transition sm:px-7 ${
+                  className={`inline-flex items-center min-h-16 border-b-2 px-5 text-sm font-semibold transition sm:px-7 ${
                     activeTab === id
                       ? "border-[#2F8DFF] text-white"
                       : "border-transparent text-slate-400 hover:text-white"
                   }`}
                 >
                   {label}
-                </button>
+                </a>
               ))}
-            </div>
+            </nav>
           </div>
         </section>
 
         <section className="bg-white text-slate-950">
           <div className="mx-auto max-w-[1500px] px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-            {activeTab === "overview" && (
+            <section id="overview" data-home-panel hidden={activeTab !== "overview"} aria-label="Overview">
               <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
                 <div>
                   <SectionLabel>OVERVIEW</SectionLabel>
@@ -686,9 +526,9 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-            )}
+            </section>
 
-            {activeTab === "capabilities" && (
+            <section id="capabilities" data-home-panel hidden={activeTab !== "capabilities"} aria-label="Capabilities">
               <div className="grid gap-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
                 <div>
                   <SectionLabel>CAPABILITIES</SectionLabel>
@@ -700,18 +540,22 @@ function HomePage() {
                   </p>
                 </div>
                 <div className="border-t border-slate-300">
-                  {capabilityCards.map(([num,title,text]) => (
+                  {capabilityCards.map(([num,title,text], index) => (
                     <div key={num} className="grid gap-3 border-b border-slate-300 py-6 sm:grid-cols-[56px_210px_1fr] sm:gap-6">
                       <span className="text-xs font-medium text-slate-400">{num}</span>
-                      <h3 className="text-lg font-semibold text-[#0A1625]">{title}</h3>
+                      <h3 className="text-lg font-semibold text-[#0A1625]"><a href={capabilityPaths[index]} className="hover:text-[#005BFF]">{title} →</a></h3>
                       <p className="text-sm leading-6 text-slate-600">{text}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+              <details className="mt-8 border-t border-slate-300 py-5">
+                <summary className="cursor-pointer font-semibold">Explore all 17 specialist services</summary>
+                <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{seoPages.map((page) => <a key={page.path} href={page.path} className="border-b border-slate-300 py-3 font-semibold hover:text-[#005BFF]">{page.title} →</a>)}</div>
+              </details>
+            </section>
 
-            {activeTab === "industries" && (
+            <section id="industries" data-home-panel hidden={activeTab !== "industries"} aria-label="Industries">
               <div>
                 <div className="max-w-3xl">
                   <SectionLabel>INDUSTRIES</SectionLabel>
@@ -728,9 +572,9 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-            )}
+            </section>
 
-            {activeTab === "why" && (
+            <section id="why" data-home-panel hidden={activeTab !== "why"} aria-label="Why">
               <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
                 <div>
                   <SectionLabel>WHY JJDS</SectionLabel>
@@ -756,9 +600,9 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-            )}
+            </section>
 
-            {activeTab === "contact" && (
+            <section id="contact" data-home-panel hidden={activeTab !== "contact"} aria-label="Contact">
               <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
                 <div>
                   <SectionLabel>CONTACT</SectionLabel>
@@ -770,12 +614,12 @@ function HomePage() {
                   </p>
                   <div className="mt-8 border-t border-slate-300">
                     <a href={`tel:${phoneClean}`} className="block border-b border-slate-300 py-4 font-semibold text-[#0A1625]">PH {BRAND.phone}</a>
-                    <a href={`mailto:${BRAND.email}`} className="block border-b border-slate-300 py-4 font-semibold text-[#0A1625]">EM {BRAND.email}</a>
+                    <a href={`mailto:${BRAND.email}`} className="block break-words border-b border-slate-300 py-4 font-semibold text-[#0A1625]">EM {BRAND.email}</a>
                   </div>
                 </div>
-                <EnquiryForm pageTitle="Website enquiry" />
+                <EnquiryForm light pageTitle="Website enquiry" />
               </div>
-            )}
+            </section>
           </div>
         </section>
       </main>
@@ -786,16 +630,15 @@ function HomePage() {
 }
 
 function ServicePage({ page }) {
-  useMeta(page);
   return (
     <>
       <Header />
-      <main className="bg-[#050505] text-white">
+      <main id="main-content" tabIndex={-1} className="bg-[#050505] text-white">
         <section className="relative overflow-hidden px-4 py-14 sm:px-5 sm:py-20 md:py-32">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(47,141,255,0.22),transparent_34%),linear-gradient(135deg,#050505,#09111c_55%,#050505)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,91,255,0.30),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.94),rgba(0,0,0,0.62),rgba(0,0,0,0.9))]" />
           <div className="relative mx-auto grid max-w-7xl gap-8 pt-4 sm:gap-10 sm:pt-8 lg:grid-cols-[1.1fr_0.9fr] lg:pt-12">
-            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
+            <div><SectionLabel light>{page.eyebrow}</SectionLabel><h1 className="mt-4 text-[clamp(2.55rem,12vw,7rem)] font-semibold leading-[0.96] tracking-[-0.06em] sm:mt-5 sm:tracking-[-0.075em]">{page.title}</h1><p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">{page.hero}</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Send RFQ / drawings</GradientButton><GhostButton href={`tel:${phoneClean}`}>Call now</GhostButton></div></div>
             <EnquiryForm compact pageTitle={page.title} />
           </div>
         </section>
@@ -829,7 +672,7 @@ function ServicePage({ page }) {
             <div className="mt-10 border-t border-white/15">{complianceItems.map((item, index) => <div key={item} className="grid grid-cols-[44px_1fr] border-b border-white/15 py-5"><span className="text-xs font-medium text-slate-500">0{index + 1}</span><span className="font-semibold text-white">{item}</span></div>)}</div>
           </div>
         </section>
-        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/">Start enquiry</GradientButton><a href="/" className="inline-flex min-h-12 items-center justify-center border border-slate-950 px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-950 hover:text-white">Back home</a></div></div><div className="min-h-72 border-l border-slate-300 bg-[linear-gradient(135deg,#f8fafc,#eef4fb)]" /></div></section>
+        <section className="bg-white px-4 py-16 text-slate-950 sm:px-5 sm:py-24"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr]"><div><SectionLabel>Why JJDS</SectionLabel><h2 className="mt-3 text-4xl font-semibold tracking-[-0.015em] md:text-6xl">A practical contractor you can deal with directly.</h2><p className="mt-6 text-lg leading-8 text-slate-600">JJDS provides experienced trades with direct supervision and straightforward communication. We work through site issues as they come up and keep the client informed.</p><div className="mt-8 flex flex-wrap gap-4"><GradientButton href="/#contact">Start enquiry</GradientButton><a href="/" className="inline-flex min-h-12 items-center justify-center border border-slate-950 px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-950 hover:text-white">Back home</a></div></div><div className="min-h-72 border-l border-slate-300 bg-[linear-gradient(135deg,#f8fafc,#eef4fb)]" /></div></section>
       </main>
       <Footer />
       <MobileButtons />
@@ -842,7 +685,7 @@ function Footer() {
     <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
       <div><img src="/jjds-logo.png" alt="JJDS Industries" className="h-28 w-auto object-contain" /><p className="mt-5 max-w-sm leading-7 text-slate-400">Integrated industrial construction, mechanical installation, structural steel, process pipework, shutdown and maintenance support across Australia.</p></div>
       <div><p className="font-semibold tracking-[0.18em] text-white">Capabilities</p><div className="mt-5 grid gap-3 text-sm">{seoPages.slice(0, 6).map((page) => <a key={page.path} href={page.path} className="hover:text-[#99C8FF]">{page.navLabel}</a>)}</div></div>
-      <div><p className="font-semibold tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/live-job-library" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/hseq-compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
+      <div><p className="font-semibold tracking-[0.18em] text-white">Company</p><div className="mt-5 grid gap-3 text-sm"><a href="/#why" className="hover:text-[#99C8FF]">Why JJDS</a><a href="/live-job-library" className="hover:text-[#99C8FF]">Project Gallery</a><a href="/hseq-compliance" className="hover:text-[#99C8FF]">HSEQ & Quality</a><a href="/#contact" className="hover:text-[#99C8FF]">Request a Quote</a></div></div>
       <div><p className="font-semibold tracking-[0.18em] text-white">Contact</p><div className="mt-5 grid gap-3 text-sm"><a href={`tel:${phoneClean}`} className="hover:text-[#99C8FF]">{BRAND.phone}</a><a href={`mailto:${BRAND.email}`} className="break-all hover:text-[#99C8FF]">{BRAND.email}</a><p>Australia</p><p>Nationwide mobilisation</p></div></div>
     </div>
     <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 md:flex-row md:justify-between"><p>© 2026 {BRAND.name}. All rights reserved.</p><p>JJDS Industries Pty Ltd • ABN {BRAND.abn} • ACN {BRAND.acn}</p></div>
@@ -850,12 +693,12 @@ function Footer() {
 }
 
 function MobileButtons() {
-  return <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/10 bg-[#050505]/95 backdrop-blur md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-14 items-center justify-center bg-[#005BFF] px-4 text-sm font-semibold text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-14 items-center justify-center border-l border-white/10 px-4 text-sm font-semibold text-white">SMS JJDS</a></div>;
+  return <div className="pb-[env(safe-area-inset-bottom)] fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/10 bg-[#050505]/95 backdrop-blur md:hidden"><a href={`tel:${phoneClean}`} className="flex min-h-14 items-center justify-center bg-[#005BFF] px-4 text-sm font-semibold text-white">Call JJDS</a><a href={`sms:${phoneClean}?&body=${encodeURIComponent("Hi JJDS, I would like to enquire about a job.")}`} className="flex min-h-14 items-center justify-center border-l border-white/10 px-4 text-sm font-semibold text-white">SMS JJDS</a></div>;
 }
 
-export default function App() {
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
+export default function App({ path = "/" }) {
   const page = seoPages.find((item) => item.path === path || item.aliases?.includes(path));
   if (page) return <ServicePage page={page} />;
   return <HomePage />;
 }
+
