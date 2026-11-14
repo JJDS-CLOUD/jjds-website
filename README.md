@@ -6,6 +6,8 @@ Next.js website for https://www.jjdsindustries.com.au, deployed through the exis
 
 Use Node.js 24.
 
+The application uses Next.js 15.5.29. Dependency overrides keep its nested PostCSS on the patched version used by this project, and pin patched Sharp and selector-parser releases. Review these overrides when upgrading Next.js or Tailwind; keep `npm audit` clean and verify a production build before removing them.
+
 ```sh
 npm ci
 npm run dev

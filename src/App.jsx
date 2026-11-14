@@ -382,7 +382,7 @@ function Header() {
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <header ref={root} className="sticky top-0 z-50 border-b border-white/10 bg-[#050A12]/96 backdrop-blur-xl">
+      <header ref={root} className="sticky top-0 z-50 border-b border-white/10 bg-[#050A12]/[0.96] backdrop-blur-xl">
         <div className="mx-auto flex min-h-[76px] max-w-[1600px] items-center justify-between gap-3 px-4 sm:px-6 lg:min-h-[88px] lg:px-10">
           <a href="/" className="flex min-w-0 items-center gap-3" onClick={closeMenu}>
             <img src="/jjds-logo.png" alt="JJDS Industries" className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-16 lg:w-16" />
