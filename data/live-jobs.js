@@ -16,6 +16,19 @@ export const liveJobs = [
     ],
     coverImage: "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQArTRApp1dlSIuGEmDJNyYeAZrhON_L97yY3MRibKOtkVA",
     images: [
+          "/live-jobs/20261110_043050702_iOS.jpg",
+          "/live-jobs/20261111_072319296_iOS.jpg",
+          "/live-jobs/20261111_034035600_iOS.jpg",
+          "/live-jobs/20261110_043125363_iOS.jpg",
+          "/live-jobs/20261103_011343956_iOS.jpg",
+          "/live-jobs/20261030_041455499_iOS.jpg",
+          "/live-jobs/20261029_050324319_iOS.jpg",
+          "/live-jobs/20261028_223412230_iOS.jpg",
+          "/live-jobs/20261028_010448841_iOS.jpg",
+          "/live-jobs/20261022_043427200_iOS.jpg",
+          "/live-jobs/20261022_030640049_iOS.jpg",
+          "/live-jobs/20261008_061737238_iOS.jpg",
+          "/live-jobs/20261007_064804747_iOS.jpg",
           "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQArTRApp1dlSIuGEmDJNyYeAZrhON_L97yY3MRibKOtkVA",
           "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQAzqNNj0AKYSYAn0SIq-QByASf8KXuf678--Vm6NmLjzUc",
           "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQB9tcc5hHXWS4eKarGycRE9AfC5G0vDem9vMMkHtciMprY",
@@ -50,9 +63,9 @@ export const liveJobs = [
           "/live-jobs/20261006_treatment-vessel-lift.jpg",
           "/live-jobs/20261016_huntly-progress.jpg"
     ],
-    updated: "22 October 2026",
+    updated: "11 November 2026",
     update:
-      "Latest site photography from 22 October shows further progress across the Huntly installation and associated mechanical works.",
+      "Latest site photography through 11 November shows further progress across the Huntly installation and associated mechanical works.",
   },
 ];
 
