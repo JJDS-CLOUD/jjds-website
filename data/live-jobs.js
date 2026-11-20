@@ -1,5 +1,28 @@
 export const liveJobs = [
   {
+    id: "client-new-factory-installation",
+    status: "Active",
+    location: "Australia",
+    sector: "Industrial Manufacturing",
+    title: "Day One of Installation of Client's New Factory",
+    summary:
+      "Day one of installation works for the client's new factory, showing the project as site installation gets underway.",
+    scope: [
+      "Factory installation works",
+      "Site mobilisation and setup",
+      "Mechanical installation",
+      "Project coordination and site delivery",
+    ],
+    coverImage: "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQCnhemZbxLHQZhDM8kLgAw9AXO-epQct90HA3bKCM3qo-8",
+    images: [
+      "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQCnhemZbxLHQZhDM8kLgAw9AXO-epQct90HA3bKCM3qo-8",
+      "https://rqn9s3axsdbjmfou.sharepoint.com/_layouts/15/download.aspx?share=IQBSlkP6kB_uQqmlCKqvGjfbAW3Zugtl4WIMXmNDThlSfUU"
+    ],
+    updated: "19 November 2026",
+    update:
+      "Day one of installation of client's new factory.",
+  },
+  {
     id: "huntly-waste-treatment",
     status: "Active",
     location: "Huntly, Victoria",
